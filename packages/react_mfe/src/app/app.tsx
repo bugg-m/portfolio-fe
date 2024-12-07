@@ -1,14 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import PasswordGenerator from '@react_mfe/components/password-generator/password-generator';
 
-import NxWelcome from './nx-welcome';
-
-export function App() {
-  return (
-    <div>
-      <NxWelcome title="react_mfe" />
-    </div>
-  );
+function App() {
+  return <PasswordGenerator />;
 }
 
 export default App;
