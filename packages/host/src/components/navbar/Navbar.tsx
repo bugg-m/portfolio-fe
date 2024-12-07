@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/LogoIcon';
 import { CapitalizeAllLetter } from '@host/utils/core-utilities';
 
-const NavbarComponent: React.FC = () => {
+const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
 
   const menuItems = [
@@ -53,4 +53,4 @@ const NavbarComponent: React.FC = () => {
   );
 };
 
-export default NavbarComponent;
+export default Navbar;

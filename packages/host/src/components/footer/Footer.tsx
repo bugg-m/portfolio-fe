@@ -5,7 +5,7 @@ import { ImWhatsapp } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import LogoIcon from '../logo-component/LogoIcon';
 
-function FooterComponent() {
+function Footer() {
   return (
     <div className="w-full py-5">
       <hr className="my-3 border-gray-200 sm:mx-auto dark:border-gray-400" />
@@ -54,4 +54,4 @@ function FooterComponent() {
   );
 }
 
-export default FooterComponent;
+export default Footer;
