@@ -2,7 +2,7 @@ import useFolderHook from '@react_mfe/hooks/use-folder-hooks';
 import { IFolderData } from '@react_mfe/types/folder-types';
 import React, { useState } from 'react';
 import RootFolderItem from './root-folder-item';
-import FolderInput from './folder-input';
+// import FolderInput from './folder-input';
 
 const Folder: React.FC<{ folderItems: IFolderData }> = ({ folderItems }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ const Folder: React.FC<{ folderItems: IFolderData }> = ({ folderItems }) => {
           setIsOpen={setIsOpen}
           handleShowInput={handleShowInput}
         />
-        {showInput?.isVisible && <FolderInput />}
+        {/* {showInput?.isVisible && <FolderInput />} */}
         <div className={`${isOpen ? 'block' : 'hidden'}`}>
           {folderData.subFolders.map((file) => (
             <div key={file.id}>
