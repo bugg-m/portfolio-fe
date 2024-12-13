@@ -20,9 +20,10 @@
           "packages/react_mfe/src/favicon.ico",
           "packages/react_mfe/src/assets"
         ],
-        "styles": ["packages/react_mfe/src/styles.css"],
+        "styles": ["input.css"],
         "scripts": [],
-        "webpackConfig": "packages/react_mfe/webpack.config.ts"
+        "webpackConfig": "packages/react_mfe/webpack.config.ts",
+        "postcssConfig": "postcss.config.js"
       },
       "configurations": {
         "development": {
