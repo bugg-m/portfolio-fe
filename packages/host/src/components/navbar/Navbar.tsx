@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PiBugDroidFill } from 'react-icons/pi';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoIcon from '../logo-component/LogoIcon';
+import LogoIcon from '../logo-component/logo-icon';
 import { CapitalizeAllLetter } from '@host/utils/core-utilities';
 
 const Navbar: React.FC = () => {
