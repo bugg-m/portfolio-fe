@@ -1,4 +1,4 @@
-import useOmitCellsHook from '@react_mfe/hooks/omit-cells-hooks';
+import useOmitCellsHook from '@react_mfe/hooks/use-omit-cells-hooks';
 import React, { useMemo } from 'react';
 
 const OmitCells: React.FC = () => {

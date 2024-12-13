@@ -1,7 +1,7 @@
-import PasswordGenerator from '@react_mfe/components/password-generator/password-generator';
+import Pagination from '@react_mfe/components/pagination/pagination';
 
 function App() {
-  return <PasswordGenerator />;
+  return <Pagination />;
 }
 
 export default App;
