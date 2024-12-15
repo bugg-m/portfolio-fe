@@ -1,19 +1,20 @@
+import { AppRoutesEnum } from '@host/enums/app-routes-enum';
 import React from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
 } from 'react-router-dom';
-import RootLayout from './root.layout';
-import { ErrorPage } from '../components/error/ErrorPage';
 
+const RootLayout = React.lazy(() => import('./root.layout'));
+const ErrorPage = React.lazy(() => import('../components/error/error-page'));
 const ReactMfe = React.lazy(() => import('react_micro_service'));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route path="/react_mfe" element={<ReactMfe />} />
-      <Route path="*" element={<ErrorPage />} />
+    <Route path={AppRoutesEnum.HOST} element={<RootLayout />}>
+      <Route path={AppRoutesEnum.REACT_MFE} element={<ReactMfe />} />
+      <Route path={AppRoutesEnum.ERROR} element={<ErrorPage />} />
     </Route>
   )
 );

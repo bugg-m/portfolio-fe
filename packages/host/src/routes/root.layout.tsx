@@ -1,19 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Navbar from '@host/components/navbar/Navbar';
-import Footer from '@host/components/footer/Footer';
-import Bubbles from '@host/components/bubble/Bubbles';
+import Navbar from '@host/components/navbar/navbar';
+import Footer from '@host/components/footer/footer';
+// import Bubbles from '@host/components/bubble/Bubbles';
 
 function RootLayout() {
   return (
-    <div className="font-mono w-full min-h-screen relative">
+    <div className="font-mono min-w-full min-h-screen">
       <div className="fixed top-0 w-full bg-white z-50">
         <Navbar />
       </div>
-      <div className="w-full min-h-full -z-10 flex blur-sm absolute">
+      {/* <div className="w-full min-h-full -z-10 flex blur-sm absolute">
         <Bubbles />
-      </div>
-      <div className="w-full min-h-screen flex justify-center items-center mt-7 z-10">
+      </div> */}
+      <div className="w-full min-h-screen pt-20 z-10">
         <Outlet />
       </div>
       <Toaster position="top-center" reverseOrder={true} />
