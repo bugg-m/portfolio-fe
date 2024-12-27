@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve host",
-    "build": "nx build host"
+    "start:host": "nx serve host",
+    "build:host": "nx build host",
+    "start:react_mfe": "nx serve react_mfe",
+    "build:react_mfe": "nx build react_mfe",
+    "start:all": "nx run-many --target=serve --projects=host,react_mfe",
+    "build:all": "nx run-many --target=build --projects=host,react_mfe"
   },
   "private": true,
   "devDependencies": {
