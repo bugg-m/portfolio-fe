@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Spinner: React.FC = () => {
+const Loader: React.FC = () => {
   return (
     <div
       className="flex space-x-1 scale-100 [&>div]:bg-brand"
@@ -14,6 +14,6 @@ const Spinner: React.FC = () => {
   );
 };
 
-Spinner.displayName = 'Spinner';
+Loader.displayName = 'Loader';
 
-export default Spinner;
+export default Loader;
