@@ -1,4 +1,4 @@
-import Spinner from '@host/components/spinner/spinner';
+import Spinner from '@host/components/spinner/Spinner';
 import { router } from '@host/routes/root.route';
 import { StrictMode, Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';

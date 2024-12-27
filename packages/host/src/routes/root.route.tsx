@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 const RootLayout = React.lazy(() => import('./root.layout'));
-const ErrorPage = React.lazy(() => import('../components/error/error-page'));
+const ErrorPage = React.lazy(() => import('../components/error/ErrorPage'));
 const ReactMfe = React.lazy(() => import('react_micro_service'));
 
 export const router = createBrowserRouter(
