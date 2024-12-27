@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Navbar from '@host/components/navbar/Navbar';
-import Footer from '@host/components/footer/Footer';
+import Navbar from '@host/components/navbar/navbar';
+import Footer from '@host/components/footer/footer';
 // import Bubbles from '@host/components/bubble/Bubbles';
 
 function RootLayout() {
