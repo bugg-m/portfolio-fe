@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
+    "postinstall": "nx reset",
     "start:host": "nx serve host",
     "build:host": "nx build host",
     "start:react_mfe": "nx serve react_mfe",

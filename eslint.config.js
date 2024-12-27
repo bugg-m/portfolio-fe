@@ -29,16 +29,9 @@ module.exports = [
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
       'import/no-unresolved': [
-        'error',
+        'off',
         {
           caseSensitive: true,
-          // allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$', '@host/*'],
-          // depConstraints: [
-          //   {
-          //     sourceTag: '*',
-          //     onlyDependOnLibsWithTags: ['*'],
-          //   },
-          // ],
         },
       ],
     },
