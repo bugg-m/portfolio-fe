@@ -3,7 +3,7 @@ import { ImGithub } from 'react-icons/im';
 import { SiMaildotcom } from 'react-icons/si';
 import { ImWhatsapp } from 'react-icons/im';
 import { Link } from 'react-router-dom';
-import LogoIcon from '../logo-component/logo-icon';
+import LogoIcon from '../logo-component/LogoIcon';
 
 function Footer() {
   return (
