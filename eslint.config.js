@@ -32,13 +32,13 @@ module.exports = [
         'error',
         {
           caseSensitive: true,
-          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$', '@host/*'],
-          depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
-          ],
+          // allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$', '@host/*'],
+          // depConstraints: [
+          //   {
+          //     sourceTag: '*',
+          //     onlyDependOnLibsWithTags: ['*'],
+          //   },
+          // ],
         },
       ],
     },
