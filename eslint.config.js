@@ -25,15 +25,4 @@ module.exports = [
       ],
     },
   },
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    rules: {
-      'import/no-unresolved': [
-        'error',
-        {
-          caseSensitive: true,
-        },
-      ],
-    },
-  },
 ];
