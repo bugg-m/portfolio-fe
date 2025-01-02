@@ -1,11 +1,12 @@
 import { composePlugins, withNx } from '@nx/webpack';
 import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/react/module-federation';
-import { ModuleFederationConfig } from '@nx/webpack';
+// import { ModuleFederationConfig } from '@nx/webpack';
 
 import baseConfig from './module-federation.config';
 
-const prodConfig: ModuleFederationConfig = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const prodConfig: any = {
   ...baseConfig,
   /*
    * Remote overrides for production.
@@ -24,7 +25,16 @@ const prodConfig: ModuleFederationConfig = {
    *   ['app2', 'http://example.com/path/to/app2/remoteEntry.js'],
    * ]
    */
-  remotes: [['react_mfe', 'https://bugg-m-react.netlify.app']],
+  remotes: [['react_mfe', 'https://bugg-m-react.netlify.app/remoteEntry.js']],
+  shared: {
+    'react-icons': {
+      singleton: true,
+      strictVersion: true,
+      requiredVersion: '^5.4.0',
+    },
+    react: { singleton: true },
+    'react-dom': { singleton: true },
+  },
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.
