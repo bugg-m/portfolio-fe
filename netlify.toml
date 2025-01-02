@@ -1,2 +1,2 @@
 [build]
-  command = "yarn build:host"
+  command = "yarn build:all"
