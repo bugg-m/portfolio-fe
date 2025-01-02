@@ -24,7 +24,7 @@ const prodConfig: ModuleFederationConfig = {
    *   ['app2', 'http://example.com/path/to/app2/remoteEntry.js'],
    * ]
    */
-  remotes: [['react_mfe', 'http://localhost:9001/']],
+  remotes: [['react_mfe', 'https://bugg-m-react.netlify.app']],
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.
