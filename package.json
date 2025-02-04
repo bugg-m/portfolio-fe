@@ -5,9 +5,9 @@
   "scripts": {
     "postinstall": "nx reset",
     "start:host": "nx serve host",
-    "build:host": "nx build host",
+    "build:host": "nx affected:build host",
     "start:react_mfe": "nx serve react_mfe",
-    "build:react_mfe": "nx build react_mfe",
+    "build:react_mfe": "nx affected:build react_mfe",
     "start:all": "nx run-many --target=serve --projects=host,react_mfe",
     "build:all": "nx run-many --target=build --projects=host,react_mfe"
   },
