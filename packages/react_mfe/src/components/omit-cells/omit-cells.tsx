@@ -23,7 +23,7 @@ const OmitCells: React.FC = () => {
           key={index}
           disabled={cell === 0 || selectedDiv.includes(index) || isCubeClearing}
           onClick={() => handleColorCube(index)}
-          className={`size-36 ${
+          className={`size-5 ${
             cell === 1
               ? `border border-gray-500 cursor-pointer ${
                   selectedDiv.includes(index) ? 'bg-green-400' : 'bg-white'

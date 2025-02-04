@@ -1,6 +1,6 @@
 import { IPageNavButtonProps } from '@react_mfe/types/pagination-types';
 import React from 'react';
-import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from 'react-icons/ri';
+// import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from 'react-icons/ri';
 
 const PageNavButton: React.FC<IPageNavButtonProps> = ({
   disabled,
@@ -20,13 +20,13 @@ const PageNavButton: React.FC<IPageNavButtonProps> = ({
     >
       {iconLeft && (
         <span>
-          <RiArrowLeftDoubleFill size={20} />
+          {/* <RiArrowLeftDoubleFill size={20} /> */}RiArrowLeftDoubleFill
         </span>
       )}
       <span>{value}</span>
       {iconRight && (
         <span>
-          <RiArrowRightDoubleFill size={20} />
+          {/* <RiArrowRightDoubleFill size={20} /> */}RiArrowRightDoubleFill
         </span>
       )}
     </button>

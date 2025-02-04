@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PiBugDroidFill } from 'react-icons/pi';
+// import { PiBugDroidFill } from 'react-icons/pi';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
           onClick={() => setShowMobileNavbar(!showMobileNavbar)}
           className="text-3xl block gap-5 md:hidden"
         >
-          <PiBugDroidFill />
+          {/* <PiBugDroidFill /> */}PiBugDroidFill
         </div>
       </div>
     </nav>

@@ -1,7 +1,7 @@
-import { ImLinkedin } from 'react-icons/im';
-import { ImGithub } from 'react-icons/im';
-import { SiMaildotcom } from 'react-icons/si';
-import { ImWhatsapp } from 'react-icons/im';
+// import { ImLinkedin } from 'react-icons/im';
+// import { ImGithub } from 'react-icons/im';
+// import { SiMaildotcom } from 'react-icons/si';
+// import { ImWhatsapp } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
 
@@ -17,28 +17,28 @@ function Footer() {
             target="_blank"
             className="hover:underline me-4 md:me-6"
           >
-            <ImGithub />
+            {/* <ImGithub /> */}ImGithub
           </Link>
           <Link
             to="https://www.linkedin.com/in/manish-kumar-2b4924200/"
             target="_blank"
             className="hover:underline me-4 md:me-6"
           >
-            <ImLinkedin />
+            {/* <ImLinkedin /> */}ImLinkedin
           </Link>
           <Link
             to="https://echobuggm@gmail.com"
             target="_blank"
             className="hover:underline me-4 md:me-6"
           >
-            <SiMaildotcom />
+            {/* <SiMaildotcom /> */}SiMaildotcom
           </Link>
           <Link
             to="https://wa.me/9058314973"
             target="_blank"
             className="hover:underline"
           >
-            <ImWhatsapp />
+            {/* <ImWhatsapp /> */}ImWhatsapp
           </Link>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { LuServerCrash } from 'react-icons/lu';
+// import { LuServerCrash } from 'react-icons/lu';
 import React from 'react';
 
 const ErrorPage: React.FC = () => {
@@ -6,7 +6,7 @@ const ErrorPage: React.FC = () => {
     <main className="w-full z-10 h-[80vh] flex items-center justify-center">
       <div className="flex flex-col gap-10 items-center bg-blue-500 rounded-md border border-gray-200 justify-center w-2/5 h-2/3">
         <span className="text-7xl">
-          <LuServerCrash />
+          {/* <LuServerCrash /> */} Server crash icon
         </span>
         <div className="flex flex-col gap-2 items-center justify-center">
           <span className="text-3xl font-semibold">Oh Snap!</span>
