@@ -8,7 +8,7 @@ import {
 
 const RootLayout = React.lazy(() => import('./root.layout'));
 const ErrorPage = React.lazy(() => import('../components/error/error-page'));
-const ReactMfe = React.lazy(() => import('react_micro_service'));
+const ReactMfe = React.lazy(() => import('@react_mfe/remote-entry'));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
