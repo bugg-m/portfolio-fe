@@ -8,7 +8,7 @@ import baseConfig from './module-federation.config';
 const prodConfig: ModuleFederationConfig = {
   ...baseConfig,
 
-  remotes: [['react_mfe', 'https://bugg-m-react.netlify.app']],
+  remotes: [['react_mfe', 'https://bugg-m-react.netlify.app/remoteEntry.js']],
   // remotes: [['react_mfe', 'https://localhost:9001/remoteEntry.js']],
 };
 
