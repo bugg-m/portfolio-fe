@@ -5,11 +5,12 @@ import { ModuleFederationConfig } from '@nx/webpack';
 
 import baseConfig from './module-federation.config';
 
+const react_mfe_url = process.env.NX_REACT_MFE_URL ?? '';
+
 const prodConfig: ModuleFederationConfig = {
   ...baseConfig,
 
-  remotes: [['react_mfe', 'https://bugg-m-react.netlify.app/remoteEntry.js']],
-  // remotes: [['react_mfe', 'https://localhost:9001/remoteEntry.js']],
+  remotes: [['react_mfe', react_mfe_url]],
 };
 
 export default composePlugins(

@@ -59,7 +59,8 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "react_mfe:build:development"
+          "buildTarget": "react_mfe:build:development",
+          "hmr": true
         },
         "production": {
           "buildTarget": "react_mfe:build:production",
@@ -74,11 +75,13 @@
       "executor": "@nx/react:module-federation-static-server",
       "defaultConfiguration": "production",
       "options": {
-        "serveTarget": "react_mfe:serve"
+        "serveTarget": "react_mfe:serve",
+        "hmr": true
       },
       "configurations": {
         "development": {
-          "serveTarget": "react_mfe:serve:development"
+          "serveTarget": "react_mfe:serve:development",
+          "hmr": true
         },
         "production": {
           "serveTarget": "react_mfe:serve:production"

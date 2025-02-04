@@ -56,7 +56,8 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "host:build:development"
+          "buildTarget": "host:build:development",
+          "hmr": true
         },
         "production": {
           "buildTarget": "host:build:production",
@@ -71,11 +72,13 @@
       "executor": "@nx/react:module-federation-static-server",
       "defaultConfiguration": "production",
       "options": {
-        "serveTarget": "host:serve"
+        "serveTarget": "host:serve",
+        "hmr": true
       },
       "configurations": {
         "development": {
-          "serveTarget": "host:serve:development"
+          "serveTarget": "host:serve:development",
+          "hmr": true
         },
         "production": {
           "serveTarget": "host:serve:production"
