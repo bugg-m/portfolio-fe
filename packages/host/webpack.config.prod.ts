@@ -10,7 +10,7 @@ const react_mfe_url = process.env.NX_REACT_MFE_URL ?? '';
 const prodConfig: ModuleFederationConfig = {
   ...baseConfig,
 
-  remotes: [['react_mfe', react_mfe_url]],
+  remotes: [['react_mfe', `react_mfe@${react_mfe_url}`]],
 };
 
 export default composePlugins(
