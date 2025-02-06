@@ -1,56 +1,69 @@
-import { useState } from 'react';
-// import { PiBugDroidFill } from 'react-icons/pi';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
 import { CapitalizeAllLetter } from '@host/utils/core-utilities';
+import Icon from '../icon/icon';
+import icons from '@host/constants/icons';
 
 const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
 
   const menuItems = [
-    {
-      title: 'home',
-      id: 1,
-      to: '',
-    },
-    {
-      title: 'React',
-      id: 2,
-      to: 'react_mfe',
-    },
-    // {
-    //   title: 'experience',
-    //   id: 3,
-    //   to: 'experience',
-    // },
-    // {
-    //   title: 'projects',
-    //   id: 4,
-    //   to: 'projects',
-    // },
+    { title: 'home', id: 1, to: '' },
+    { title: 'react', id: 1, to: '/react_mfe' },
+    { title: 'experience', id: 2, to: 'experience' },
+    { title: 'projects', id: 3, to: 'projects' },
+    { title: 'contact me', id: 4, to: 'contact' },
   ];
 
   return (
-    <nav className="flex justify-center items-center border-b-2 border-gray-400 rounded font-mono box-border">
-      <div className="flex justify-between items-center px-6 py-2 w-4/5">
+    <nav className="bg-neutral-50 text-secondary-500 border-b border-neutral-200 shadow-sm">
+      <div className="flex justify-between items-center px-6 py-3 w-full md:w-4/5 mx-auto">
         <LogoIcon />
-        <div>
-          <div className="text-base md:flex gap-8 hidden ">
-            {menuItems?.map(({ title, id, to }) => (
-              <NavLink key={id} className="hover:text-brand" to={to}>
-                {CapitalizeAllLetter(title)}
-              </NavLink>
-            ))}
-          </div>
-          <div
-            onClick={() => setShowMobileNavbar(!showMobileNavbar)}
-            className="text-3xl block gap-5 md:hidden"
-          >
-            {/* <PiBugDroidFill /> */}PiBugDroidFill
-          </div>
+
+        <div className="hidden md:flex gap-8 text-sm font-medium">
+          {menuItems.map(({ title, id, to }) => (
+            <NavLink
+              key={id}
+              to={to}
+              className="hover:text-primary-500 transition-colors"
+            >
+              {CapitalizeAllLetter(title)}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="md:hidden text-2xl cursor-pointer text-secondary-700">
+          {showMobileNavbar ? (
+            <Icon
+              src={icons.close}
+              alt="close icon"
+              onClick={() => setShowMobileNavbar(false)}
+            />
+          ) : (
+            <Icon
+              src={icons.menu}
+              alt="menu icon"
+              onClick={() => setShowMobileNavbar(true)}
+            />
+          )}
         </div>
       </div>
+
+      {showMobileNavbar && (
+        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-50 border-t border-neutral-200">
+          {menuItems.map(({ title, id, to }) => (
+            <NavLink
+              key={id}
+              to={to}
+              className="text-secondary-500 hover:text-primary-500 transition-colors"
+              onClick={() => setShowMobileNavbar(false)}
+            >
+              {CapitalizeAllLetter(title)}
+            </NavLink>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
