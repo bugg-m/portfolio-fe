@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
-import bug from '@host/assets/svg-logo/bug.svg';
+import Icon from '@host/components/icon/icon';
+import icons from '@host/constants/icons';
+
 const LogoIcon = () => {
   return (
-    <div>
-      <Link to={'/'} className="flex justify-start items-center gap-2">
-        <div className="md:size-8 size-6 hover:animate-ping">
-          <img src={bug} alt="bug icon" />
-        </div>
-        <span className="md:text-xl text-lg hover:animate-pulse md:pt-1 pt-0.5 font-semibold">
-          BUGG
-        </span>
-      </Link>
-    </div>
+    <Link to="/" className="flex items-center gap-2">
+      <div className="hover:animate-ping">
+        <Icon src={icons.bug} alt="bug icon" />
+      </div>
+      <span className="md:text-xl text-lg hover:animate-pulse font-semibold text-secondary-700">
+        BUGG
+      </span>
+    </Link>
   );
 };
 

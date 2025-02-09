@@ -17,5 +17,13 @@ const config = {
 export default composePlugins(
   withNx(),
   withReact(),
-  withModuleFederation(config, { dts: false })
+  withModuleFederation(config, { dts: false }),
+
+  (config) => {
+    if (config.mode === 'development') {
+      config.optimization ??= {};
+      config.optimization.runtimeChunk = 'single';
+    }
+    return config;
+  }
 );

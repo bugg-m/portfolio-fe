@@ -1,0 +1,5 @@
+# Redirect all routes to home to support client-side routing (e.g., React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
