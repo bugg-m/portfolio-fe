@@ -1,49 +1,50 @@
-// import { ImLinkedin } from 'react-icons/im';
-// import { ImGithub } from 'react-icons/im';
-// import { SiMaildotcom } from 'react-icons/si';
-// import { ImWhatsapp } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
+import Icon from '../icon/icon';
+import icons from '@host/constants/icons';
 
 function Footer() {
+  const links = [
+    {
+      to: 'https://github.com/cyborgM1002',
+      icon: icons.github,
+      alt: 'github icon',
+    },
+    {
+      to: 'https://www.linkedin.com/in/manish-kumar-2b4924200/',
+      icon: icons.linkedin,
+      alt: 'linkedin icon',
+    },
+    {
+      to: 'https://echobuggm@gmail.com',
+      icon: icons.mail,
+      alt: 'mail icon',
+    },
+    {
+      to: 'https://wa.me/9058314973',
+      icon: icons.message,
+      alt: 'message icon',
+    },
+  ];
+
   return (
-    <div className="w-full py-5">
-      <hr className="my-3 border-gray-200 sm:mx-auto dark:border-gray-400" />
-      <div className="sm:flex px-10 sm:items-center sm:justify-between">
+    <div className="w-full">
+      <div className="sm:flex px-10 sm:items-center sm:justify-between py-3 border-t border-secondary-500">
         <LogoIcon />
-        <div className="flex flex-wrap items-center text-lg font-medium text-gray-600">
-          <Link
-            to="https://github.com/cyborgM1002"
-            target="_blank"
-            className="hover:underline me-4 md:me-6"
-          >
-            {/* <ImGithub /> */}ImGithub
-          </Link>
-          <Link
-            to="https://www.linkedin.com/in/manish-kumar-2b4924200/"
-            target="_blank"
-            className="hover:underline me-4 md:me-6"
-          >
-            {/* <ImLinkedin /> */}ImLinkedin
-          </Link>
-          <Link
-            to="https://echobuggm@gmail.com"
-            target="_blank"
-            className="hover:underline me-4 md:me-6"
-          >
-            {/* <SiMaildotcom /> */}SiMaildotcom
-          </Link>
-          <Link
-            to="https://wa.me/9058314973"
-            target="_blank"
-            className="hover:underline"
-          >
-            {/* <ImWhatsapp /> */}ImWhatsapp
-          </Link>
+        <div className="flex items-center justify-center gap-3">
+          {links.map(({ to, icon, alt }) => (
+            <Link
+              to={to}
+              target="_blank"
+              className="hover:underline size-8 p-1.5 flex items-center justify-center rounded-full bg-primary-500 hover:bg-primary-700"
+            >
+              <Icon src={icon} alt={alt} className="invert" />
+            </Link>
+          ))}
         </div>
       </div>
-      <hr className="my-6 w-11/12 border-gray-200 sm:mx-auto dark:border-gray-300" />
-      <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <hr className="w-11/12 border-secondary-100 sm:mx-auto" />
+      <span className="block py-2 text-sm text-secondary-500 sm:text-center">
         © 2024{' '}
         <Link to="/" className="hover:underline">
           BUGG™

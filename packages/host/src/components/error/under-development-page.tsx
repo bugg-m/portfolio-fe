@@ -1,12 +1,10 @@
-// import { LuServerCrash } from 'react-icons/lu';
+import icons from '@host/constants/icons';
+import Icon from '../icon/icon';
 
 const PageUnderDevelopment: React.FC = () => {
   return (
     <div className="flex z-10 flex-col gap-10 shadow-lg shadow-neutral-500 items-center bg-blue-500 rounded-md justify-center w-2/5 h-2/3">
-      <span className="text-7xl">
-        {/* <LuServerCrash /> */}
-        server crash icon
-      </span>
+      <Icon src={icons.serverCrash} alt="server crash icon" size="xl" />
       <div className="flex flex-col gap-2 items-center justify-center">
         <span className="text-3xl font-semibold">Oh Snap!</span>
         <span className="text-xl font-light">

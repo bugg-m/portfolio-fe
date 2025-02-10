@@ -10,14 +10,13 @@ const Navbar: React.FC = () => {
 
   const menuItems = [
     { title: 'home', id: 1, to: '' },
-    { title: 'react', id: 1, to: '/react_mfe' },
     { title: 'experience', id: 2, to: 'experience' },
     { title: 'projects', id: 3, to: 'projects' },
     { title: 'contact me', id: 4, to: 'contact' },
   ];
 
   return (
-    <nav className="bg-neutral-50 text-secondary-500 border-b border-neutral-200 shadow-sm">
+    <nav className="bg-neutral-50 text-secondary-500 border-b border-neutral-100 shadow-sm">
       <div className="flex justify-between items-center px-6 py-3 w-full md:w-4/5 mx-auto">
         <LogoIcon />
 
