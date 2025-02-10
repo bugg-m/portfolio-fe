@@ -1,3 +1,4 @@
+import Home from '@host/app/home/home';
 import { AppRoutesEnum } from '@host/enums/app-routes-enum';
 import React from 'react';
 import {
@@ -12,7 +13,9 @@ const ReactMfe = React.lazy(() => import('react_mfe/Module'));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path={AppRoutesEnum.HOST} element={<RootLayout />}>
+    <Route path={AppRoutesEnum.HOME} element={<RootLayout />}>
+      {/* host routes */}
+      <Route path={AppRoutesEnum.HOME} element={<Home />} />
       <Route path={AppRoutesEnum.REACT_MFE} element={<ReactMfe />} />
       <Route path={AppRoutesEnum.ERROR} element={<ErrorPage />} />
     </Route>

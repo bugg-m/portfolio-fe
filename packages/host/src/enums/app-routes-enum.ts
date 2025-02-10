@@ -1,5 +1,5 @@
 export enum AppRoutesEnum {
   ERROR = '*',
-  HOST = '/',
+  HOME = '/',
   REACT_MFE = 'react_mfe',
 }

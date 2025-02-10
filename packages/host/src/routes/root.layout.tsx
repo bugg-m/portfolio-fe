@@ -13,7 +13,7 @@ function RootLayout() {
       {/* <div className="w-full min-h-full -z-10 flex blur-sm absolute">
         <Bubbles />
       </div> */}
-      <div className="w-full min-h-screen pt-20 z-10">
+      <div className="w-full min-h-screen z-10 mt-12">
         <Outlet />
       </div>
       <Toaster position="top-center" reverseOrder={true} />
