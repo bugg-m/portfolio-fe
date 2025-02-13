@@ -29,11 +29,12 @@ function Footer() {
 
   return (
     <div className="w-full">
-      <div className="sm:flex px-10 sm:items-center sm:justify-between py-3 border-t border-secondary-500">
+      <div className="flex-content-between px-10 py-3 border-t border-secondary-300">
         <LogoIcon />
         <div className="flex items-center justify-center gap-3">
           {links.map(({ to, icon, alt }) => (
             <Link
+              key={alt}
               to={to}
               target="_blank"
               className="hover:underline size-8 p-1.5 flex items-center justify-center rounded-full bg-primary-500 hover:bg-primary-700"
@@ -44,7 +45,7 @@ function Footer() {
         </div>
       </div>
       <hr className="w-11/12 border-secondary-100 sm:mx-auto" />
-      <span className="block py-2 text-sm text-secondary-500 sm:text-center">
+      <span className="block py-2 text-center text-sm text-secondary-500 sm:text-center">
         © 2024{' '}
         <Link to="/" className="hover:underline">
           BUGG™

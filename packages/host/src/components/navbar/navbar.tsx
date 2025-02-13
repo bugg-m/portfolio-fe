@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-neutral-50 text-secondary-500 border-b border-neutral-100 shadow-sm">
-      <div className="flex justify-between items-center px-6 py-3 w-full md:w-4/5 mx-auto">
+      <div className="flex-content-between px-6 py-3 w-full md:w-4/5 mx-auto">
         <LogoIcon />
 
         <div className="hidden md:flex gap-8 text-sm font-medium">
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {showMobileNavbar && (
-        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-50 border-t border-neutral-200">
+        <div className="md:hidden flex-center flex-col gap-4 py-4 bg-neutral-50 border-t border-neutral-200">
           {menuItems.map(({ title, id, to }) => (
             <NavLink
               key={id}

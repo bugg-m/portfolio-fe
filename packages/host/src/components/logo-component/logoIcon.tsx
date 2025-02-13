@@ -4,7 +4,7 @@ import icons from '@host/constants/icons';
 
 const LogoIcon = () => {
   return (
-    <Link to="/" className="flex items-center gap-2">
+    <Link to="/" className="flex-center gap-2">
       <div className="hover:animate-ping">
         <Icon src={icons.bug} alt="bug icon" />
       </div>

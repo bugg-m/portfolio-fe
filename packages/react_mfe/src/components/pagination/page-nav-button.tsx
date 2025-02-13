@@ -13,7 +13,7 @@ const PageNavButton: React.FC<IPageNavButtonProps> = ({
   return (
     <button
       disabled={disabled}
-      className={`flex min-w-8 items-center justify-center gap-1 rounded-md px-2 py-1 text-base font-normal hover:bg-gray-500 cursor-pointer ${
+      className={`flex-center min-w-8 gap-1 rounded-md px-2 py-1 text-base font-normal hover:bg-gray-500 cursor-pointer ${
         selected ? 'bg-gray-500 text-white' : 'text-gray-900 bg-gray-400'
       }`}
       {...props}

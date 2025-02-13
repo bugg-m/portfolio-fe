@@ -20,8 +20,8 @@ const PasswordGenerator: React.FC = () => {
         <span className="text-lg text-gray-700 font-semibold text-center block mb-5">
           Password Generator
         </span>
-        <div className="flex flex-col items-center justify-center gap-5">
-          <div className="w-full flex items-center justify-center gap-5">
+        <div className="flex-center flex-col gap-5">
+          <div className="w-full flex-center gap-5">
             <input
               type="text"
               name="password"
@@ -36,7 +36,7 @@ const PasswordGenerator: React.FC = () => {
               Copy
             </button>
           </div>
-          <div className="w-full flex items-center justify-center gap-5">
+          <div className="w-full flex-center gap-5">
             <CharacterButtonItem
               label="Add Number"
               isChecked={addNumber}
@@ -49,7 +49,7 @@ const PasswordGenerator: React.FC = () => {
             />
           </div>
 
-          <div className="w-full flex flex-col items-center justify-center gap-5">
+          <div className="w-full flex-center flex-col gap-5">
             <label htmlFor="range">{size}</label>
             <input
               className="w-full"

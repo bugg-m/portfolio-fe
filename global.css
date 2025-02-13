@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '@bugg-m/bugg-ui/style.css';
 
 body {
   font-family: sans-serif;
@@ -28,6 +29,7 @@ body {
     --neutral-200: #c7c7c7;
     --neutral-500: #6b6b6b;
     --neutral-700: #3d3d3d;
+    --neutral-800: #2d2d2d;
     --neutral-900: #212121;
   }
 
@@ -52,4 +54,40 @@ body {
     --neutral-700: #888888;
     --neutral-900: #bbbbbb;
   }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-items-start {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.flex-items-end {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.flex-content-start {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.flex-content-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-content-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -9,13 +9,13 @@ const Pagination: React.FC = () => {
   console.log({ skip, limit, currentPage });
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center">
+    <div className="w-full h-screen flex-center flex-col">
       <div className="w-4/5 h-screen grid grid-cols-5 gap-2 place-content-around">
         {products.map((product: IProductCardProps) => (
           <Products product={product} />
         ))}
       </div>
-      <div className="w-4/5 bg-gray-200 h-20  flex justify-center items-center gap-5 rounded-md">
+      <div className="w-4/5 bg-gray-200 h-20 flex-center gap-5 rounded-md">
         {currentPage > 1 && (
           <PageNavButton
             onClick={() => setCurrentPage((prev) => prev - 1)}

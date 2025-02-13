@@ -8,7 +8,7 @@ const CharacterButtonItem: React.FC<ICharacterButtonProps> = ({
 }) => {
   const name = label.replace(' ', '-');
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex-center gap-2">
       <input
         onChange={handleCheck}
         checked={isChecked}
