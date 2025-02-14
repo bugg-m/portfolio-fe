@@ -1,7 +1,7 @@
+@import '@bugg-m/bugg-ui/style.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '@bugg-m/bugg-ui/style.css';
 
 body {
   font-family: sans-serif;
