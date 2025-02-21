@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
-import Icon from '../icon/icon';
 import icons from '@host/constants/icons';
+import { Icon } from '@bugg-m/bugg-ui';
 
 function Footer() {
   const links = [
@@ -36,10 +36,10 @@ function Footer() {
             <Link
               key={alt}
               to={to}
+              className="size-8 p-1.5 flex items-center justify-center rounded-full border border-primary-50 hover:bg-primary-50"
               target="_blank"
-              className="hover:underline size-8 p-1.5 flex items-center justify-center rounded-full bg-primary-500 hover:bg-primary-700"
             >
-              <Icon src={icon} alt={alt} className="invert" />
+              <Icon src={icon} />
             </Link>
           ))}
         </div>

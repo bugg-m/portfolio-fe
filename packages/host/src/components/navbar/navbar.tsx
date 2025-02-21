@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
 import { CapitalizeAllLetter } from '@host/utils/core-utilities';
-import Icon from '../icon/icon';
 import icons from '@host/constants/icons';
+import { Icon } from '@bugg-m/bugg-ui';
 
 const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
@@ -36,13 +36,15 @@ const Navbar: React.FC = () => {
           {showMobileNavbar ? (
             <Icon
               src={icons.close}
-              alt="close icon"
+              iconColor="secondary"
+              size="lg"
               onClick={() => setShowMobileNavbar(false)}
             />
           ) : (
             <Icon
               src={icons.menu}
-              alt="menu icon"
+              iconColor="secondary"
+              size="lg"
               onClick={() => setShowMobileNavbar(true)}
             />
           )}

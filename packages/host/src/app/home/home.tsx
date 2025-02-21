@@ -1,5 +1,5 @@
+import { Image } from '@bugg-m/bugg-ui';
 import Hero from './hero';
-import Image from '@host/components/image/image';
 import logos from '@host/constants/logos';
 
 const Home = () => {

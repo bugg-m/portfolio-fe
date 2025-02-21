@@ -1,6 +1,5 @@
-import Image from '@host/components/image/image';
 import images from '@host/constants/images';
-import { Button } from '@bugg-m/bugg-ui';
+import { Button, Image } from '@bugg-m/bugg-ui';
 
 const Hero = () => {
   return (
@@ -11,10 +10,7 @@ const Hero = () => {
             Hello, I'm
           </span>
           <span className="mt-1 ml-3 text-xl md:text-2xl font-medium text-neutral-700">
-            Manish Kumar
-          </span>
-          <span className="text-sm font-medium text-neutral-500 tracking-tight">
-            , a
+            Manish Kumar,
           </span>
         </div>
         <div className="space-y-3 w-full">
@@ -26,21 +22,23 @@ const Hero = () => {
               with 1 year of experience.
             </p>
           </div>
-          <p className="text-xs font-medium text-neutral-500 tracking-tight">
+          <p className="text-sm leading-4 font-medium text-neutral-500 tracking-widest">
             Bridging front-end finesse with back-end power to create dynamic and
             scalable web experiences.
           </p>
         </div>
-        <div className="flex-center gap-3">
-          <Button>Explore</Button>
-          <Button>Contact Me</Button>
+        <div className="flex-content-start pt-10 gap-5">
+          <Button className="w-2/5">Explore</Button>
+          <Button className="w-3/5" variant={'outline'}>
+            Contact Me
+          </Button>
         </div>
       </div>
       <div className="col-span-1 flex-center p-5">
         <Image
           src={images.developer}
           alt="Developer"
-          className="object-cover w-3/4"
+          className="object-cover size-3/4"
         />
       </div>
     </section>
