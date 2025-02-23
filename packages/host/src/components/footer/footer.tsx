@@ -29,17 +29,17 @@ function Footer() {
 
   return (
     <div className="w-full">
-      <div className="flex-content-between px-10 py-3 border-t border-secondary-300">
+      <div className="flex-content-between px-4 md:px-10 py-1 md:py-3 border-t border-secondary-300">
         <LogoIcon />
         <div className="flex items-center justify-center gap-3">
           {links.map(({ to, icon, alt }) => (
             <Link
               key={alt}
               to={to}
-              className="size-8 p-1.5 flex items-center justify-center rounded-full border border-primary-50 hover:bg-primary-50"
+              className="size-6 md:size-8 flex items-center justify-center rounded-full border border-primary-50 hover:bg-primary-50"
               target="_blank"
             >
-              <Icon src={icon} />
+              <Icon src={icon} iconColor="primary" />
             </Link>
           ))}
         </div>

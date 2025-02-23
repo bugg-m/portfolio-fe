@@ -1,3 +1,4 @@
+import { Image } from '@bugg-m/bugg-ui';
 import React from 'react';
 
 interface IProfileProps {
@@ -8,7 +9,7 @@ interface IProfileProps {
 const Profile: React.FC<IProfileProps> = ({ image, title }) => {
   return (
     <div className="flex-center p-5 relative">
-      <img
+      <Image
         src={image}
         alt="yoga"
         className="rounded-full object-cover size-52 border-4 border-white"
