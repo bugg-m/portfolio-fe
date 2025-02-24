@@ -1,3 +1,5 @@
+import { Card, Image } from '@bugg-m/bugg-ui';
+import images from '@host/constants/images';
 import React from 'react';
 
 const Experience: React.FC = () => {
@@ -19,17 +21,14 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 bg-neutral-50">
+    <section id="experience" className="section">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-primary-500 text-center mb-8">
           Experience
         </h2>
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="p-6 border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-            >
+            <Card variant="elevated" key={index}>
               <h3 className="text-xl font-semibold text-neutral-800">
                 {exp.role} at {exp.company}
               </h3>
@@ -37,8 +36,16 @@ const Experience: React.FC = () => {
               <p className="mt-2 text-base text-neutral-700">
                 {exp.description}
               </p>
-            </div>
+            </Card>
           ))}
+        </div> */}
+
+        <div className="banner">
+          <div className="slider">
+            <div className="item">
+              <Image src={images.profile} alt="img" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

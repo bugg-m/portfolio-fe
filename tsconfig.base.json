@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "types": ["node_modules/@bugg-m/bugg-ui/types"],
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",

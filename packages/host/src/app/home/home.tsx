@@ -10,25 +10,22 @@ const Home: React.FC = () => {
     { icon: logos.vue, title: 'Vue Js' },
     { icon: logos.nodeJs, title: 'Node Js' },
     { icon: logos.express, title: 'Express Js' },
-    { icon: logos.mongodb, title: 'MongoDb' },
   ];
 
   return (
     <div className="bg-secondary-200 md:px-20 min-h-screen">
       <div className="border-x-4 bg-secondary-100 border-white">
         <Hero />
-        <div className="w-full space-y-3 py-10 text-center shadow-md bg-primary-50 border-y border-primary-100 md:rounded-lr-full rounded-lr-default">
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-700 tracking-tight leading-snug">
-            Tech Stacks
-          </h2>
+        <div className="section bg-primary-100 border-x border-primary-500 md:rounded-lr-full rounded-lr-default">
+          <h2 className="header">Tech Stacks</h2>
           <div className="flex flex-wrap items-center justify-around gap-1 md:gap-4">
             {skillsData.map(({ icon, title }) => (
-              <div className="flex-center flex-col">
+              <div className="flex-center flex-col hover-scale-110">
                 <Image
                   key={title}
                   src={icon}
                   alt={title}
-                  className="size-8 hover:scale-105 md:size-16 transition-transform"
+                  className="size-8 md:size-16"
                 />
                 <span className="text-xs text-secondary-400">{title}</span>
               </div>
@@ -36,7 +33,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <About />
-        {/* <Experience /> */}
+        <Experience />
       </div>
     </div>
   );
