@@ -1,10 +1,10 @@
-import images from '@host/constants/images';
 import { Button, Image } from '@bugg-m/bugg-ui';
+import illustrations from '@host/constants/illustrations';
 
 const Hero: React.FC = () => {
   return (
     <section className="section min-h-[80vh] grid grid-cols-1 md:grid-cols-2 md:px-8 border-x border-t border-primary-500 bg-primary-100 md:rounded-rl-full rounded-rl-default">
-      <div className="flex flex-col max-md:items-center justify-center col-span-1 order-2 md:order-1 px-8 space-y-4">
+      <div className="flex flex-col max-md:items-center justify-center col-span-1 order-2 md:order-1 md:px-12 space-y-4">
         <div className="hover-scale-110">
           <span
             role="img"
@@ -29,13 +29,13 @@ const Hero: React.FC = () => {
             scalable web experiences.
           </p>
         </div>
-        <div className="flex-content-start pt-10 gap-5">
+        <div className="flex-center pt-10 gap-5">
           <Button className="md:w-1/3 w-1/2 hover-scale-110" rounded="full">
             Explore
           </Button>
           <Button
             variant="outline"
-            className="md:w-1/3 w-1/2 hover-scale-110"
+            className="md:w-1/3 w-1/2 hover-scale-110 bg-white"
             rounded="full"
             colorScheme="secondary"
           >
@@ -43,11 +43,17 @@ const Hero: React.FC = () => {
           </Button>
         </div>
       </div>
-      <div className="order-1 md:order-2 col-span-1 flex-center p-5">
+      <div className="order-1 md:order-2 col-span-1 flex-center px-5">
         <Image
-          src={images.developer}
+          src={illustrations.developer1}
           alt="Developer working on code"
-          className="object-contain hover-scale-90 w-3/5 md:w-3/4 h-auto"
+          className="hover-scale-90 md:block object-contain hidden w-3/4 h-auto"
+        />
+        <Image
+          src={illustrations.developer3}
+          alt="Developer working on code"
+          className="hover-scale-90 md:hidden object-contain h-auto"
+          size="full"
         />
       </div>
     </section>

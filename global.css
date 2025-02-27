@@ -127,10 +127,23 @@ body {
 /* custom typography classes */
 @layer base {
   .paragraph {
-    @apply text-neutral-700 text-base md:text-lg leading-relaxed mt-4 transition-transform duration-300 transform hover:translate-x-1;
+    @apply text-neutral-700 text-base md:text-lg leading-relaxed transition-transform tracking-tight duration-300 transform hover:translate-x-1;
+  }
+  .s-paragraph {
+    @apply text-neutral-700 text-sm md:text-base leading-relaxed transition-transform tracking-tight duration-300 transform hover:translate-x-1;
   }
   .header {
     @apply inline-block mb-6 text-2xl md:text-3xl font-bold text-neutral-600 text-center tracking-tight leading-snug transition-all hover:scale-90 duration-300 hover:text-neutral-700;
+  }
+  .title {
+    @apply text-xl font-semibold text-neutral-700 hover:text-neutral-600 md:text-lg leading-relaxed transition-all tracking-wider duration-300 transform hover:translate-x-2;
+  }
+}
+
+/* custom container classes */
+@layer base {
+  .section {
+    @apply w-full space-y-3 px-5 py-10 text-center shadow-md transition-all duration-300 hover:shadow-lg;
   }
 }
 
@@ -144,43 +157,65 @@ body {
   }
 }
 
-/* custom container classes */
-@layer base {
-  .section {
-    @apply w-full space-y-3 px-5 py-10 text-center shadow-md transition-all duration-300 hover:shadow-lg;
-  }
-}
-
-/* sliding effect */
-
-@layer base {
-  .banner {
-    @apply w-full h-screen text-center overflow-hidden relative;
-  }
-  .slider {
-    @apply absolute w-52 h-64 top-[10%] left-[calc(50%-6.25rem)] transform-3d perspective-[62.5rem] animate-slide;
-  }
-  .sliderItem {
-    @apply absolute inset-0;
-    transform: rotateY(
-        calc((var(--position)-1) * (360 / (var(--quantity)) * 1deg))
-      )
-      translateZ(34.375rem);
-  }
-  .itemImage {
-    @apply w-full h-full object-cover;
-  }
-}
-
-@theme {
-  --animate-slide: autoRun 20s linear infinite;
-  @keyframes autoRun {
-    0%,
+/* appear animations classes */
+@layer utilities {
+  @keyframes appearBottomLeft {
+    0% {
+      clip-path: inset(100% 100% 0 0);
+    }
     100% {
-      transform: perspective(62.5rem) rotateY(0deg);
+      clip-path: inset(0 0 0 0);
     }
-    50% {
-      transform: perspective(62.5rem) rotateY(360deg);
+  }
+
+  @keyframes appearBottomRight {
+    0% {
+      clip-path: inset(0 0 100% 100%);
     }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes appearTopLeft {
+    0% {
+      clip-path: inset(0 100% 100% 0);
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes appearTopRight {
+    0% {
+      clip-path: inset(100% 0 0 100%);
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .animate-appearBottomLeft {
+    animation: appearBottomLeft linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .animate-appearBottomRight {
+    animation: appearBottomRight linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .animate-appearTopLeft {
+    animation: appearTopLeft linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .animate-appearTopRight {
+    animation: appearTopRight linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
   }
 }

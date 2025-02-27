@@ -8,7 +8,7 @@ const LogoIcon = () => {
       <div className="hover:animate-ping">
         <Icon src={icons.bug} className="md:size-10 size-8" />
       </div>
-      <span className="md:text-xl text-lg hover:animate-pulse font-semibold text-secondary-700">
+      <span className="md:text-xl text-lg hover:animate-pulse font-semibold text-neutral-700">
         BUGG
       </span>
     </Link>

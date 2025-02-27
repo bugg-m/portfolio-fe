@@ -1,50 +1,38 @@
-import { Card, Image } from '@bugg-m/bugg-ui';
-import images from '@host/constants/images';
 import React from 'react';
+import { Image } from '@bugg-m/bugg-ui';
+import illustrations from '@host/constants/illustrations';
 
 const Experience: React.FC = () => {
-  const experiences = [
-    {
-      company: 'Tech Company A',
-      role: 'Frontend Developer',
-      duration: 'Jan 2024 - Present',
-      description:
-        'Developed interactive web interfaces with React and Tailwind CSS, improving performance and user engagement.',
-    },
-    {
-      company: 'Tech Company B',
-      role: 'Full-Stack Developer Intern',
-      duration: 'Jun 2023 - Dec 2023',
-      description:
-        'Built end-to-end features for e-commerce platforms using Node.js and MongoDB, collaborating closely with cross-functional teams.',
-    },
-  ];
+  const experience = {
+    company: 'Fibonacci Innovations',
+    role: 'Full-Stack Developer',
+    duration: 'July 2023 - Dec 2024',
+    description:
+      'Developed interactive web interfaces with React and Tailwind CSS, enhancing performance and user engagement over my 1.5 years of experience.',
+  };
 
   return (
-    <section id="experience" className="section">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary-500 text-center mb-8">
-          Experience
-        </h2>
-        {/* <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <Card variant="elevated" key={index}>
-              <h3 className="text-xl font-semibold text-neutral-800">
-                {exp.role} at {exp.company}
-              </h3>
-              <p className="text-sm text-neutral-600">{exp.duration}</p>
-              <p className="mt-2 text-base text-neutral-700">
-                {exp.description}
-              </p>
-            </Card>
-          ))}
-        </div> */}
-
-        <div className="banner">
-          <div className="slider">
-            <div className="item">
-              <Image src={images.profile} alt="img" />
+    <section className="section md:rounded-tr-full rounded-tr-default border-x border-secondary-300 bg-secondary-50">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <h2 className="header">Experience</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-12 items-center justify-center">
+          <div className="flex-center col-span-1">
+            <Image
+              src={illustrations.experience}
+              alt="experience"
+              className="hover-scale-110 hover:bg-secondary-100"
+              rounded="md"
+              size="full"
+            />
+          </div>
+          <div className="h-3/4 p-5 rounded-md col-span-2 text-left space-y-2 w-3/4 border-l-2 border-secondary-300">
+            <div className="title flex-col flex-items-start">
+              <span className="text-3xl">{experience.role}</span>
+              <span className="text-lg">at {experience.company}</span>
             </div>
+
+            <p className="text-sm text-neutral-600">{experience.duration}</p>
+            <p className="mt-2 s-paragraph">{experience.description}</p>
           </div>
         </div>
       </div>

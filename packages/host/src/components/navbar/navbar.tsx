@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className="bg-neutral-50 text-secondary-500 border-b border-neutral-100 shadow-sm"
+      className="bg-neutral-50 text-neutral-700 border-b border-neutral-100 shadow-sm"
       role="navigation"
       aria-label="Main Navigation"
     >
@@ -30,8 +30,8 @@ const Navbar: React.FC = () => {
               key={id}
               to={to}
               className={({ isActive }) =>
-                `transition-colors hover:text-primary-500 ${
-                  isActive ? 'text-primary-500' : 'text-secondary-500'
+                `hover-scale-110 hover:text-primary-500 ${
+                  isActive ? 'text-primary-500' : 'text-neutral-700'
                 }`
               }
             >
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                 key={id}
                 to={to}
                 onClick={() => setShowMobileNavbar(false)}
-                className="transition-colors text-secondary-500"
+                className="transition-colors text-neutral-700"
               >
                 {CapitalizeAllLetter(title)}
               </NavLink>

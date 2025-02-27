@@ -45,7 +45,7 @@ function Footer() {
         </div>
       </div>
       <hr className="w-11/12 border-secondary-100 sm:mx-auto" />
-      <span className="block py-2 text-center text-sm text-secondary-500 sm:text-center">
+      <span className="block py-2 text-center text-sm text-neutral-700 sm:text-center">
         © 2024{' '}
         <Link to="/" className="hover:underline">
           BUGG™
