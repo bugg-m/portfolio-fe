@@ -52,6 +52,10 @@ module.exports = {
       borderRadius: {
         default: '8rem',
       },
+      fontSize: {
+        xxxs: '0.35rem',
+        xxs: '0.5rem',
+      },
     },
   },
   plugins: [],

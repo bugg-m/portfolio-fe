@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "types": ["node_modules/@bugg-m/bugg-ui/types"],
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -11,7 +10,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": ["es2021", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",

@@ -21,13 +21,8 @@ const Home: React.FC = () => {
           <h2 className="header">Tech Stacks</h2>
           <div className="flex flex-wrap items-center justify-around gap-1 md:gap-4">
             {skillsData.map(({ icon, title }) => (
-              <div className="flex-center flex-col hover-scale-110">
-                <Image
-                  key={title}
-                  src={icon}
-                  alt={title}
-                  className="size-8 md:size-16"
-                />
+              <div key={title} className="flex-center flex-col hover-scale-110">
+                <Image src={icon} alt={title} className="size-8 md:size-16" />
                 <span className="text-xs text-neutral-400">{title}</span>
               </div>
             ))}

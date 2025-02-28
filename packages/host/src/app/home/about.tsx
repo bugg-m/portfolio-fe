@@ -18,13 +18,13 @@ const About: React.FC = () => {
             />
           </div>
           <div className="col-span-2 text-left space-y-4">
-            <p className="paragraph mt-4">
+            <p className="l-paragraph animate-paragraph mt-4">
               I’m a full-stack developer with a passion for creating dynamic and
               scalable web experiences. With a strong foundation in modern
               frameworks and a custom-built UI component library, I bridge
               front-end finesse with back-end power.
             </p>
-            <p className="paragraph mt-4 md:pr-10">
+            <p className="l-paragraph animate-paragraph mt-4 md:pr-10">
               My journey in development has been driven by a commitment to
               continuous learning and innovation. Whether working on complex
               applications or refining my design process, I thrive on

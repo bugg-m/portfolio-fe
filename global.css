@@ -126,11 +126,14 @@ body {
 
 /* custom typography classes */
 @layer base {
-  .paragraph {
-    @apply text-neutral-700 text-base md:text-lg leading-relaxed transition-transform tracking-tight duration-300 transform hover:translate-x-1;
+  .animate-paragraph {
+    @apply transition-transform tracking-tight duration-300 transform hover:translate-x-1;
+  }
+  .l-paragraph {
+    @apply text-neutral-700 text-base md:text-lg leading-relaxed;
   }
   .s-paragraph {
-    @apply text-neutral-700 text-sm md:text-base leading-relaxed transition-transform tracking-tight duration-300 transform hover:translate-x-1;
+    @apply text-neutral-700 text-sm md:text-base leading-relaxed;
   }
   .header {
     @apply inline-block mb-6 text-2xl md:text-3xl font-bold text-neutral-600 text-center tracking-tight leading-snug transition-all hover:scale-90 duration-300 hover:text-neutral-700;
