@@ -4,6 +4,7 @@ import logos from '@host/constants/logos';
 import About from './about';
 import Experience from './experience';
 import Projects from './projects';
+import Contact from './contact';
 
 const Home: React.FC = () => {
   const skillsData = [
@@ -31,6 +32,7 @@ const Home: React.FC = () => {
         <About />
         <Experience />
         <Projects />
+        <Contact />
       </div>
     </div>
   );

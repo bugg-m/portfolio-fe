@@ -1013,10 +1013,10 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bugg-m/bugg-ui@^2.3.6":
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/@bugg-m/bugg-ui/-/bugg-ui-2.3.6.tgz#d617a604bb8846901190091bb6d87daed98a01da"
-  integrity sha512-9eS4zKnjP4q9W/1fjFtz6bwx79b5QI/QywjWDYcYteZ8MoLiBS+jHROPOHTpXtb+zd4aScF83xwxHe1XzX8SeA==
+"@bugg-m/bugg-ui@^2.3.7":
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/@bugg-m/bugg-ui/-/bugg-ui-2.3.7.tgz#127f37cc092d8b31f78fb30e31979a7c7aa58df1"
+  integrity sha512-U7HlkPju/rhvdJK+c2mCGyYM3Ys5ITbrZ5BWH4tspl3vECEF0ikjH0FEPeGRNI6e8hiqQ4C61KHcMRSvqi008w==
   dependencies:
     class-variance-authority "^0.7.0"
     clsx "^2.1.1"

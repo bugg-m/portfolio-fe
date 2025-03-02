@@ -106,6 +106,9 @@ body {
   .flex-content-between {
     @apply flex justify-between items-center;
   }
+  .flex-between-start {
+    @apply flex justify-around items-start;
+  }
 }
 
 /* custom rounded classes */

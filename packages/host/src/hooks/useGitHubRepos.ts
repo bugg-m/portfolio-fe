@@ -6,9 +6,11 @@ import { PortfolioRoutes } from '@host/constants/portfolio-api-routes';
 
 const useGitHubRepos = () => {
   const [gitHubRepos, setGitHubRepos] = useState<IGitHubRepos[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const getAllGitHubRepos = useCallback(async () => {
     try {
+      setLoading(true);
       const { data } = await axios.get(PortfolioRoutes.GITHUB_PROJECTS);
 
       if (data.statusCode === 200) {
@@ -27,12 +29,17 @@ const useGitHubRepos = () => {
           return newRepos.push(newData);
         });
         setGitHubRepos(newRepos);
+        setLoading(false);
       } else {
         NotifyError('Repo not found!');
+        setGitHubRepos([]);
+        setLoading(false);
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       NotifyError(error?.message?.slice(0, 30) || 'Request not completed');
+      setGitHubRepos([]);
+      setLoading(false);
     }
   }, []);
 
@@ -40,7 +47,7 @@ const useGitHubRepos = () => {
     getAllGitHubRepos();
   }, [getAllGitHubRepos]);
 
-  return { gitHubRepos };
+  return { gitHubRepos, loading };
 };
 
 export default useGitHubRepos;

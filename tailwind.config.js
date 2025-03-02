@@ -53,8 +53,10 @@ module.exports = {
         default: '8rem',
       },
       fontSize: {
-        xxxs: '0.35rem',
-        xxs: '0.5rem',
+        '5xs': '0.25rem',
+        '4xs': '0.3rem',
+        '3xs': '0.35rem',
+        '2xs': '0.5rem',
       },
     },
   },
