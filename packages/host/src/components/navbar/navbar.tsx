@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
-import { CapitalizeAllLetter } from '@host/utils/core-utilities';
 import icons from '@host/constants/icons';
 import { Button, Icon } from '@bugg-m/bugg-ui';
 
@@ -30,12 +29,12 @@ const Navbar: React.FC = () => {
               key={id}
               to={to}
               className={({ isActive }) =>
-                `hover-scale-110 hover:text-primary-500 ${
+                `hover-scale-110 hover:text-primary-500 uppercase ${
                   isActive ? 'text-primary-500' : 'text-neutral-700'
                 }`
               }
             >
-              {CapitalizeAllLetter(title)}
+              {title}
             </NavLink>
           ))}
         </div>
@@ -67,9 +66,9 @@ const Navbar: React.FC = () => {
                 key={id}
                 to={to}
                 onClick={() => setShowMobileNavbar(false)}
-                className="transition-colors text-neutral-700"
+                className="transition-colors uppercase text-neutral-700"
               >
-                {CapitalizeAllLetter(title)}
+                {title}
               </NavLink>
             </div>
           ))}
