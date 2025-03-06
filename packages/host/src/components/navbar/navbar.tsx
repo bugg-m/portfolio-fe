@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
 import icons from '@host/constants/icons';
-import { Button, Icon } from '@bugg-m/bugg-ui';
+import { Avatar, Button, Icon } from '@bugg-m/bugg-ui';
+import ToggleTheme from '../toggle-theme/toggle-theme';
+import images from '@host/constants/images';
 
 const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
@@ -10,7 +12,6 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { title: 'home', id: 1, to: '' },
     { title: 'microservices', id: 3, to: 'microservices' },
-    { title: 'contact me', id: 4, to: 'contact' },
   ];
 
   return (
@@ -19,11 +20,11 @@ const Navbar: React.FC = () => {
       role="navigation"
       aria-label="Main Navigation"
     >
-      <div className="flex-content-between md:px-6 px-3 py-1 md:py-3 w-full md:w-4/5 mx-auto">
+      <div className="flex-between-center md:px-6 px-3 py-1 md:py-3 w-full md:w-4/5 mx-auto">
         <LogoIcon />
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-sm font-medium">
+        <div className="hidden md:flex-center gap-8 text-sm font-medium">
           {menuItems.map(({ title, id, to }) => (
             <NavLink
               key={id}
@@ -37,6 +38,14 @@ const Navbar: React.FC = () => {
               {title}
             </NavLink>
           ))}
+          <ToggleTheme />
+          <Avatar
+            src={images.profile}
+            status={false}
+            size="sm"
+            shape="circle"
+            className="hover-scale-110"
+          />
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -61,9 +70,11 @@ const Navbar: React.FC = () => {
       {showMobileNavbar && (
         <div className="md:hidden flex-center flex-col bg-neutral-50 border-t border-neutral-200">
           {menuItems.map(({ title, id, to }) => (
-            <div className="bg-secondary-50 w-full h-10 py-2 flex-center">
+            <div
+              key={id}
+              className="bg-secondary-50 w-full h-10 py-2 flex-center"
+            >
               <NavLink
-                key={id}
                 to={to}
                 onClick={() => setShowMobileNavbar(false)}
                 className="transition-colors uppercase text-neutral-700"

@@ -21,7 +21,7 @@ const ProjectCardItems: React.FC<IProjectCardItems> = ({ projects }) => {
         <span className="text-3xs block capitalize md:text-2xs font-semibold text-neutral-700 transition-all group-hover:text-primary-800 group-hover:scale-110 duration-300">
           {projects.name}
         </span>
-        <div className="flex-content-between gap-2 md:mb-2">
+        <div className="flex-between-center gap-2 md:mb-2">
           <Button
             onClick={() => handleLinkClick(projects.githubUrl)}
             className="w-full h-1 px-2 py-1 md:h-3"

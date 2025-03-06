@@ -1,21 +1,35 @@
 import { Button, Image } from '@bugg-m/bugg-ui';
 import illustrations from '@host/constants/illustrations';
-import resume from '@host/assets/pdf/resume.pdf';
+import { useGetDataHook } from '@host/api/hooks/use-get-data-hook';
+import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
+import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
 
 const Hero: React.FC = () => {
-  const downloadResume = () => {
+  const { isLoading, getData } = useGetDataHook();
+  const { width } = useWindowDimensions();
+  const downloadResume = async () => {
+    const response = await getData({
+      url: PortfolioRoutes.DOWNLOAD_CV,
+      config: {
+        responseType: 'blob',
+      },
+      notify: true,
+    });
+
+    if (!response.status) {
+      return;
+    }
+    const url = window.URL.createObjectURL(new Blob([response.data]));
     const link = document.createElement('a');
-    link.href = resume;
-    link.download = 'ManishKumar_CV.pdf';
+    link.href = url;
+    link.setAttribute('download', 'ManishKumar_CV.pdf');
     document.body.appendChild(link);
     link.click();
-
-    link.remove();
   };
 
   return (
     <section className="section min-h-[95vh] grid grid-cols-1 md:grid-cols-2 md:px-8 border-x border-t border-primary-500 bg-primary-100 md:rounded-rl-full rounded-rl-default">
-      <div className="flex flex-col max-md:items-center md:justify-end col-span-1 order-2 md:order-1 md:p-12 space-y-4 h-full">
+      <div className="flex flex-col max-md:items-center md:justify-end col-span-1 order-2 md:order-1 lg:p-10 md:p-5 space-y-4 h-full">
         <div className="hover-scale-110">
           <span
             role="img"
@@ -40,8 +54,13 @@ const Hero: React.FC = () => {
             scalable web experiences.
           </p>
         </div>
-        <div className="flex-center w-full pt-10 gap-5">
-          <Button className="md:w-1/3 w-2/5 hover-scale-110" rounded="full">
+        <div className="flex-center w-full pt-10 gap-10 md:gap-5">
+          <Button
+            disabled
+            title="This feature is Under Development"
+            className="md:w-1/3 w-2/5 hover-scale-110"
+            rounded="full"
+          >
             Explore
           </Button>
 
@@ -50,6 +69,9 @@ const Hero: React.FC = () => {
             className="md:w-1/3 w-2/5 hover-scale-110 bg-white"
             rounded="full"
             colorScheme="secondary"
+            isLoading={isLoading}
+            loadingText="Downloading..."
+            loaderColor="primary"
             onClick={downloadResume}
           >
             Download CV
@@ -58,15 +80,11 @@ const Hero: React.FC = () => {
       </div>
       <div className="order-1 md:order-2 col-span-1 flex-center px-5">
         <Image
-          src={illustrations.developer1}
+          src={
+            width > 640 ? illustrations.developer1 : illustrations.developer2
+          }
           alt="Developer working on code"
-          className="hover-scale-90 drop-shadow-2xl md:block object-contain hidden w-full h-auto"
-        />
-        <Image
-          src={illustrations.developer2}
-          alt="Developer working on code"
-          className="hover-scale-90 md:hidden object-contain h-auto"
-          size="full"
+          className="hover-scale-90 drop-shadow-2xl md:w-full w-3/5 h-auto object-contain"
         />
       </div>
     </section>

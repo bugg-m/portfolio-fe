@@ -91,19 +91,19 @@ body {
   .flex-center {
     @apply flex justify-center items-center;
   }
-  .flex-items-start {
+  .flex-center-start {
     @apply flex justify-center items-start;
   }
-  .flex-items-end {
+  .flex-center-end {
     @apply flex justify-center items-end;
   }
-  .flex-content-start {
+  .flex-start-center {
     @apply flex justify-start items-center;
   }
-  .flex-content-around {
+  .flex-around-center {
     @apply flex justify-around items-center;
   }
-  .flex-content-between {
+  .flex-between-center {
     @apply flex justify-between items-center;
   }
   .flex-between-start {
@@ -149,7 +149,7 @@ body {
 /* custom container classes */
 @layer base {
   .section {
-    @apply w-full space-y-3 px-5 py-10 text-center shadow-md transition-all duration-300 hover:shadow-lg;
+    @apply w-full h-auto space-y-3 px-5 py-10 text-center shadow-md transition-all duration-300 hover:shadow-lg;
   }
 }
 

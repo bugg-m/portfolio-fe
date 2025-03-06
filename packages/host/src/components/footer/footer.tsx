@@ -29,7 +29,7 @@ function Footer() {
 
   return (
     <div className="w-full">
-      <div className="flex-content-between px-4 md:px-10 py-1 md:py-3 border-t border-secondary-300">
+      <div className="flex-between-center px-4 md:px-10 py-1 md:py-3 border-t border-secondary-300">
         <LogoIcon />
         <div className="flex items-center justify-center gap-3">
           {links.map(({ to, icon, alt }) => (
