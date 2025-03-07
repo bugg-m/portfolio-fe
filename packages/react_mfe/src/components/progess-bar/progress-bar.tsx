@@ -28,7 +28,7 @@ const ProgressBar: React.FC<IProgressBarProps> = ({
   }, [value]);
 
   return (
-    <div className="w-full h-40 bg-gray-200 flex flex-col justify-center items-center gap-5">
+    <div className="w-full h-40 bg-gray-200 flex-center flex-col gap-5">
       <span className="text-3xl text-center block text-gray-700">
         Progress Bar
       </span>

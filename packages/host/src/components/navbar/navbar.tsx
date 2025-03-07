@@ -1,66 +1,81 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
-import { CapitalizeAllLetter } from '@host/utils/core-utilities';
-import Icon from '../icon/icon';
 import icons from '@host/constants/icons';
+import { Icon } from '@bugg-m/bugg-ui';
+// import ToggleTheme from '../toggle-theme/toggle-theme';
+// import images from '@host/constants/images';
 
 const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
 
   const menuItems = [
     { title: 'home', id: 1, to: '' },
-    { title: 'react', id: 1, to: '/react_mfe' },
-    { title: 'experience', id: 2, to: 'experience' },
-    { title: 'projects', id: 3, to: 'projects' },
-    { title: 'contact me', id: 4, to: 'contact' },
+    { title: 'microservices', id: 3, to: 'microservices' },
   ];
 
   return (
-    <nav className="bg-neutral-50 text-secondary-500 border-b border-neutral-200 shadow-sm">
-      <div className="flex justify-between items-center px-6 py-3 w-full md:w-4/5 mx-auto">
+    <nav
+      className="bg-neutral-50 text-neutral-700 border-b border-neutral-100 shadow-sm"
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      <div className="flex-between-center md:px-6 px-3 py-1 md:py-3 w-full md:w-4/5 mx-auto">
         <LogoIcon />
 
-        <div className="hidden md:flex gap-8 text-sm font-medium">
-          {menuItems.map(({ title, id, to }) => (
-            <NavLink
-              key={id}
-              to={to}
-              className="hover:text-primary-500 transition-colors"
-            >
-              {CapitalizeAllLetter(title)}
-            </NavLink>
-          ))}
-        </div>
-
-        <div className="md:hidden text-2xl cursor-pointer text-secondary-700">
-          {showMobileNavbar ? (
+        <div className="flex-center gap-1 md:gap-8">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex-center gap-8 text-sm font-medium">
+            {menuItems.map(({ title, id, to }) => (
+              <NavLink
+                key={id}
+                to={to}
+                className={({ isActive }) =>
+                  `hover-scale-110 hover:text-primary-500 uppercase ${
+                    isActive ? 'text-primary-500' : 'text-neutral-700'
+                  }`
+                }
+              >
+                {title}
+              </NavLink>
+            ))}
+          </div>
+          {/* <ToggleTheme /> */}
+          {/* <Avatar
+            src={images.profile}
+            status={false}
+            size="sm"
+            shape="circle"
+            className="hover-scale-110 md:block hidden"
+          /> */}
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
             <Icon
-              src={icons.close}
-              alt="close icon"
-              onClick={() => setShowMobileNavbar(false)}
+              onClick={() => setShowMobileNavbar((prev) => !prev)}
+              src={showMobileNavbar ? icons.close : icons.menu}
+              iconColor="secondary"
+              size="md"
             />
-          ) : (
-            <Icon
-              src={icons.menu}
-              alt="menu icon"
-              onClick={() => setShowMobileNavbar(true)}
-            />
-          )}
+          </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {showMobileNavbar && (
-        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-50 border-t border-neutral-200">
+        <div className="md:hidden flex-center flex-col bg-neutral-50 border-t border-neutral-200">
           {menuItems.map(({ title, id, to }) => (
-            <NavLink
+            <div
               key={id}
-              to={to}
-              className="text-secondary-500 hover:text-primary-500 transition-colors"
-              onClick={() => setShowMobileNavbar(false)}
+              className="bg-secondary-50 w-full h-10 py-2 flex-center"
             >
-              {CapitalizeAllLetter(title)}
-            </NavLink>
+              <NavLink
+                to={to}
+                onClick={() => setShowMobileNavbar(false)}
+                className="transition-colors uppercase text-neutral-700"
+              >
+                {title}
+              </NavLink>
+            </div>
           ))}
         </div>
       )}

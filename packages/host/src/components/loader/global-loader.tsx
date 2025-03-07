@@ -1,9 +1,9 @@
+import { Loader } from '@bugg-m/bugg-ui';
 import React from 'react';
-import Loader from './loader';
 
-const GlobalLoader = () => {
+const GlobalLoader: React.FC = () => {
   return (
-    <div className="w-full h-screen bg-gray-100 flex items-center justify-center">
+    <div className="w-full h-screen bg-gray-100 flex-center">
       <Loader />
     </div>
   );

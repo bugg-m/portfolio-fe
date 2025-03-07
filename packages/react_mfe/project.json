@@ -20,7 +20,7 @@
           "packages/react_mfe/src/favicon.ico",
           "packages/react_mfe/src/assets"
         ],
-        "styles": ["input.css"],
+        "styles": ["global.css"],
         "scripts": [],
         "webpackConfig": "packages/react_mfe/webpack.config.ts",
         "postcssConfig": "postcss.config.js"

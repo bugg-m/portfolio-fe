@@ -1,21 +1,34 @@
-// import { LuServerCrash } from 'react-icons/lu';
+import { Button, Image } from '@bugg-m/bugg-ui';
+import illustrations from '@host/constants/illustrations';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ErrorPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <main className="w-full z-10 h-[80vh] flex items-center justify-center">
-      <div className="flex flex-col gap-10 items-center bg-blue-500 rounded-md border border-gray-200 justify-center w-2/5 h-2/3">
-        <span className="text-7xl">
-          {/* <LuServerCrash /> */} Server crash icon
-        </span>
-        <div className="flex flex-col gap-2 items-center justify-center">
-          <span className="text-3xl font-semibold">Oh Snap!</span>
-          <span className="text-xl font-light">Something went Wrong!!</span>
-          <span className="text-lg font-light">
-            Server lost!!
-            <span role="img" aria-label="sad-emoji">
-              🙁
-            </span>
+    <main className="w-full h-screen flex-center">
+      <div className="flex-center flex-col p-5 bg-primary-100 rounded-md border border-secondary-200 w-2/5 h-auto">
+        <div className="w-3/5">
+          <Image
+            src={illustrations.serviceUnavailable}
+            size="full"
+            alt="something went wrong"
+          />
+        </div>
+        <div className="flex-center flex-col gap-2">
+          <span className="text-3xl text-neutral-700 font-semibold">
+            Oh Snap!
+          </span>
+          <span className="text-xl text-neutral-600 font-light">
+            Something went Wrong!!
+          </span>
+          <span className="text-lg font-light mt-5">
+            <Button
+              onClick={() => navigate('/', { replace: true })}
+              colorScheme="secondary"
+            >
+              Go to Homepage
+            </Button>
           </span>
         </div>
       </div>

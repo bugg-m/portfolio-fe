@@ -17,7 +17,7 @@
         "main": "packages/host/src/main.ts",
         "tsConfig": "packages/host/tsconfig.app.json",
         "assets": ["packages/host/src/favicon.ico", "packages/host/src/assets"],
-        "styles": ["input.css"],
+        "styles": ["global.css"],
         "scripts": [],
         "webpackConfig": "packages/host/webpack.config.ts",
         "postcssConfig": "postcss.config.js"

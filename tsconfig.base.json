@@ -10,7 +10,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": ["es2021", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -19,6 +19,5 @@
       "@react_mfe/*": ["packages/react_mfe/src/*"],
       "react_mfe/Module": ["packages/react_mfe/src/remote-entry.ts"]
     }
-  },
-  "exclude": ["node_modules", "tmp"]
+  }
 }
