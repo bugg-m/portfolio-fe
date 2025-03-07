@@ -3,16 +3,16 @@ import illustrations from '@host/constants/illustrations';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ErrorPage: React.FC = () => {
+const NotFoundErrorPage: React.FC = () => {
   const navigate = useNavigate();
   return (
     <main className="w-full h-screen flex-center">
       <div className="flex-center flex-col p-5 bg-primary-100 rounded-md border border-secondary-200 w-2/5 h-auto">
         <div className="w-3/5">
           <Image
-            src={illustrations.serviceUnavailable}
+            src={illustrations.notFound404}
             size="full"
-            alt="something went wrong"
+            alt="404 not found"
           />
         </div>
         <div className="flex-center flex-col gap-2">
@@ -20,7 +20,7 @@ const ErrorPage: React.FC = () => {
             Oh Snap!
           </span>
           <span className="text-xl text-neutral-600 font-light">
-            Something went Wrong!!
+            404 Not Found!!
           </span>
           <span className="text-lg font-light mt-5">
             <Button
@@ -36,4 +36,4 @@ const ErrorPage: React.FC = () => {
   );
 };
 
-export default ErrorPage;
+export default NotFoundErrorPage;

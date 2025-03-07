@@ -1,20 +1,38 @@
-import { Icon } from '@bugg-m/bugg-ui';
-import icons from '@host/constants/icons';
+import { Button, Image } from '@bugg-m/bugg-ui';
+import illustrations from '@host/constants/illustrations';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PageUnderDevelopment: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <div className="flex-center z-10 flex-col gap-10 shadow-lg shadow-neutral-500 bg-blue-500 rounded-md w-2/5 h-2/3">
-      <Icon src={icons.serverCrash} size="xl" />
-      <div className="flex-center flex-col gap-2">
-        <span className="text-3xl font-semibold">Oh Snap!</span>
-        <span className="text-xl font-light">
-          Page Underdevelopment!!{' '}
-          <span role="img" aria-label="sad-emoji">
-            🙁
+    <main className="w-full h-screen flex-center">
+      <div className="flex-center flex-col p-5 bg-primary-100 rounded-md border border-secondary-200 w-2/5 h-auto">
+        <div className="w-3/5">
+          <Image
+            src={illustrations.comingSoon}
+            size="full"
+            alt="Page Under Development"
+          />
+        </div>
+        <div className="flex-center flex-col gap-2">
+          <span className="text-3xl text-neutral-700 font-semibold">
+            Oh Snap!
           </span>
-        </span>
+          <span className="text-xl text-neutral-600 font-light">
+            Page Under Development!!
+          </span>
+          <span className="text-lg font-light mt-5">
+            <Button
+              onClick={() => navigate('/', { replace: true })}
+              colorScheme="secondary"
+            >
+              Go to Homepage
+            </Button>
+          </span>
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 
