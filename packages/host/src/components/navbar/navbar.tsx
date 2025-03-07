@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
 import icons from '@host/constants/icons';
-import { Avatar, Button, Icon } from '@bugg-m/bugg-ui';
-import ToggleTheme from '../toggle-theme/toggle-theme';
-import images from '@host/constants/images';
+import { Icon } from '@bugg-m/bugg-ui';
+// import ToggleTheme from '../toggle-theme/toggle-theme';
+// import images from '@host/constants/images';
 
 const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
@@ -23,46 +23,40 @@ const Navbar: React.FC = () => {
       <div className="flex-between-center md:px-6 px-3 py-1 md:py-3 w-full md:w-4/5 mx-auto">
         <LogoIcon />
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex-center gap-8 text-sm font-medium">
-          {menuItems.map(({ title, id, to }) => (
-            <NavLink
-              key={id}
-              to={to}
-              className={({ isActive }) =>
-                `hover-scale-110 hover:text-primary-500 uppercase ${
-                  isActive ? 'text-primary-500' : 'text-neutral-700'
-                }`
-              }
-            >
-              {title}
-            </NavLink>
-          ))}
-          <ToggleTheme />
-          <Avatar
+        <div className="flex-center gap-1 md:gap-8">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex-center gap-8 text-sm font-medium">
+            {menuItems.map(({ title, id, to }) => (
+              <NavLink
+                key={id}
+                to={to}
+                className={({ isActive }) =>
+                  `hover-scale-110 hover:text-primary-500 uppercase ${
+                    isActive ? 'text-primary-500' : 'text-neutral-700'
+                  }`
+                }
+              >
+                {title}
+              </NavLink>
+            ))}
+          </div>
+          {/* <ToggleTheme /> */}
+          {/* <Avatar
             src={images.profile}
             status={false}
             size="sm"
             shape="circle"
-            className="hover-scale-110"
-          />
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <Button
-            onClick={() => setShowMobileNavbar((prev) => !prev)}
-            aria-label="Toggle navigation"
-            className="cursor-pointer"
-            colorScheme="secondary"
-            variant="ghost"
-          >
-            {showMobileNavbar ? (
-              <Icon src={icons.close} iconColor="secondary" size="md" />
-            ) : (
-              <Icon src={icons.menu} iconColor="secondary" size="md" />
-            )}
-          </Button>
+            className="hover-scale-110 md:block hidden"
+          /> */}
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <Icon
+              onClick={() => setShowMobileNavbar((prev) => !prev)}
+              src={showMobileNavbar ? icons.close : icons.menu}
+              iconColor="secondary"
+              size="md"
+            />
+          </div>
         </div>
       </div>
 

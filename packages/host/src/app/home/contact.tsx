@@ -64,6 +64,7 @@ const Contact: React.FC = () => {
               <div className="space-y-6">
                 <Input
                   type="text"
+                  colorScheme="secondary"
                   id="name"
                   name="name"
                   placeholder="Name"
@@ -75,6 +76,7 @@ const Contact: React.FC = () => {
                 <Input
                   type="email"
                   id="email"
+                  colorScheme="secondary"
                   name="email"
                   placeholder="Email"
                   value={formData.email}
@@ -84,6 +86,7 @@ const Contact: React.FC = () => {
 
                 <TextArea
                   id="message"
+                  colorScheme="secondary"
                   name="message"
                   placeholder="Message"
                   rows={4}
