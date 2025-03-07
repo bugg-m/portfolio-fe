@@ -9,9 +9,9 @@ import {
 
 const RootLayout = React.lazy(() => import('./root.layout'));
 const ErrorPage = React.lazy(() => import('@host/components/error/error-page'));
-const NotFoundErrorPage = React.lazy(
-  () => import('@host/components/error/not-found-error-page')
-);
+// const NotFoundErrorPage = React.lazy(
+//   () => import('@host/components/error/not-found-error-page')
+// );
 const UnderDevelopment = React.lazy(
   () => import('@host/components/error/under-development-page')
 );
@@ -24,7 +24,7 @@ export const router = createBrowserRouter(
     <Route
       path={AppRoutesEnum.HOME}
       element={<RootLayout />}
-      errorElement={<NotFoundErrorPage />}
+      // errorElement={<NotFoundErrorPage />}
     >
       {/* host routes */}
       <Route path={AppRoutesEnum.HOME} element={<Home />} />
