@@ -7,7 +7,7 @@ import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
 
 function useUpdateDataHook<T>() {
   const [data, setData] = useState<T | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<ApiError | null>(null);
 
   const postUpdatedData = useCallback(

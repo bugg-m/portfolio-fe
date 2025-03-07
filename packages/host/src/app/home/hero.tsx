@@ -3,28 +3,50 @@ import illustrations from '@host/constants/illustrations';
 import { useGetDataHook } from '@host/api/hooks/use-get-data-hook';
 import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
 import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
+import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
+import { ApiError } from '@host/api/utils/core-api-classes';
+
+export interface CVDocument {
+  public_id: string;
+  url: string;
+
+  originalName: string;
+}
 
 const Hero: React.FC = () => {
-  const { isLoading, getData } = useGetDataHook();
+  const { isLoading, getData } = useGetDataHook<CVDocument>();
   const { width } = useWindowDimensions();
   const downloadResume = async () => {
-    const response = await getData({
-      url: PortfolioRoutes.DOWNLOAD_CV,
-      config: {
-        responseType: 'blob',
-      },
-      notify: true,
-    });
+    try {
+      const result = await getData({
+        url: PortfolioRoutes.DOWNLOAD_CV,
+      });
 
-    if (!response.status) {
-      return;
+      const CV = await fetch(result.data.url);
+      const blob = await CV.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'ManishKumar_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up
+      setTimeout(() => {
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(link);
+      }, 100);
+
+      NotifySuccess(result.message);
+    } catch (err) {
+      const apiError = new ApiError({
+        statusCode: 500,
+        message:
+          err instanceof Error ? err.message : 'An unexpected error occurred',
+        status: false,
+      });
+      NotifyError(apiError.message);
     }
-    const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'ManishKumar_CV.pdf');
-    document.body.appendChild(link);
-    link.click();
   };
 
   return (
@@ -66,11 +88,10 @@ const Hero: React.FC = () => {
 
           <Button
             variant="outline"
-            className="md:w-1/3 w-2/5 hover-scale-110 bg-white"
+            className="md:w-1/3 h-auto w-2/5 hover-scale-110 bg-white"
             rounded="full"
             colorScheme="secondary"
             isLoading={isLoading}
-            loadingText="Downloading..."
             loaderColor="primary"
             onClick={downloadResume}
           >
