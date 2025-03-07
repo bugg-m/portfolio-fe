@@ -98,6 +98,9 @@ const Contact: React.FC = () => {
               <Button
                 type="submit"
                 fullWidth
+                disabled={
+                  !formData.email || !formData.message || !formData.name
+                }
                 isLoading={isLoading}
                 loadingText="Sending..."
               >
