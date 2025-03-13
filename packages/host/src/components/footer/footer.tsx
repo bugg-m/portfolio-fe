@@ -6,22 +6,22 @@ import { Icon } from '@bugg-m/bugg-ui';
 function Footer() {
   const links = [
     {
-      to: 'https://github.com/cyborgM1002',
+      to: process.env.NX_PUBLIC_GITHUB_URL ?? '',
       icon: icons.github,
       alt: 'github icon',
     },
     {
-      to: 'https://www.linkedin.com/in/manish-kumar-2b4924200/',
+      to: process.env.NX_PUBLIC_LINKEDIN_URL ?? '',
       icon: icons.linkedin,
       alt: 'linkedin icon',
     },
     {
-      to: 'https://echobuggm@gmail.com',
+      to: process.env.NX_PUBLIC_GMAIL_URL ?? '',
       icon: icons.mail,
       alt: 'mail icon',
     },
     {
-      to: 'https://wa.me/9058314973',
+      to: process.env.NX_PUBLIC_WHATSAPP ?? '',
       icon: icons.message,
       alt: 'message icon',
     },

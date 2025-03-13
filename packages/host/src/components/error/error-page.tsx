@@ -1,4 +1,4 @@
-import { Button, Image } from '@bugg-m/bugg-ui';
+import { Button, Card, Image } from '@bugg-m/bugg-ui';
 import illustrations from '@host/constants/illustrations';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -6,9 +6,15 @@ import { useNavigate } from 'react-router-dom';
 const ErrorPage: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <main className="w-full h-screen flex-center">
-      <div className="flex-center flex-col p-5 bg-primary-100 rounded-md border border-secondary-200 w-2/5 h-auto">
-        <div className="w-3/5">
+    <main className="w-full h-screen flex-center px-5">
+      <Card
+        className="flex-center flex-col xs:w-4/5 sm:w-3/5 md:w-1/2 lg:w-2/5 h-auto"
+        colorScheme="primary"
+        variant="filled"
+        tone={100}
+        size="xl"
+      >
+        <div className="profile-responsive">
           <Image
             src={illustrations.serviceUnavailable}
             size="full"
@@ -16,22 +22,21 @@ const ErrorPage: React.FC = () => {
           />
         </div>
         <div className="flex-center flex-col gap-2">
-          <span className="text-3xl text-neutral-700 font-semibold">
+          <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-3xl text-neutral-700 font-semibold">
             Oh Snap!
           </span>
-          <span className="text-xl text-neutral-600 font-light">
+          <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-neutral-600 font-light">
             Something went Wrong!!
           </span>
-          <span className="text-lg font-light mt-5">
-            <Button
-              onClick={() => navigate('/', { replace: true })}
-              colorScheme="secondary"
-            >
-              Go to Homepage
-            </Button>
-          </span>
+          <Button
+            className="font-light mt-5 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"
+            onClick={() => navigate('/', { replace: true })}
+            colorScheme="secondary"
+          >
+            Go to Homepage
+          </Button>
         </div>
-      </div>
+      </Card>
     </main>
   );
 };

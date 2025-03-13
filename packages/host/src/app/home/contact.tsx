@@ -50,9 +50,10 @@ const Contact: React.FC = () => {
     <section className="section bg-secondary-50 border-x border-secondary-300">
       <div className="md:max-w-5xl w-full mx-auto md:px-4">
         <h2 className="header">Get In Touch</h2>
-        <p className="paragraph-md animate-paragraph mb-10">
-          Whether you have a project in mind or just want to say hello, feel
-          free to reach out.
+        <p className="paragraph-md animate-paragraph mb-10 text-neutral-500">
+          Whether you're ready to start your next project, have questions about
+          our services, or simply want to say hello, we're here to connect.
+          Reach out anytime—we look forward to hearing from you.
         </p>
         <div className="flex-between-center w-full flex-col-reverse md:flex-row gap-8">
           <Card hoverable className="flex-1 md:w-4/5 sm:w-3/5 w-full">
@@ -107,12 +108,13 @@ const Contact: React.FC = () => {
                 Send Message
               </Button>
 
-              <p className="text-neutral-700 text-sm">
+              <p className="text-neutral-500 text-sm">
                 Or email me at
                 <Button
                   variant="link"
-                  href="echobuggm@email.com"
-                  className="px-1.5 text-neutral-700 hover:text-primary-500"
+                  href={process.env.NX_PUBLIC_GMAIL_URL}
+                  target="_blank"
+                  className="px-1.5 hover:text-primary-500"
                 >
                   echobuggm@email.com
                 </Button>
