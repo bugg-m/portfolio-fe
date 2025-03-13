@@ -17,13 +17,7 @@ export default composePlugins(
       config.optimization ??= {};
       config.optimization.runtimeChunk = 'single';
     }
-    config.module?.rules?.push({
-      test: /\.pdf$/,
-      type: 'asset/resource',
-      generator: {
-        filename: 'assets/pdf/[name].[hash][ext][query]',
-      },
-    });
+
     return config;
   }
 );

@@ -15,15 +15,17 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="bg-secondary-100 md:px-5 min-h-screen px-2">
+    <div className="bg-secondary-100 responsive-container min-h-screen">
       <Hero />
-      <div className="section animate-appearTopLeft bg-primary-100 border-x border-primary-500 md:rounded-lr-full rounded-lr-default">
+      <div className="section animate-appear-tl bg-primary-100 border-x border-primary-500 rounded-lr-4xl sm:rounded-lr-full">
         <h2 className="header">Tech Stacks</h2>
-        <div className="flex flex-wrap items-center justify-around gap-1 md:gap-4">
+        <div className="flex flex-wrap items-center justify-around gap-responsive">
           {skillsData.map(({ icon, title }) => (
             <div key={title} className="flex-center flex-col hover-scale-110">
-              <Image src={icon} alt={title} className="size-8 md:size-16" />
-              <span className="text-xs text-neutral-400">{title}</span>
+              <Image src={icon} alt={title} className="icon-responsive" />
+              <span className="text-xs sm:text-sm text-neutral-400">
+                {title}
+              </span>
             </div>
           ))}
         </div>

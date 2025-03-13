@@ -34,6 +34,19 @@ const Projects: React.FC = () => {
             <ProjectCardItems key={index} projects={project} />
           ))}
       </Carousel>
+      <div className="text-center md:px-10 px-2">
+        <p className="paragraph-sm text-neutral-500 animate-paragraph">
+          My portfolio showcases a diverse range of full-stack development work,
+          from modular React applications using Nx workspace and micro-frontend
+          architecture to custom UI component libraries documented with
+          Storybook. These projects demonstrate my expertise in modern
+          JavaScript frameworks, responsive design implementation with Tailwind
+          CSS, and backend development using Node.js with Express and MongoDB.
+          Each project reflects my commitment to creating maintainable,
+          scalable, and user-centric applications while implementing best
+          practices in state management, authentication, and API integration.
+        </p>
+      </div>
     </section>
   );
 };

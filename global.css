@@ -85,9 +85,16 @@ body {
   }
 }
 
-/* custom flex classes */
-
+/* Focus Styles for Accessibility */
 @layer base {
+  *:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+}
+
+/* Custom Flex Classes */
+@layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
   }
@@ -107,36 +114,75 @@ body {
     @apply flex justify-between items-center;
   }
   .flex-between-start {
-    @apply flex justify-around items-start;
+    @apply flex justify-between items-start;
   }
 }
 
-/* custom rounded classes */
-@layer base {
+/* Custom Rounded Classes */
+@layer utilities {
+  .rounded-lr-4xl {
+    @apply rounded-tr-4xl rounded-bl-4xl;
+  }
+  .rounded-lr-5xl {
+    @apply rounded-tr-5xl rounded-bl-5xl;
+  }
+  .rounded-lr-6xl {
+    @apply rounded-tr-6xl rounded-bl-6xl;
+  }
+  .rounded-lr-7xl {
+    @apply rounded-tr-7xl rounded-bl-7xl;
+  }
+  .rounded-lr-8xl {
+    @apply rounded-tr-8xl rounded-bl-8xl;
+  }
+  .rounded-lr-9xl {
+    @apply rounded-tr-9xl rounded-bl-9xl;
+  }
+  .rounded-lr-10xl {
+    @apply rounded-tr-10xl rounded-bl-10xl;
+  }
   .rounded-lr-full {
     @apply rounded-tr-full rounded-bl-full;
+  }
+  .rounded-rl-4xl {
+    @apply rounded-br-4xl rounded-tl-4xl;
+  }
+  .rounded-rl-5xl {
+    @apply rounded-br-5xl rounded-tl-5xl;
+  }
+  .rounded-rl-6xl {
+    @apply rounded-br-6xl rounded-tl-6xl;
+  }
+  .rounded-rl-7xl {
+    @apply rounded-br-7xl rounded-tl-7xl;
+  }
+  .rounded-rl-8xl {
+    @apply rounded-br-8xl rounded-tl-8xl;
+  }
+  .rounded-rl-9xl {
+    @apply rounded-br-9xl rounded-tl-9xl;
+  }
+  .rounded-rl-10xl {
+    @apply rounded-br-10xl rounded-tl-10xl;
   }
   .rounded-rl-full {
     @apply rounded-br-full rounded-tl-full;
   }
-  .rounded-lr-default {
-    @apply rounded-tr-default rounded-bl-default;
-  }
-  .rounded-rl-default {
-    @apply rounded-br-default rounded-tl-default;
-  }
 }
 
-/* custom typography classes */
-@layer base {
+/* Custom Typography Classes */
+@layer components {
   .animate-paragraph {
     @apply transition-transform tracking-tight duration-300 transform hover:translate-x-1;
   }
-  .l-paragraph {
+  .paragraph-md {
     @apply text-neutral-700 text-base md:text-lg leading-relaxed;
   }
-  .s-paragraph {
+  .paragraph-sm {
     @apply text-neutral-700 text-sm md:text-base leading-relaxed;
+  }
+  .paragraph-xs {
+    @apply text-neutral-600 text-2xs md:text-xs leading-relaxed;
   }
   .header {
     @apply inline-block mb-6 text-2xl md:text-3xl font-bold text-neutral-600 text-center tracking-tight leading-snug transition-all hover:scale-90 duration-300 hover:text-neutral-700;
@@ -144,17 +190,20 @@ body {
   .title {
     @apply text-xl font-semibold text-neutral-700 hover:text-neutral-600 md:text-lg leading-relaxed transition-all tracking-wider duration-300 transform hover:translate-x-2;
   }
-}
-
-/* custom container classes */
-@layer base {
-  .section {
-    @apply w-full h-auto space-y-3 px-5 py-10 text-center shadow-md transition-all duration-300 hover:shadow-lg;
+  .sub-title {
+    @apply text-sm font-semibold text-neutral-700 hover:text-neutral-600 md:text-base leading-relaxed transition-all tracking-wider duration-300 transform hover:translate-x-2;
   }
 }
 
-/* custom hover scale classes */
-@layer base {
+/* Custom Container Classes */
+@layer components {
+  .section {
+    @apply w-full h-auto md:space-y-3 px-5 py-10 text-center shadow-md;
+  }
+}
+
+/* Custom Hover Scale Classes */
+@layer utilities {
   .hover-scale-110 {
     @apply transition-all hover:scale-110 duration-300;
   }
@@ -163,7 +212,7 @@ body {
   }
 }
 
-/* appear animations classes */
+/* Appear Animations Classes with Browser Support Checks */
 @layer utilities {
   @keyframes appearBottomLeft {
     0% {
@@ -201,27 +250,87 @@ body {
     }
   }
 
-  .animate-appearBottomLeft {
-    animation: appearBottomLeft linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+  /* Modern browsers with view() timeline support */
+  @supports (animation-timeline: view()) {
+    .animate-appear-bl {
+      animation: appearBottomLeft linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .animate-appear-br {
+      animation: appearBottomRight linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .animate-appear-tl {
+      animation: appearTopLeft linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .animate-appear-tr {
+      animation: appearTopRight linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
   }
 
-  .animate-appearBottomRight {
-    animation: appearBottomRight linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+  /* Fallback for browsers without view() timeline support */
+  @supports not (animation-timeline: view()) {
+    .animate-appear-bl,
+    .animate-appear-br,
+    .animate-appear-tl,
+    .animate-appear-tr {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@layer utilities {
+  /* Responsive container utilities */
+  .responsive-container {
+    @apply px-3 sm:px-4 md:px-6 lg:px-8;
   }
 
-  .animate-appearTopLeft {
-    animation: appearTopLeft linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+  /* Responsive text size utilities */
+  .text-responsive-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
   }
 
-  .animate-appearTopRight {
-    animation: appearTopRight linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+  .text-responsive-subtitle {
+    @apply text-lg sm:text-xl md:text-2xl font-medium;
+  }
+
+  .text-responsive-body {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  /* Responsive spacing utilities */
+  .gap-responsive {
+    @apply gap-2 sm:gap-4 md:gap-6 lg:gap-8;
+  }
+
+  /* Responsive image sizing */
+  .image-responsive {
+    @apply drop-shadow-2xl w-full xs:w-2/5 sm:w-1/2 md:w-3/5 lg:w-4/5 h-auto;
+  }
+  .profile-responsive {
+    @apply drop-shadow-2xl w-1/2 xs:w-2/5 sm:w-1/2 md:w-3/5 lg:w-4/5 h-auto;
+  }
+
+  /* Responsive icon sizing */
+  .icon-responsive {
+    @apply w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16;
   }
 }

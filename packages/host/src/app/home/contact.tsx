@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
     <section className="section bg-secondary-50 border-x border-secondary-300">
       <div className="md:max-w-5xl w-full mx-auto md:px-4">
         <h2 className="header">Get In Touch</h2>
-        <p className="l-paragraph animate-paragraph mb-10">
+        <p className="paragraph-md animate-paragraph mb-10">
           Whether you have a project in mind or just want to say hello, feel
           free to reach out.
         </p>
@@ -97,17 +97,17 @@ const Contact: React.FC = () => {
               </div>
               <Button
                 type="submit"
-                fullWidth
                 disabled={
                   !formData.email || !formData.message || !formData.name
                 }
                 isLoading={isLoading}
                 loadingText="Sending..."
+                className="w-full"
               >
                 Send Message
               </Button>
 
-              {/* <p className="text-neutral-700 text-sm">
+              <p className="text-neutral-700 text-sm">
                 Or email me at
                 <Button
                   variant="link"
@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
                 >
                   echobuggm@email.com
                 </Button>
-              </p> */}
+              </p>
             </form>
           </Card>
           <div className="flex-1 md:w-2/5 flex flex-col justify-center items-center space-y-4">
