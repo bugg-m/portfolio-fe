@@ -1,28 +1,28 @@
 import { Link } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
-import icons from '@host/constants/icons';
+import { github, linkedin, mail, message } from '@host/constants/icons';
 import { Icon } from '@bugg-m/bugg-ui';
 
 function Footer() {
   const links = [
     {
       to: process.env.NX_PUBLIC_GITHUB_URL ?? '',
-      icon: icons.github,
+      icon: github,
       alt: 'github icon',
     },
     {
       to: process.env.NX_PUBLIC_LINKEDIN_URL ?? '',
-      icon: icons.linkedin,
+      icon: linkedin,
       alt: 'linkedin icon',
     },
     {
       to: process.env.NX_PUBLIC_GMAIL_URL ?? '',
-      icon: icons.mail,
+      icon: mail,
       alt: 'mail icon',
     },
     {
       to: process.env.NX_PUBLIC_WHATSAPP ?? '',
-      icon: icons.message,
+      icon: message,
       alt: 'message icon',
     },
   ];

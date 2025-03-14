@@ -11,7 +11,7 @@ import redux from '@host/assets/logos/redux-logo.svg';
 import storybook from '@host/assets/logos/storybook-logo.svg';
 import tailwind from '@host/assets/logos/tailwind-css-logo.svg';
 
-export default {
+export {
   react,
   vue,
   nextJs,

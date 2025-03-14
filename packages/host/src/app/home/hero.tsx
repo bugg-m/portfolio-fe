@@ -1,5 +1,5 @@
 import { Button, Image } from '@bugg-m/bugg-ui';
-import illustrations from '@host/constants/illustrations';
+import { developer1, developer2 } from '@host/constants/illustrations';
 import { useGetDataHook } from '@host/api/hooks/use-get-data-hook';
 import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
 import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
@@ -98,9 +98,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="order-1 md:order-2 col-span-1 flex-center p-4 sm:p-6">
         <Image
-          src={
-            width > 760 ? illustrations.developer1 : illustrations.developer2
-          }
+          src={width > 760 ? developer1 : developer2}
           alt="Developer working on code"
           className="hover-scale-90 image-responsive object-contain"
         />

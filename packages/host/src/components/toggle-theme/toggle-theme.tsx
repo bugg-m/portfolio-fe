@@ -1,5 +1,5 @@
 import { Icon } from '@bugg-m/bugg-ui';
-import icons from '@host/constants/icons';
+import { sunDark, sunLight } from '@host/constants/icons';
 import React, { useState, useEffect } from 'react';
 
 const ToggleTheme: React.FC = () => {
@@ -15,7 +15,7 @@ const ToggleTheme: React.FC = () => {
 
   return (
     <Icon
-      src={darkTheme ? icons.sunDark : icons.sunLight}
+      src={darkTheme ? sunDark : sunLight}
       size="md"
       className={`hover-scale-110 hover:bg-primary-100 ${
         darkTheme ? 'text-secondary-50' : 'text-primary-600'

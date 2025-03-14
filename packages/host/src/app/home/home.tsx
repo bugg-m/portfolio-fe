@@ -1,6 +1,6 @@
 import { Image } from '@bugg-m/bugg-ui';
 import Hero from './hero';
-import logos from '@host/constants/logos';
+import { express, nodeJs, react, vue } from '@host/constants/logos';
 import About from './about';
 import Experience from './experience';
 import Projects from './projects';
@@ -8,10 +8,10 @@ import Contact from './contact';
 
 const Home: React.FC = () => {
   const skillsData = [
-    { icon: logos.react, title: 'React Js' },
-    { icon: logos.vue, title: 'Vue Js' },
-    { icon: logos.nodeJs, title: 'Node Js' },
-    { icon: logos.express, title: 'Express Js' },
+    { icon: react, title: 'React Js' },
+    { icon: vue, title: 'Vue Js' },
+    { icon: nodeJs, title: 'Node Js' },
+    { icon: express, title: 'Express Js' },
   ];
 
   return (

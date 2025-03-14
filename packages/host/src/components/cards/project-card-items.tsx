@@ -1,5 +1,5 @@
 import { Button, Card, Image } from '@bugg-m/bugg-ui';
-import illustrations from '@host/constants/illustrations';
+import { developer2 } from '@host/constants/illustrations';
 import { IProjectCardItems } from '@host/types/core-portfolio-types';
 import React from 'react';
 
@@ -15,7 +15,7 @@ const ProjectCardItems: React.FC<IProjectCardItems> = ({ projects }) => {
       tone={200}
     >
       <div className="flex w-full h-1/3 justify-center items-center md:mb-2">
-        <Image size="full" src={illustrations.developer2} alt={projects.name} />
+        <Image size="full" src={developer2} alt={projects.name} />
       </div>
       <div className="h-2/3">
         <span className="text-3xs block capitalize md:text-2xs font-semibold text-neutral-700 transition-all group-hover:text-primary-800 group-hover:scale-110 duration-300">

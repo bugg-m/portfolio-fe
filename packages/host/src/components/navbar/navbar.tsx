@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoIcon from '../logo-component/logoIcon';
-import icons from '@host/constants/icons';
+import { close, menu } from '@host/constants/icons';
 import { Icon } from '@bugg-m/bugg-ui';
 // import ToggleTheme from '../toggle-theme/toggle-theme';
-// import images from '@host/constants/images';
+// import { profile } from '@host/constants/images';
 
 const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
           </div>
           {/* <ToggleTheme /> */}
           {/* <Avatar
-            src={images.profile}
+            src={profile}
             status={false}
             size="sm"
             shape="circle"
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <Icon
               onClick={() => setShowMobileNavbar((prev) => !prev)}
-              src={showMobileNavbar ? icons.close : icons.menu}
+              src={showMobileNavbar ? close : menu}
               iconColor="secondary"
               size="md"
             />

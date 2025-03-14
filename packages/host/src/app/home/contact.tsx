@@ -2,7 +2,7 @@ import { Button, Card, Image, Input, TextArea } from '@bugg-m/bugg-ui';
 import { usePostDataHook } from '@host/api/hooks/use-post-data-hook';
 import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
 import { NotifyError } from '@host/components/notify/notify';
-import illustrations from '@host/constants/illustrations';
+import { contact } from '@host/constants/illustrations';
 import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
           <div className="flex-1 md:w-2/5 flex flex-col justify-center items-center space-y-4">
             <Image
               size="full"
-              src={illustrations.contact}
+              src={contact}
               alt="contact"
               className="hover-scale-110 drop-shadow-2xl"
             />

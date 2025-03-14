@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image } from '@bugg-m/bugg-ui';
-import illustrations from '@host/constants/illustrations';
+import { experience } from '@host/constants/illustrations';
 
 const Experience: React.FC = () => {
-  const experience = {
+  const myExperiences = {
     company: 'Fibonacci Innovations',
     role: 'Associate Software Engineer',
     duration: 'July 2023 - Dec 2024',
@@ -28,7 +28,7 @@ const Experience: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-12 items-center justify-center">
           <div className="flex-center col-span-1">
             <Image
-              src={illustrations.experience}
+              src={experience}
               alt="experience"
               className="hover-scale-110 hover:bg-secondary-100 md:w-full w-3/5 h-auto"
               rounded="md"
@@ -38,22 +38,26 @@ const Experience: React.FC = () => {
           <div className="h-auto md:p-5 rounded-md md:col-span-2 text-left space-y-4 w-full md:border-l-2 border-secondary-300">
             <title className="flex-col flex-center-start">
               <div className="title flex-col flex-center-start mb-2">
-                <span className="md:text-3xl text-2xl">{experience.role}</span>
+                <span className="md:text-3xl text-2xl">
+                  {myExperiences.role}
+                </span>
                 <span className="text-sm md:text-lg text-neutral-500">
-                  at {experience.company}
+                  at {myExperiences.company}
                 </span>
               </div>
 
-              <p className="text-xs text-neutral-400">{experience.duration}</p>
+              <p className="text-xs text-neutral-400">
+                {myExperiences.duration}
+              </p>
             </title>
 
             <p className="mt-2 paragraph-sm animate-paragraph text-neutral-600">
-              {experience.description}
+              {myExperiences.description}
             </p>
             <div>
               <h2 className="title inline-block mb-2">Skills</h2>
               <ul className="flex-start-center flex-wrap md:gap-x-8 md:gap-y-3 gap-y-1 gap-x-5 list-disc">
-                {experience.skills.map((title) => (
+                {myExperiences.skills.map((title) => (
                   <li
                     key={title}
                     className="text-xs sm:text-sm text-neutral-400 hover-scale-110 hover:text-neutral-600"

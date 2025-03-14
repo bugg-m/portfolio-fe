@@ -1,5 +1,5 @@
 import { Image } from '@bugg-m/bugg-ui';
-import images from '@host/constants/images';
+import { profile } from '@host/constants/images';
 import React from 'react';
 
 const About: React.FC = () => {
@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center">
           <div className="flex-center col-span-1">
             <Image
-              src={images.profile}
+              src={profile}
               alt="Manish Kumar"
               className="profile-responsive hover-scale-110 hover:bg-secondary-50 animate-appear-bl"
               rounded="md"

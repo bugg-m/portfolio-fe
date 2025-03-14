@@ -9,12 +9,6 @@ import {
 
 const RootLayout = React.lazy(() => import('./root.layout'));
 const ErrorPage = React.lazy(() => import('@host/components/error/error-page'));
-const NotFoundErrorPage = React.lazy(
-  () => import('@host/components/error/not-found-error-page')
-);
-const UnderDevelopment = React.lazy(
-  () => import('@host/components/error/under-development-page')
-);
 
 // micro services
 const ReactMfe = React.lazy(() => import('react_mfe/Module'));
@@ -24,16 +18,19 @@ export const router = createBrowserRouter(
     <Route
       path={AppRoutesEnum.HOME}
       element={<RootLayout />}
-      errorElement={<NotFoundErrorPage />}
+      errorElement={<ErrorPage type="unAvailable" />}
     >
       {/* host routes */}
       <Route path={AppRoutesEnum.HOME} element={<Home />} />
       <Route path={AppRoutesEnum.REACT_MFE} element={<ReactMfe />} />
       <Route
         path={AppRoutesEnum.MICROSERVICES}
-        element={<UnderDevelopment />}
+        element={<ErrorPage type="underDevelopment" />}
       />
-      <Route path={AppRoutesEnum.ERROR} element={<ErrorPage />} />
+      <Route
+        path={AppRoutesEnum.ERROR}
+        element={<ErrorPage type="notFound" />}
+      />
     </Route>
   )
 );
