@@ -1,10 +1,10 @@
 import { Button, Image } from '@bugg-m/bugg-ui';
 import { developer1, developer2 } from '@host/constants/illustrations';
-import { useGetDataHook } from '@host/api/hooks/use-get-data-hook';
-import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
+import { useGetDataHook } from '@api/hooks/use-get-data-hook';
+import { PortfolioApiRoutes } from '@api/routes/portfolio-api-routes';
 import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
 import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
-import { ApiError } from '@host/api/utils/core-api-classes';
+import { ApiError } from '@api/utils/core-api-classes';
 
 export interface CVDocument {
   public_id: string;
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   const downloadResume = async () => {
     try {
       const result = await getData({
-        url: PortfolioRoutes.DOWNLOAD_CV,
+        url: PortfolioApiRoutes.DOWNLOAD_CV,
       });
 
       const CV = await fetch(result.data.url);

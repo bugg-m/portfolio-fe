@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Carousel } from '@bugg-m/bugg-ui';
 import ProjectCardItems from '@host/components/cards/project-card-items';
 import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
-import { useGetDataHook } from '@host/api/hooks/use-get-data-hook';
-import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
+import { useGetDataHook } from '@api/hooks/use-get-data-hook';
+import { PortfolioApiRoutes } from '@api/routes/portfolio-api-routes';
 import { IGitHubRepos } from '@host/types/core-portfolio-types';
 
 const Projects: React.FC = () => {
@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
   const { width } = useWindowDimensions();
 
   useEffect(() => {
-    getData({ url: PortfolioRoutes.GITHUB_PROJECTS });
+    getData({ url: PortfolioApiRoutes.GITHUB_PROJECTS });
   }, [getData]);
 
   return (

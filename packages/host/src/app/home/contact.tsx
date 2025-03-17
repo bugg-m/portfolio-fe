@@ -1,6 +1,6 @@
 import { Button, Card, Image, Input, TextArea } from '@bugg-m/bugg-ui';
-import { usePostDataHook } from '@host/api/hooks/use-post-data-hook';
-import { PortfolioRoutes } from '@host/api/routes/portfolio-api-routes';
+import { usePostDataHook } from '@api/hooks/use-post-data-hook';
+import { PortfolioApiRoutes } from '@api/routes/portfolio-api-routes';
 import { NotifyError } from '@host/components/notify/notify';
 import { contact } from '@host/constants/illustrations';
 import React, { useState } from 'react';
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
     }
 
     const response = await postData({
-      url: PortfolioRoutes.SEND_MESSAGE,
+      url: PortfolioApiRoutes.SEND_MESSAGE,
       data: formData,
       notify: true,
     });
