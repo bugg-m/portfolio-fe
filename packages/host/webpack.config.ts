@@ -1,6 +1,7 @@
-import { composePlugins, withNx, ModuleFederationConfig } from '@nx/webpack';
 import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/react/module-federation';
+import { composePlugins, ModuleFederationConfig,withNx } from '@nx/webpack';
+
 import baseConfig from './module-federation.config';
 
 const config: ModuleFederationConfig = {
@@ -12,18 +13,12 @@ export default composePlugins(
   withReact(),
   withModuleFederation(config, { dts: false }),
 
-  (config) => {
+  config => {
     if (config.mode === 'development') {
       config.optimization ??= {};
       config.optimization.runtimeChunk = 'single';
     }
-    config.module?.rules?.push({
-      test: /\.pdf$/,
-      type: 'asset/resource',
-      generator: {
-        filename: 'assets/pdf/[name].[hash][ext][query]',
-      },
-    });
+
     return config;
   }
 );

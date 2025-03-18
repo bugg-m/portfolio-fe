@@ -1,21 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useState } from 'react';
 import { ApiError } from '../utils/core-api-classes';
 import { ApiService } from '../utils/core-api-utility';
 import { AxiosRequestConfig } from 'axios';
 import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
 
-function useGetDataHook<T>() {
+function usePostDataHook<T>() {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<ApiError | null>(null);
 
-  const getData = useCallback(
+  const postData = useCallback(
     async ({
       url,
+      data,
       config,
       notify = false,
     }: {
       url: string;
+      data: T | any;
       config?: AxiosRequestConfig;
       notify?: boolean;
     }) => {
@@ -23,7 +26,7 @@ function useGetDataHook<T>() {
       setError(null);
 
       try {
-        const result = await ApiService.get<T>({ url, config });
+        const result = await ApiService.post<T>({ url, data, config });
 
         if (result instanceof ApiError) {
           setError(result);
@@ -43,8 +46,7 @@ function useGetDataHook<T>() {
       } catch (err) {
         const apiError = new ApiError({
           statusCode: 500,
-          message:
-            err instanceof Error ? err.message : 'An unexpected error occurred',
+          message: err instanceof Error ? err.message : 'An unexpected error occurred',
           status: false,
         });
         setError(apiError);
@@ -58,7 +60,7 @@ function useGetDataHook<T>() {
     []
   );
 
-  return { data, isLoading, error, getData };
+  return { data, isLoading, error, postData };
 }
 
-export { useGetDataHook };
+export { usePostDataHook };

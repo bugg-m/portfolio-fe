@@ -1,11 +1,12 @@
 import React from 'react';
-import PageNavButton from './page-nav-button';
+
 import usePaginationHook from '@react_mfe/hooks/use-pagination-hooks';
+
+import PageNavButton from './page-nav-button';
 import Products, { IProductCardProps } from './products';
 
 const Pagination: React.FC = () => {
-  const { size, skip, limit, products, currentPage, setCurrentPage } =
-    usePaginationHook();
+  const { size, skip, limit, products, currentPage, setCurrentPage } = usePaginationHook();
   console.log({ skip, limit, currentPage });
 
   return (
@@ -18,7 +19,7 @@ const Pagination: React.FC = () => {
       <div className="w-4/5 bg-gray-200 h-20 flex-center gap-5 rounded-md">
         {currentPage > 1 && (
           <PageNavButton
-            onClick={() => setCurrentPage((prev) => prev - 1)}
+            onClick={() => setCurrentPage(prev => prev - 1)}
             value="prev"
             iconLeft
           />
@@ -33,9 +34,7 @@ const Pagination: React.FC = () => {
         ))}
         {currentPage < size && (
           <PageNavButton
-            onClick={() =>
-              setCurrentPage((prev) => (prev < size ? prev + 1 : prev))
-            }
+            onClick={() => setCurrentPage(prev => (prev < size ? prev + 1 : prev))}
             value="Next"
             iconRight
           />

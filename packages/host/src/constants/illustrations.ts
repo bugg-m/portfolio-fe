@@ -7,7 +7,7 @@ import badRequestError from '@host/assets/illustrations/bad-request-error.svg';
 import serviceUnavailable from '@host/assets/illustrations/service-unavailable.svg';
 import comingSoon from '@host/assets/illustrations/coming-soon.svg';
 
-export default {
+export {
   notFound404,
   badRequestError,
   serviceUnavailable,

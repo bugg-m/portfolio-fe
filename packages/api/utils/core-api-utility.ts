@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ApiError, ApiResponse } from '@host/api/utils/core-api-classes';
+import { ApiError, ApiResponse } from '@api/utils/core-api-classes';
 import axios, { AxiosRequestConfig, Method } from 'axios';
 
 async function request<T>(
@@ -49,10 +49,7 @@ async function request<T>(
       return new ApiError({
         statusCode: error.response?.status || 500,
         message:
-          errorData?.error ||
-          errorData?.message ||
-          error.message ||
-          'An unexpected error occurred',
+          errorData?.error || errorData?.message || error.message || 'An unexpected error occurred',
         status: false,
         data: errorData || null,
         errors: errorData?.errors || [],
@@ -71,25 +68,11 @@ const ApiService = {
   get: <T>({ url, config }: { url: string; config?: AxiosRequestConfig }) =>
     request<T>('GET', url, undefined, config),
 
-  post: <T>({
-    url,
-    data,
-    config,
-  }: {
-    url: string;
-    data: any;
-    config?: AxiosRequestConfig;
-  }) => request<T>('POST', url, data, config),
+  post: <T>({ url, data, config }: { url: string; data: any; config?: AxiosRequestConfig }) =>
+    request<T>('POST', url, data, config),
 
-  patch: <T>({
-    url,
-    data,
-    config,
-  }: {
-    url: string;
-    data: any;
-    config?: AxiosRequestConfig;
-  }) => request<T>('PATCH', url, data, config),
+  patch: <T>({ url, data, config }: { url: string; data: any; config?: AxiosRequestConfig }) =>
+    request<T>('PATCH', url, data, config),
 
   delete: <T>({ url, config }: { url: string; config?: AxiosRequestConfig }) =>
     request<T>('DELETE', url, undefined, config),

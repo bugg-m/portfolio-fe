@@ -16,10 +16,7 @@
         "baseHref": "/",
         "main": "packages/react_mfe/src/main.ts",
         "tsConfig": "packages/react_mfe/tsconfig.app.json",
-        "assets": [
-          "packages/react_mfe/src/favicon.ico",
-          "packages/react_mfe/src/assets"
-        ],
+        "assets": ["packages/react_mfe/src/favicon.ico", "packages/react_mfe/src/assets"],
         "styles": ["global.css"],
         "scripts": [],
         "webpackConfig": "packages/react_mfe/webpack.config.ts",

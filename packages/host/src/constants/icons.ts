@@ -11,7 +11,7 @@ import stepBack from '@host/assets/icons/step-back.svg';
 import sunLight from '@host/assets/icons/sun-light.svg';
 import sunDark from '@host/assets/icons/sun-dark.svg';
 
-export default {
+export {
   menu,
   sunLight,
   sunDark,

@@ -1,21 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useState } from 'react';
 import { ApiError } from '../utils/core-api-classes';
 import { ApiService } from '../utils/core-api-utility';
 import { AxiosRequestConfig } from 'axios';
 import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
 
-function useDeleteDataHook<T>() {
+function useUpdateDataHook<T>() {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<ApiError | null>(null);
 
-  const deleteData = useCallback(
+  const postUpdatedData = useCallback(
     async ({
       url,
+      data,
       config,
       notify = false,
     }: {
       url: string;
+      data: T | any;
       config?: AxiosRequestConfig;
       notify?: boolean;
     }) => {
@@ -23,7 +26,7 @@ function useDeleteDataHook<T>() {
       setError(null);
 
       try {
-        const result = await ApiService.delete<T>({ url, config });
+        const result = await ApiService.patch<T>({ url, data, config });
 
         if (result instanceof ApiError) {
           setError(result);
@@ -43,8 +46,7 @@ function useDeleteDataHook<T>() {
       } catch (err) {
         const apiError = new ApiError({
           statusCode: 500,
-          message:
-            err instanceof Error ? err.message : 'An unexpected error occurred',
+          message: err instanceof Error ? err.message : 'An unexpected error occurred',
           status: false,
         });
         setError(apiError);
@@ -58,7 +60,7 @@ function useDeleteDataHook<T>() {
     []
   );
 
-  return { data, isLoading, error, deleteData };
+  return { data, isLoading, error, postUpdatedData };
 }
 
-export { useDeleteDataHook };
+export { useUpdateDataHook };
