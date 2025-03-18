@@ -1,10 +1,13 @@
 import { Image } from '@bugg-m/bugg-ui';
-import Hero from './hero';
+
+import { WelcomeModal } from '@host/components/modals/welcom-modal';
 import { express, nodeJs, react, vue } from '@host/constants/logos';
+
 import About from './about';
-import Experience from './experience';
-import Projects from './projects';
 import Contact from './contact';
+import Experience from './experience';
+import Hero from './hero';
+import Projects from './projects';
 
 const Home: React.FC = () => {
   const skillsData = [
@@ -21,11 +24,15 @@ const Home: React.FC = () => {
         <h2 className="header">Tech Stacks</h2>
         <div className="flex flex-wrap items-center justify-around gap-responsive">
           {skillsData.map(({ icon, title }) => (
-            <div key={title} className="flex-center flex-col hover-scale-110">
-              <Image src={icon} alt={title} className="icon-responsive" />
-              <span className="text-xs sm:text-sm text-neutral-400">
-                {title}
-              </span>
+            <div
+              key={title}
+              className="flex-center flex-col hover-scale-110">
+              <Image
+                src={icon}
+                alt={title}
+                className="icon-responsive"
+              />
+              <span className="text-xs sm:text-sm text-neutral-400">{title}</span>
             </div>
           ))}
         </div>
@@ -34,6 +41,7 @@ const Home: React.FC = () => {
       <Experience />
       <Projects />
       <Contact />
+      <WelcomeModal />
     </div>
   );
 };
