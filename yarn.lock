@@ -1012,10 +1012,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bugg-m/bugg-ui@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@bugg-m/bugg-ui/-/bugg-ui-2.4.1.tgz#1a866a62e8d0d46feafa26d0d025d76a6265a5ff"
-  integrity sha512-F691VMSE4vmeqQwrKj0db5S8+M4/yW+pqZcz1Kxn5QIZdqQNoFJPXSh02Po/tGbJF+cSD1T3+aFyFrXrIFI8PA==
+"@bugg-m/bugg-ui@^2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@bugg-m/bugg-ui/-/bugg-ui-2.4.4.tgz#db9da6c4a82d7f30e209f992edf61195d803c393"
+  integrity sha512-k2gzFBl51lrmFbnTHB0Kaut3hf3Y1YCVrGOqGpGp/bFqODid1TKveIqGqTLu5rmpzwEI6zFAu+EBAmsrjhT7Yg==
   dependencies:
     class-variance-authority "^0.7.0"
     clsx "^2.1.1"

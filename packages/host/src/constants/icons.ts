@@ -10,9 +10,19 @@ import stepNext from '@host/assets/icons/step-forward.svg';
 import stepBack from '@host/assets/icons/step-back.svg';
 import sunLight from '@host/assets/icons/sun-light.svg';
 import sunDark from '@host/assets/icons/sun-dark.svg';
+import earth from '@host/assets/icons/earth.svg';
+import settings from '@host/assets/icons/settings.svg';
+import combine from '@host/assets/icons/combine.svg';
+import lightning from '@host/assets/icons/lightning.svg';
+import packages from '@host/assets/icons/package.svg';
 
 export {
   menu,
+  combine,
+  packages,
+  lightning,
+  earth,
+  settings,
   sunLight,
   sunDark,
   bug,
