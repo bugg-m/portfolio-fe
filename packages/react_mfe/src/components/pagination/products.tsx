@@ -11,9 +11,7 @@ const Products: React.FC<{ product: IProductCardProps }> = ({ product }) => {
         />
       </div>
       <p className="text-nowrap text-sm font-medium text-gray-500">
-        {product.title.length > 25
-          ? `${product.title.slice(0, 25)}...`
-          : product.title}
+        {product.title.length > 25 ? `${product.title.slice(0, 25)}...` : product.title}
       </p>
     </div>
   );

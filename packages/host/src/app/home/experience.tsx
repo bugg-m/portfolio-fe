@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from '@bugg-m/bugg-ui';
+
 import { experience } from '@host/constants/illustrations';
 
 const Experience: React.FC = () => {
@@ -38,17 +39,13 @@ const Experience: React.FC = () => {
           <div className="h-auto md:p-5 rounded-md md:col-span-2 text-left space-y-4 w-full md:border-l-2 border-secondary-300">
             <title className="flex-col flex-center-start">
               <div className="title flex-col flex-center-start mb-2">
-                <span className="md:text-3xl text-2xl">
-                  {myExperiences.role}
-                </span>
+                <span className="md:text-3xl text-2xl">{myExperiences.role}</span>
                 <span className="text-sm md:text-lg text-neutral-500">
                   at {myExperiences.company}
                 </span>
               </div>
 
-              <p className="text-xs text-neutral-400">
-                {myExperiences.duration}
-              </p>
+              <p className="text-xs text-neutral-400">{myExperiences.duration}</p>
             </title>
 
             <p className="mt-2 paragraph-sm animate-paragraph text-neutral-600">
@@ -57,11 +54,10 @@ const Experience: React.FC = () => {
             <div>
               <h2 className="title inline-block mb-2">Skills</h2>
               <ul className="flex-start-center flex-wrap md:gap-x-8 md:gap-y-3 gap-y-1 gap-x-5 list-disc">
-                {myExperiences.skills.map((title) => (
+                {myExperiences.skills.map(title => (
                   <li
                     key={title}
-                    className="text-xs sm:text-sm text-neutral-400 hover-scale-110 hover:text-neutral-600"
-                  >
+                    className="text-xs sm:text-sm text-neutral-400 hover-scale-110 hover:text-neutral-600">
                     {title}
                   </li>
                 ))}

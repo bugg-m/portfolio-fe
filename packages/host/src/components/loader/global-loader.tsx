@@ -1,5 +1,5 @@
-import { Loader } from '@bugg-m/bugg-ui';
 import React from 'react';
+import { Loader } from '@bugg-m/bugg-ui';
 
 const GlobalLoader: React.FC = () => {
   return (

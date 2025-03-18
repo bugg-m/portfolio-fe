@@ -1,5 +1,6 @@
-import { IPageNavButtonProps } from '@react_mfe/types/pagination-types';
 import React from 'react';
+
+import { IPageNavButtonProps } from '@react_mfe/types/pagination-types';
 // import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from 'react-icons/ri';
 
 const PageNavButton: React.FC<IPageNavButtonProps> = ({
@@ -16,19 +17,10 @@ const PageNavButton: React.FC<IPageNavButtonProps> = ({
       className={`flex-center min-w-8 gap-1 rounded-md px-2 py-1 text-base font-normal hover:bg-gray-500 cursor-pointer ${
         selected ? 'bg-gray-500 text-white' : 'text-gray-900 bg-gray-400'
       }`}
-      {...props}
-    >
-      {iconLeft && (
-        <span>
-          {/* <RiArrowLeftDoubleFill size={20} /> */}RiArrowLeftDoubleFill
-        </span>
-      )}
+      {...props}>
+      {iconLeft && <span>{/* <RiArrowLeftDoubleFill size={20} /> */}RiArrowLeftDoubleFill</span>}
       <span>{value}</span>
-      {iconRight && (
-        <span>
-          {/* <RiArrowRightDoubleFill size={20} /> */}RiArrowRightDoubleFill
-        </span>
-      )}
+      {iconRight && <span>{/* <RiArrowRightDoubleFill size={20} /> */}RiArrowRightDoubleFill</span>}
     </button>
   );
 };

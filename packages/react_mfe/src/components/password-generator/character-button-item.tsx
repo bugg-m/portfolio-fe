@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ICharacterButtonProps } from '@react_mfe/types/password-generator-types';
 
 const CharacterButtonItem: React.FC<ICharacterButtonProps> = ({

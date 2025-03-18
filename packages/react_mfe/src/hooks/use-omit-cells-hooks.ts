@@ -7,7 +7,7 @@ const useOmitCellsHook = ({ cells }: IOmitCellsHookProps) => {
   const handleClearCube = () => {
     setIsCubeClearing(true);
     const timer: NodeJS.Timeout = setInterval(() => {
-      setSelectedDiv((prev) => {
+      setSelectedDiv(prev => {
         const newPrev = prev.slice();
         newPrev.pop();
 

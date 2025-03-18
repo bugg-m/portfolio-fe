@@ -1,5 +1,6 @@
-import { IRootFolderItemProps } from '@react_mfe/types/folder-types';
 import React from 'react';
+
+import { IRootFolderItemProps } from '@react_mfe/types/folder-types';
 
 const RootFolderItem: React.FC<IRootFolderItemProps> = ({
   setIsOpen,
@@ -12,24 +13,25 @@ const RootFolderItem: React.FC<IRootFolderItemProps> = ({
         onClick={() => setIsOpen((prev: boolean) => !prev)}
         role="img"
         aria-label="folder"
-        className="bg-gray-300 border border-gray-300 px-1 py-0.5 rounded-md text-sm cursor-pointer"
-      >
+        className="bg-gray-300 border border-gray-300 px-1 py-0.5 rounded-md text-sm cursor-pointer">
         📂 {folderName}
       </span>
       <div className="flex gap-1">
         <button
           onClick={() => handleShowInput(true)}
-          className="px-1 py-0.5 rounded-md bg-gray-300"
-        >
-          <span role="img" aria-label="folder">
+          className="px-1 py-0.5 rounded-md bg-gray-300">
+          <span
+            role="img"
+            aria-label="folder">
             📂+
           </span>
         </button>
         <button
           onClick={() => handleShowInput(false)}
-          className="px-1 py-0.5 rounded-md bg-gray-300"
-        >
-          <span role="img" aria-label="folder">
+          className="px-1 py-0.5 rounded-md bg-gray-300">
+          <span
+            role="img"
+            aria-label="folder">
             📉+
           </span>
         </button>

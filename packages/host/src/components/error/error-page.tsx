@@ -1,11 +1,8 @@
-import { Button, Card, Image } from '@bugg-m/bugg-ui';
-import {
-  comingSoon,
-  notFound404,
-  serviceUnavailable,
-} from '@host/constants/illustrations';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button, Card, Image } from '@bugg-m/bugg-ui';
+
+import { comingSoon, notFound404, serviceUnavailable } from '@host/constants/illustrations';
 
 interface ErrorPageProps {
   type: 'unAvailable' | 'underDevelopment' | 'notFound';
@@ -46,8 +43,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ type = 'notFound' }) => {
         colorScheme="primary"
         variant="filled"
         tone={100}
-        size="xl"
-      >
+        size="xl">
         <div className="profile-responsive">
           {errorType?.src && (
             <Image
@@ -67,8 +63,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ type = 'notFound' }) => {
           <Button
             className="font-light mt-5 text-xs xs:text-sm"
             onClick={() => navigate('/', { replace: true })}
-            colorScheme="secondary"
-          >
+            colorScheme="secondary">
             Go to Homepage
           </Button>
         </div>

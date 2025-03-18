@@ -46,8 +46,7 @@ function usePostDataHook<T>() {
       } catch (err) {
         const apiError = new ApiError({
           statusCode: 500,
-          message:
-            err instanceof Error ? err.message : 'An unexpected error occurred',
+          message: err instanceof Error ? err.message : 'An unexpected error occurred',
           status: false,
         });
         setError(apiError);

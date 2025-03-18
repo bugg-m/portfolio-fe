@@ -1,23 +1,19 @@
+import React, { useState } from 'react';
+
 import useFolderHook from '@react_mfe/hooks/use-folder-hooks';
 import { IFolderData } from '@react_mfe/types/folder-types';
-import React, { useState } from 'react';
+
 import RootFolderItem from './root-folder-item';
 // import FolderInput from './folder-input';
 
 const Folder: React.FC<{ folderItems: IFolderData }> = ({ folderItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const {
-    setName,
-    showInput,
-    folderData,
-    setShowInput,
-    handleShowInput,
-    handleOnKeyDown,
-  } = useFolderHook({
-    folderItems,
-    setIsOpen,
-  });
+  const { setName, showInput, folderData, setShowInput, handleShowInput, handleOnKeyDown } =
+    useFolderHook({
+      folderItems,
+      setIsOpen,
+    });
   if (folderData.isFolder) {
     return (
       <div className="ml-10">
@@ -28,7 +24,7 @@ const Folder: React.FC<{ folderItems: IFolderData }> = ({ folderItems }) => {
         />
         {/* {showInput?.isVisible && <FolderInput />} */}
         <div className={`${isOpen ? 'block' : 'hidden'}`}>
-          {folderData.subFolders.map((file) => (
+          {folderData.subFolders.map(file => (
             <div key={file.id}>
               <Folder folderItems={file} />
             </div>
@@ -38,8 +34,12 @@ const Folder: React.FC<{ folderItems: IFolderData }> = ({ folderItems }) => {
     );
   } else {
     return (
-      <div key={folderData.id} className="text-sm ml-10 mb-3">
-        <span role="img" aria-label="folder">
+      <div
+        key={folderData.id}
+        className="text-sm ml-10 mb-3">
+        <span
+          role="img"
+          aria-label="folder">
           📉 {folderData.name}
         </span>
       </div>

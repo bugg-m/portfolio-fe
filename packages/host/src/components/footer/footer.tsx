@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import LogoIcon from '../logo-component/logoIcon';
-import { github, linkedin, mail, message } from '@host/constants/icons';
 import { Icon } from '@bugg-m/bugg-ui';
+
+import { github, linkedin, mail, message } from '@host/constants/icons';
+
+import LogoIcon from '../logo-component/logoIcon';
 
 function Footer() {
   const links = [
@@ -37,9 +39,11 @@ function Footer() {
               key={alt}
               to={to}
               className="size-6 md:size-8 flex items-center justify-center rounded-full border border-primary-50 hover:bg-primary-50"
-              target="_blank"
-            >
-              <Icon src={icon} iconColor="primary" />
+              target="_blank">
+              <Icon
+                src={icon}
+                iconColor="primary"
+              />
             </Link>
           ))}
         </div>
@@ -47,7 +51,9 @@ function Footer() {
       <hr className="w-11/12 border-secondary-100 sm:mx-auto" />
       <span className="block py-2 text-center text-sm text-neutral-700 sm:text-center">
         © 2024{' '}
-        <Link to="/" className="hover:underline">
+        <Link
+          to="/"
+          className="hover:underline">
           BUGG™
         </Link>
         . All Rights Reserved.

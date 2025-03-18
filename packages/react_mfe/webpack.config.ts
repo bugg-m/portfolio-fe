@@ -1,6 +1,6 @@
-import { composePlugins, withNx } from '@nx/webpack';
 import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/react/module-federation';
+import { composePlugins, withNx } from '@nx/webpack';
 
 import baseConfig from './module-federation.config';
 
@@ -19,7 +19,7 @@ export default composePlugins(
   withReact(),
   withModuleFederation(config, { dts: false }),
 
-  (config) => {
+  config => {
     if (config.mode === 'development') {
       config.optimization ??= {};
       config.optimization.runtimeChunk = 'single';

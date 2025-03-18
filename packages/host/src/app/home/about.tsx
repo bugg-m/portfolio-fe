@@ -1,6 +1,7 @@
-import { Image } from '@bugg-m/bugg-ui';
-import { profile } from '@host/constants/images';
 import React from 'react';
+import { Image } from '@bugg-m/bugg-ui';
+
+import { profile } from '@host/constants/images';
 
 const About: React.FC = () => {
   return (
@@ -18,28 +19,23 @@ const About: React.FC = () => {
           </div>
           <div className="md:col-span-2 text-left space-y-4">
             <p className="paragraph-sm animate-paragraph">
-              I'm a Full-Stack Developer specialized in creating responsive,
-              user-centric web applications. With experience at Fibonacci
-              Innovations, I've developed dynamic interfaces using React,
-              Vue.js, and Next.js while implementing backend solutions with
+              I'm a Full-Stack Developer specialized in creating responsive, user-centric web
+              applications. With experience at Fibonacci Innovations, I've developed dynamic
+              interfaces using React, Vue.js, and Next.js while implementing backend solutions with
               Node.js and Express.
             </p>
             <p className="paragraph-sm animate-paragraph">
-              My expertise includes building scalable design systems with
-              dark-light theme support, integrating secure authentication
-              mechanisms, and developing reusable UI components for
-              microservice-based architectures. I've engineered front-end
-              solutions from scratch, ensuring seamless API integration and
-              responsive layouts across platforms.
+              My expertise includes building scalable design systems with dark-light theme support,
+              integrating secure authentication mechanisms, and developing reusable UI components
+              for microservice-based architectures. I've engineered front-end solutions from
+              scratch, ensuring seamless API integration and responsive layouts across platforms.
             </p>
             <p className="paragraph-sm animate-paragraph md:pr-6 lg:pr-10">
-              Beyond technical skills, I'm passionate about solving complex
-              problems through clean, efficient code. With 150+ coding
-              challenges solved across platforms like LeetCode and CodeForces, I
-              continuously sharpen my algorithmic thinking. My approach combines
-              strong technical foundations with a focus on creating intuitive
-              experiences that balance functionality, performance, and visual
-              appeal.
+              Beyond technical skills, I'm passionate about solving complex problems through clean,
+              efficient code. With 150+ coding challenges solved across platforms like LeetCode and
+              CodeForces, I continuously sharpen my algorithmic thinking. My approach combines
+              strong technical foundations with a focus on creating intuitive experiences that
+              balance functionality, performance, and visual appeal.
             </p>
           </div>
         </div>

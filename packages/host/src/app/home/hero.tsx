@@ -1,9 +1,11 @@
 import { Button, Image } from '@bugg-m/bugg-ui';
+
+import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
 import { developer1, developer2 } from '@host/constants/illustrations';
+import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
+
 import { useGetDataHook } from '@api/hooks/use-get-data-hook';
 import { PortfolioApiRoutes } from '@api/routes/portfolio-api-routes';
-import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
-import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
 import { ApiError } from '@api/utils/core-api-classes';
 
 export interface CVDocument {
@@ -41,8 +43,7 @@ const Hero: React.FC = () => {
     } catch (err) {
       const apiError = new ApiError({
         statusCode: 500,
-        message:
-          err instanceof Error ? err.message : 'An unexpected error occurred',
+        message: err instanceof Error ? err.message : 'An unexpected error occurred',
         status: false,
       });
       NotifyError(apiError.message);
@@ -56,8 +57,7 @@ const Hero: React.FC = () => {
           <span
             role="img"
             aria-label="emoji"
-            className="text-sm font-medium text-neutral-500 tracking-tight"
-          >
+            className="text-sm font-medium text-neutral-500 tracking-tight">
             Hello 👋🏻, I'm
           </span>
           <span className="mt-1 ml-2 text-xl sm:text-2xl font-medium text-neutral-700">
@@ -69,8 +69,8 @@ const Hero: React.FC = () => {
             Full-Stack Developer
           </h1>
           <p className="text-sm px-10 sm:text-base font-medium text-neutral-500 tracking-wider sm:tracking-widest">
-            Bridging front-end finesse with back-end power to create dynamic and
-            scalable web experiences.
+            Bridging front-end finesse with back-end power to create dynamic and scalable web
+            experiences.
           </p>
         </div>
         <div className="flex-center w-full pt-6 sm:pt-8 md:pt-10 gap-4 sm:gap-6 md:gap-8">
@@ -78,8 +78,7 @@ const Hero: React.FC = () => {
             disabled
             title="This feature is Under Development"
             className="w-2/5 sm:w-1/3 hover-scale-110"
-            rounded="full"
-          >
+            rounded="full">
             Explore
           </Button>
 
@@ -90,8 +89,7 @@ const Hero: React.FC = () => {
             colorScheme="secondary"
             isLoading={isLoading}
             loaderColor="primary"
-            onClick={downloadResume}
-          >
+            onClick={downloadResume}>
             Download CV
           </Button>
         </div>

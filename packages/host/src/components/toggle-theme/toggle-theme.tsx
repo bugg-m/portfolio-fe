@@ -1,6 +1,7 @@
+import React, { useEffect,useState } from 'react';
 import { Icon } from '@bugg-m/bugg-ui';
+
 import { sunDark, sunLight } from '@host/constants/icons';
-import React, { useState, useEffect } from 'react';
 
 const ToggleTheme: React.FC = () => {
   const [darkTheme, setDarkTheme] = useState(false);

@@ -1,5 +1,5 @@
-import { Image } from '@bugg-m/bugg-ui';
 import React from 'react';
+import { Image } from '@bugg-m/bugg-ui';
 
 interface IProfileProps {
   image: string;
@@ -17,8 +17,7 @@ const Profile: React.FC<IProfileProps> = ({ image, title }) => {
       <span
         role="img"
         aria-label="emoji"
-        className="block text-xs px-3 py-2 rounded-full bg-secondary-50 border border-secondary-300 text-neutral-700 font-medium font-serif absolute -right-14 top-20 -rotate-12"
-      >
+        className="block text-xs px-3 py-2 rounded-full bg-secondary-50 border border-secondary-300 text-neutral-700 font-medium font-serif absolute -right-14 top-20 -rotate-12">
         {title}
       </span>
     </div>
