@@ -1,6 +1,8 @@
+import React from 'react';
+
 import MicroServicesCardItems from '@host/app/micro-services/micro-services-card-items';
 import { microservicesData } from '@host/constants/core-contants';
-import React from 'react';
+
 import { MicroServicesIntro } from './micro-services-intro';
 
 const MicroServices: React.FC = () => {

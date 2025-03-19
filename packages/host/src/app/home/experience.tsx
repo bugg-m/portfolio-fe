@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image } from '@bugg-m/bugg-ui';
 
-import { experience } from '@host/constants/illustrations';
 import { myExperiencesData } from '@host/constants/core-contants';
+import { experience } from '@host/constants/illustrations';
 
 const Experience: React.FC = () => {
   return (

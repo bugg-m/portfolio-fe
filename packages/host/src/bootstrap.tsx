@@ -9,7 +9,15 @@ import { router } from '@host/routes/root.route';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <StrictMode>
-    <ErrorBoundary>
+    <ErrorBoundary
+      name="Portfolio"
+      fallback={error => (
+        <div>
+          <h3>Portfolio Error</h3>
+          <p>{error.message}</p>
+          <button onClick={() => window.location.reload()}>Reload</button>
+        </div>
+      )}>
       <Suspense fallback={<GlobalLoader />}>
         <RouterProvider router={router} />
       </Suspense>

@@ -15,7 +15,10 @@ interface ErrorType {
 
 const ErrorPage: React.FC<ErrorPageProps> = ({ type = 'notFound' }) => {
   const navigate = useNavigate();
-  const [errorType, setErrorType] = useState<ErrorType>();
+  const [errorType, setErrorType] = useState<ErrorType>({
+    src: notFound404,
+    subtitle: '404 Not Found!!',
+  });
 
   useEffect(() => {
     if (type === 'unAvailable') {
@@ -45,13 +48,11 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ type = 'notFound' }) => {
         tone={100}
         size="xl">
         <div className="profile-responsive">
-          {errorType?.src && (
-            <Image
-              src={errorType?.src ?? ''}
-              size="full"
-              alt={errorType?.subtitle ?? ''}
-            />
-          )}
+          <Image
+            src={errorType?.src}
+            size="full"
+            alt={errorType?.subtitle}
+          />
         </div>
         <div className="flex-center flex-col gap-2">
           <span className="text-sm xs:text-base sm:text-lg md:text-xl text-neutral-700 font-semibold">

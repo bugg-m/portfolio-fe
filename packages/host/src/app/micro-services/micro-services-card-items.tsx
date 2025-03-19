@@ -1,7 +1,8 @@
-import { Button, Card, Image } from '@bugg-m/bugg-ui';
-import { IMicroServicesCardProps } from '@host/types/core-portfolio-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button, Card, Image } from '@bugg-m/bugg-ui';
+
+import { IMicroServicesCardProps } from '@host/types/core-portfolio-types';
 
 const MicroServicesCardItems: React.FC<IMicroServicesCardProps> = ({ services }) => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const MicroServicesCardItems: React.FC<IMicroServicesCardProps> = ({ services })
       className="group"
       hoverAble
       clickable
-      onClick={() => navigate(services.link, { replace: true })}>
+      onClick={() => navigate(services.link)}>
       <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 flex justify-center items-center md:h-48 h-32">
         <Image
           src={services.image}

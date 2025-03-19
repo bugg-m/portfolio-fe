@@ -1,6 +1,7 @@
 import React from 'react';
-import { MonorepoBenefitsCardProps as NxCardItemsProps } from './monorepo-benefits-cards';
 import { Card, Icon } from '@bugg-m/bugg-ui';
+
+import { MonorepoBenefitsCardProps as NxCardItemsProps } from './monorepo-benefits-cards';
 
 const NxCardItems: React.FC<NxCardItemsProps> = ({ icon, title, description }) => {
   return (

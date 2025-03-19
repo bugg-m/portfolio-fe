@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import Home from '@host/app/home/home';
 import { AppRoutesEnum } from '@host/enums/app-routes-enum';
+import { ErrorBoundary } from '@host/error-boundary';
 
 const RootLayout = React.lazy(() => import('./root.layout'));
 const ErrorPage = React.lazy(() => import('@host/components/error/error-page'));
@@ -22,10 +23,20 @@ export const router = createBrowserRouter(
         path={AppRoutesEnum.HOME}
         element={<Home />}
       />
-      <Route
-        path={AppRoutesEnum.REACT_MFE}
-        element={<ReactMfe />}
-      />
+      <ErrorBoundary
+        name="react micro frontend"
+        fallback={error => (
+          <div>
+            <h3>React Micro Frontend Error</h3>
+            <p>{error.message}</p>
+            <button onClick={() => window.location.reload()}>Reload</button>
+          </div>
+        )}>
+        <Route
+          path={AppRoutesEnum.REACT_MFE}
+          element={<ReactMfe />}
+        />
+      </ErrorBoundary>
       <Route
         path={AppRoutesEnum.MICROSERVICES}
         element={<MicroServices />}

@@ -1,5 +1,5 @@
-import { Card, Icon } from '@bugg-m/bugg-ui';
 import React from 'react';
+import { Card, Icon } from '@bugg-m/bugg-ui';
 
 export interface MonorepoBenefitsCardProps {
   icon: string;
