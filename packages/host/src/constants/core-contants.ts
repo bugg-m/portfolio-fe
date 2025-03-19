@@ -1,4 +1,4 @@
-import { AppRoutesEnum } from '@host/enums/app-routes-enum';
+import { AppRoutesEnum } from '@enums/app-routes-enum';
 import { brain, browser, combine, settings, sharing } from './icons';
 import { nextJs, react, vue } from './logos';
 

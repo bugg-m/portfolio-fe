@@ -18,7 +18,9 @@
       "@host/*": ["packages/host/src/*"],
       "@react_mfe/*": ["packages/react_mfe/src/*"],
       "react_mfe/Module": ["packages/react_mfe/src/remote-entry.ts"],
-      "@api/*": ["packages/api/*"]
+      "@api/*": ["packages/api/*"],
+      "@utils/*": ["packages/utils/*"],
+      "@enums/*": ["packages/enums/*"]
     }
   }
 }

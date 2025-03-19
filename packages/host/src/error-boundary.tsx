@@ -1,4 +1,6 @@
+import { Button, Card, Image } from '@bugg-m/bugg-ui';
 import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { notFound404 } from './constants/illustrations';
 
 export enum MicroFrontendErrorType {
   LOADING_FAILED = 'LOADING_FAILED',
@@ -133,12 +135,38 @@ export class ErrorBoundary extends Component<
       }
 
       return (
-        <div className="mfe-error-container">
-          <h2>Micro Frontend Error</h2>
-          <p>{errorDetails?.message || 'An error occurred while loading this component'}</p>
-          <p>Type: {errorDetails?.type}</p>
-          <button onClick={this.resetErrorBoundary}>Retry</button>
-        </div>
+        <main className="w-full h-screen flex-center px-5 md:pt-10">
+          <Card
+            className="flex-center flex-col xs:w-4/5 sm:w-3/5 md:w-1/2 lg:w-1/3"
+            colorScheme="primary"
+            variant="filled"
+            tone={100}
+            size="xl">
+            <div className="profile-responsive">
+              <Image
+                src={notFound404}
+                size="full"
+                alt="not found"
+              />
+            </div>
+            <div className="flex-center flex-col gap-2">
+              <span className="text-sm xs:text-base sm:text-lg md:text-xl text-neutral-700 font-semibold">
+                {errorDetails?.type}
+              </span>
+              <span className="text-xs xs:text-sm sm:text-base md:text-lg text-neutral-600 font-light">
+                {errorDetails?.message || 'An error occurred while loading this component'}
+              </span>
+              <Button
+                className="font-light mt-5 text-xs xs:text-sm"
+                onClick={() => {
+                  this.resetErrorBoundary();
+                }}
+                colorScheme="secondary">
+                Retry
+              </Button>
+            </div>
+          </Card>
+        </main>
       );
     }
 

@@ -1,4 +1,4 @@
-import { NotifyError } from '@host/components/notify/notify';
+import { NotifyError } from '../host/src/components/notify/notify';
 
 interface SetLocalStorageProps<T> {
   name: string;
@@ -44,4 +44,4 @@ const getLocalStorage = <T>(name: string, showError = false): T | null => {
   }
 };
 
-export { setLocalStorage, getLocalStorage };
+export { getLocalStorage, setLocalStorage };

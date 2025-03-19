@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Image, Modal } from '@bugg-m/bugg-ui';
+import { AppRoutesEnum } from '@enums/app-routes-enum';
+import { StorageNamesEnum } from '@enums/storage-names-enum';
+import { getLocalStorage, setLocalStorage } from '@utils/core-utilities';
 
 import { developer2 } from '@host/constants/illustrations';
-import { AppRoutesEnum } from '@host/enums/app-routes-enum';
-import { StorageNamesEnum } from '@host/enums/storage-names-enum';
-import { getLocalStorage, setLocalStorage } from '@host/utils/core-utilities';
 
 const WelcomeModal: React.FC = () => {
   const [showModal, setShowModal] = useState(false);

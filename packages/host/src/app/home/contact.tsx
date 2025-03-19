@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
         </p>
         <div className="flex-between-center w-full flex-col-reverse md:flex-row gap-8">
           <Card
-            hoverable
+            hoverAble
             className="flex-1 md:w-4/5 sm:w-3/5 w-full">
             <form
               onSubmit={handleSubmit}

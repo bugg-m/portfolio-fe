@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ProgressBarEnum } from '@enums/progress-bar-enum';
 
-import { ProgressBarEnum } from '@react_mfe/enums/progress-bar-enum';
 import { IProgressBarProps } from '@react_mfe/types/progress-bar-types';
 
 const ProgressBar: React.FC<IProgressBarProps> = ({ value = ProgressBarEnum.MIN_RANGE }) => {

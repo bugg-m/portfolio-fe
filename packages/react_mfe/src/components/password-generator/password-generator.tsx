@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PasswordGeneratorEnum } from '@react_mfe/enums/password-generator-enum';
+import { PasswordGeneratorEnum } from '@enums/password-generator-enum';
 import usePasswordGeneratorHook from '@react_mfe/hooks/use-password-generator-hooks';
 
 import CharacterButtonItem from './character-button-item';
