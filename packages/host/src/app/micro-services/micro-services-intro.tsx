@@ -7,11 +7,13 @@ import { NxCardItems } from './nx-card-items';
 const MicroServicesIntro = () => {
   return (
     <main className="max-w-4xl mx-auto my-16">
-      <h1 className="text-3xl md:text-4xl header mb-4">NX Powered Micro-Frontend Architecture</h1>
+      <title className="text-3xl md:text-4xl header mb-4">
+        NX Powered Micro-Frontend Architecture
+      </title>
 
-      <h2 className="title text-xl text-secondary-700 mb-6">
+      <header className="title text-xl text-secondary-700 mb-6">
         One Workspace, Multiple Technologies, Endless Possibilities
-      </h2>
+      </header>
 
       <p className="paragraph-sm mb-8">
         This monorepo solution uses
@@ -71,7 +73,7 @@ const MicroServicesIntro = () => {
         ))}
       </div>
 
-      <h3 className="title text-xl font-bold mb-4">NX Monorepo Benefits</h3>
+      <h3 className="title text-xl font-bold mb-6">NX Monorepo Benefits</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         {monorepoBenefitsData.map(benefits => (
@@ -83,26 +85,29 @@ const MicroServicesIntro = () => {
         ))}
       </div>
 
-      <p className="paragraph-sm text-secondary-600 mb-4 italic border-l-4 border-primary-300 pl-4">
+      <p className="paragraph-sm bg-primary-50 text-secondary-600 mb-4 italic border-x-4 border-primary-300 pl-4 py-4">
         "Combining multiple frontend frameworks in a single NX workspace creates a
         best-of-all-worlds solution where each technology can shine in its ideal use case."
       </p>
 
-      <p className="paragraph-sm text-secondary-600 mb-6">
+      <p className="paragraph-sm text-secondary-600 mb-10">
         The framework-specific micro-frontends below show how each contributes to this comprehensive
         architecture. Each solution can be deployed independently or combined for a seamless user
         experience.
       </p>
 
       <div className="flex items-center justify-center w-full">
-        <div className="animate-bounce bg-primary-500 w-10 h-10 ring-1 ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
+        <Button
+          size="icon"
+          rounded="full"
+          className="animate-bounce shadow-lg">
           <Icon
             src={stepNext}
             className="rotate-90"
             iconColor="default"
             size="md"
           />
-        </div>
+        </Button>
       </div>
     </main>
   );

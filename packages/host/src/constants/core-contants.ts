@@ -1,4 +1,5 @@
-import { lightning, browser, combine, settings, sharing } from './icons';
+import { AppRoutesEnum } from '@host/enums/app-routes-enum';
+import { brain, browser, combine, settings, sharing } from './icons';
 import { nextJs, react, vue } from './logos';
 
 const microservicesData = [
@@ -13,7 +14,8 @@ const microservicesData = [
       'Unidirectional Data Flow',
       'JSX Support',
     ],
-    techStack: 'React 18, Redux, React Router, Styled Components',
+    techStack: 'React 18, Redux, React Router, Vite',
+    link: AppRoutesEnum.REACT_MFE,
   },
   {
     image: nextJs,
@@ -27,6 +29,7 @@ const microservicesData = [
       'Image Optimization',
     ],
     techStack: 'Next.js 14, TypeScript, TailwindCSS, SWR',
+    link: AppRoutesEnum.NEXT_MFE,
   },
   {
     image: vue,
@@ -40,6 +43,7 @@ const microservicesData = [
       'Composition API',
     ],
     techStack: 'Vue 3, Pinia, Vue Router, Vite',
+    link: AppRoutesEnum.VUE_MFE,
   },
 ];
 
@@ -63,7 +67,7 @@ const myExperiencesData = {
 
 const monorepoBenefitsData = [
   {
-    icon: lightning,
+    icon: brain,
     title: 'Intelligent Caching',
     description: "Only rebuilds what's changed, cutting build times by up to 90%",
   },

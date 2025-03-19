@@ -8,7 +8,7 @@ const NxCardItems: React.FC<NxCardItemsProps> = ({ icon, title, description }) =
       <div className="flex-center gap-3 mb-3">
         <Icon
           src={icon}
-          size="lg"
+          size="md"
         />
         <h3 className="title text-xl font-semibold">{title}</h3>
       </div>

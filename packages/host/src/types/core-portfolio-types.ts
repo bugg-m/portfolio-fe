@@ -22,6 +22,7 @@ export interface IMicroServicesCardItems {
   description: string;
   techStack: string;
   features: Array<string>;
+  link: string;
 }
 
 export interface IMicroServicesCardProps {

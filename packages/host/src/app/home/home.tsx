@@ -31,6 +31,7 @@ const Home: React.FC = () => {
                 src={icon}
                 alt={title}
                 className="icon-responsive"
+                objectFit="contain"
               />
               <span className="text-xs sm:text-sm text-neutral-400">{title}</span>
             </div>

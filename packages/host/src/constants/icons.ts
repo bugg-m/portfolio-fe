@@ -13,13 +13,13 @@ import sharing from '@host/assets/icons/sharing.svg';
 import settings from '@host/assets/icons/settings.svg';
 import browser from '@host/assets/icons/browser.svg';
 import combine from '@host/assets/icons/combine.svg';
-import lightning from '@host/assets/icons/lightning.svg';
+import brain from '@host/assets/icons/brain.svg';
 
 export {
   menu,
   browser,
   combine,
-  lightning,
+  brain,
   sharing,
   settings,
   sunLight,
