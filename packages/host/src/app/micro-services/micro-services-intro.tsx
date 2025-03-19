@@ -1,7 +1,7 @@
 import { Button, Icon } from '@bugg-m/bugg-ui';
 import MonorepoBenefitsCard from '@host/app/micro-services/monorepo-benefits-cards';
 import { monorepoBenefitsData, nxCardItemsData } from '@host/constants/core-contants';
-import { earth, settings, stepNext } from '@host/constants/icons';
+import { stepNext } from '@host/constants/icons';
 import { NxCardItems } from './nx-card-items';
 
 const MicroServicesIntro = () => {

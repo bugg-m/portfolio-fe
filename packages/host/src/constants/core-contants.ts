@@ -1,4 +1,4 @@
-import { combine, earth, lightning, packages, settings } from './icons';
+import { lightning, browser, combine, settings, sharing } from './icons';
 import { nextJs, react, vue } from './logos';
 
 const microservicesData = [
@@ -68,12 +68,12 @@ const monorepoBenefitsData = [
     description: "Only rebuilds what's changed, cutting build times by up to 90%",
   },
   {
-    icon: combine,
+    icon: browser,
     title: 'Affected Commands',
     description: 'Automatically finds and tests impacted apps and libraries',
   },
   {
-    icon: packages,
+    icon: sharing,
     title: 'Code Sharing',
     description: 'Reuses components and utilities across all micro-frontends',
   },
@@ -81,7 +81,7 @@ const monorepoBenefitsData = [
 
 const nxCardItemsData = [
   {
-    icon: earth,
+    icon: combine,
     title: 'Unified Architecture',
     description:
       'The NX monorepo creates a centralized development ecosystem with shared libraries, consistent tooling, and standardized workflows across all micro-frontends.',
