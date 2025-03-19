@@ -47,7 +47,7 @@ body {
   }
 
   .dark {
-    /* Dark Mode - Primary (New Teal Variant) */
+    /* Dark Mode - Primary  */
     --primary-50: #0f2f26;
     --primary-100: #1a5a48;
     --primary-200: #247f61;
@@ -82,14 +82,6 @@ body {
     --neutral-700: #9a9a9a;
     --neutral-800: #aaaaaa;
     --neutral-900: #bababa;
-  }
-}
-
-/* Focus Styles for Accessibility */
-@layer base {
-  *:focus-visible {
-    outline: none;
-    box-shadow: var(--focus-ring);
   }
 }
 
@@ -182,7 +174,7 @@ body {
     @apply text-neutral-700 text-sm md:text-base leading-relaxed;
   }
   .paragraph-xs {
-    @apply text-neutral-600 text-2xs md:text-xs leading-relaxed;
+    @apply text-neutral-600 text-xs leading-relaxed;
   }
   .header {
     @apply inline-block mb-6 text-2xl md:text-3xl font-bold text-neutral-600 text-center tracking-tight leading-snug transition-all hover:scale-90 duration-300 hover:text-neutral-700;

@@ -15,3 +15,16 @@ export interface IGitHubRepos {
 export interface IProjectCardItems {
   projects: IGitHubRepos;
 }
+
+export interface IMicroServicesCardItems {
+  image: string;
+  title: string;
+  description: string;
+  techStack: string;
+  features: Array<string>;
+  link: string;
+}
+
+export interface IMicroServicesCardProps {
+  services: IMicroServicesCardItems;
+}

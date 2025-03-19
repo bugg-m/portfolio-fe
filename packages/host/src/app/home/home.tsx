@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     <div className="bg-secondary-100 responsive-container min-h-screen">
       <Hero />
       <div className="section animate-appear-tl bg-primary-100 border-x border-primary-500 rounded-lr-4xl sm:rounded-lr-full">
-        <h2 className="header">Tech Stacks</h2>
+        <h2 className="header">Tech Stack</h2>
         <div className="flex flex-wrap items-center justify-around gap-responsive">
           {skillsData.map(({ icon, title }) => (
             <div
@@ -31,6 +31,7 @@ const Home: React.FC = () => {
                 src={icon}
                 alt={title}
                 className="icon-responsive"
+                objectFit="contain"
               />
               <span className="text-xs sm:text-sm text-neutral-400">{title}</span>
             </div>

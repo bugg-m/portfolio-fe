@@ -92,18 +92,18 @@ const WelcomeModal: React.FC = () => {
             with Next.js, Vue.js, and additional React.js applications.
           </p>
           <p className="mb-2 paragraph-xs animate-paragraph">
-            Everything you see is powered by my custom-built{' '}
+            Everything you see is powered by my custom-built
             <Button
               variant="link"
               href={process.env.NX_PUBLIC_BUGG_UI_URL}
               target="_blank"
               rel="noreferrer"
-              className="px-0.5 font-semibold"
+              className="px-1.5 font-semibold"
               colorScheme="secondary"
               size="sm">
-              BUGG-UI library
+              BUGG-UI library.
             </Button>
-            . Feel free to explore and see how these different frameworks work together while
+            Feel free to explore and see how these different frameworks work together while
             maintaining their unique capabilities.
           </p>
         </div>

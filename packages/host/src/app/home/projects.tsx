@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Carousel } from '@bugg-m/bugg-ui';
 
-import ProjectCardItems from '@host/components/cards/project-card-items';
+import ProjectCardItems from '@host/app/home/project-card-items';
 import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
 import { IGitHubRepos } from '@host/types/core-portfolio-types';
 
