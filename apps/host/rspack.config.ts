@@ -8,4 +8,25 @@ const config: ModuleFederationConfig = {
   ...baseConfig,
 };
 
-export default composePlugins(withNx(), withReact(), withModuleFederation(config, { dts: false }));
+export default composePlugins(
+  withNx(),
+  withReact(),
+  withModuleFederation(config, { dts: false }) as any,
+  config => {
+    if (!config.module) {
+      config.module = {};
+    }
+
+    if (!config.module.rules) {
+      config.module.rules = [];
+    }
+
+    config.module.rules.push({
+      test: /\.svg$/i,
+      type: 'asset',
+      resourceQuery: /url/,
+    });
+
+    return config;
+  }
+);

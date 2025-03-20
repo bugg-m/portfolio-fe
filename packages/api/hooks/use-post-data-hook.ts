@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useState } from 'react';
 import { AxiosRequestConfig } from 'axios';
 
-import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
-
+import { NotifyError, NotifySuccess } from '../../../apps/host/src/components/notify/notify';
 import { ApiError } from '../utils/core-api-classes';
 import { ApiService } from '../utils/core-api-utility';
 
@@ -20,7 +18,7 @@ function usePostDataHook<T>() {
       notify = false,
     }: {
       url: string;
-      data: T | any;
+      data: T;
       config?: AxiosRequestConfig;
       notify?: boolean;
     }) => {
