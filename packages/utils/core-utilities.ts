@@ -1,4 +1,4 @@
-import { NotifyError } from '../host/src/components/notify/notify';
+import { NotifyError } from '../../apps/host/src/components/notify/notify';
 
 interface SetLocalStorageProps<T> {
   name: string;

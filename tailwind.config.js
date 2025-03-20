@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { join } from 'path';
 
-export const content = [join(__dirname, 'packages/**/src/{components,app}/**/*.{ts,tsx}')];
+export const content = [join(__dirname, 'apps/**/src/{components,app}/**/*.{ts,tsx}')];
 export const theme = {
   screens: {
     xs: '480px',

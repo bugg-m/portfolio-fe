@@ -5,15 +5,29 @@
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/eslint.config.mjs",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
+  "nxCloudId": "67db283bad94926def0f268a",
+  "plugins": [
+    {
+      "plugin": "@nx/react/router-plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "startTargetName": "start",
+        "watchDepsTargetName": "watch-deps",
+        "buildDepsTargetName": "build-deps",
+        "typecheckTargetName": "typecheck"
+      }
+    }
+  ],
   "targetDefaults": {
     "build": {
       "cache": true,
@@ -25,7 +39,7 @@
         "default",
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore",
-        "{workspaceRoot}/eslint.config.js"
+        "{workspaceRoot}/eslint.config.mjs"
       ]
     },
     "@nx/jest:jest": {
@@ -41,7 +55,7 @@
         }
       }
     },
-    "@nx/webpack:webpack": {
+    "@nx/rspack:rspack": {
       "inputs": [
         "production",
         "^production",
@@ -57,15 +71,15 @@
     "@nx/react": {
       "application": {
         "babel": true,
-        "style": "css",
+        "style": "tailwind",
         "linter": "eslint",
-        "bundler": "webpack"
+        "bundler": "rspack"
       },
       "component": {
-        "style": "css"
+        "style": "tailwind"
       },
       "library": {
-        "style": "css",
+        "style": "tailwind",
         "linter": "eslint"
       }
     }

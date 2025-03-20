@@ -15,12 +15,16 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@host/*": ["packages/host/src/*"],
-      "@react_mfe/*": ["packages/react_mfe/src/*"],
-      "react_mfe/Module": ["packages/react_mfe/src/remote-entry.ts"],
       "@api/*": ["packages/api/*"],
+      "@enums/*": ["packages/enums/*"],
+      "@host/*": ["apps/host/src/*"],
+      "@react_mfe/*": ["apps/react_mfe/src/*"],
       "@utils/*": ["packages/utils/*"],
-      "@enums/*": ["packages/enums/*"]
+      "next_mfe/Module": ["apps/next_mfe/src/remote-entry.ts"],
+      "react_mfe/Module": ["apps/react_mfe/src/remote-entry.ts"],
+      "vue_mfe/Module": ["apps/vue_mfe/src/remote-entry.ts"],
+      "@styles": ["global.css"]
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp"]
 }
