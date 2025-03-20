@@ -1,5 +1,6 @@
-import { IFolderData, IShowInputProps, IUseFolderProps } from '@react_mfe/types/folder-types';
 import { useState } from 'react';
+
+import { IFolderData, IShowInputProps, IUseFolderProps } from '@react_mfe/types/folder-types';
 
 const useFolderHook = ({ folderItems, setIsOpen }: IUseFolderProps) => {
   const [folderData, setFolderData] = useState<IFolderData>({

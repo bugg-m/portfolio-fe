@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useState } from 'react';
+import { AxiosRequestConfig } from 'axios';
+
+import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
+
 import { ApiError } from '../utils/core-api-classes';
 import { ApiService } from '../utils/core-api-utility';
-import { AxiosRequestConfig } from 'axios';
-import { NotifyError, NotifySuccess } from '@host/components/notify/notify';
 
 function useUpdateDataHook<T>() {
   const [data, setData] = useState<T | null>(null);

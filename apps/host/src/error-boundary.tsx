@@ -1,5 +1,6 @@
-import { Button, Card, Image } from '@bugg-m/bugg-ui';
 import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Button, Card, Image } from '@bugg-m/bugg-ui';
+
 import { notFound404 } from './constants/illustrations';
 
 export enum MicroFrontendErrorType {

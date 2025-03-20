@@ -1,5 +1,6 @@
-import { CHARACTERS, NUMBERS, STRINGS } from '@react_mfe/constants/password-generator-constants';
 import { useCallback, useEffect, useState } from 'react';
+
+import { CHARACTERS, NUMBERS, STRINGS } from '@react_mfe/constants/password-generator-constants';
 
 const usePasswordGeneratorHook = () => {
   const [password, setPassword] = useState<string>('');

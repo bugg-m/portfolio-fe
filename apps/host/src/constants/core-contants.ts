@@ -1,4 +1,5 @@
 import { AppRoutesEnum } from '@enums/app-routes-enum';
+
 import { brain, browser, combine, settings, sharing } from './icons';
 import { nextJs, react, vue } from './logos';
 
@@ -98,4 +99,4 @@ const nxCardItemsData = [
   },
 ];
 
-export { microservicesData, myExperiencesData, monorepoBenefitsData, nxCardItemsData };
+export { microservicesData, monorepoBenefitsData, myExperiencesData, nxCardItemsData };

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ApiError, ApiResponse } from '@api/utils/core-api-classes';
 import axios, { AxiosRequestConfig, Method } from 'axios';
+
+import { ApiError, ApiResponse } from '@api/utils/core-api-classes';
 
 async function request<T>(
   method: Method,
