@@ -1,6 +1,7 @@
 {
   "name": "host",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "apps/host",
   "sourceRoot": "apps/host/src",
   "projectType": "application",
   "tags": [],
@@ -17,6 +18,7 @@
         "tsConfig": "apps/host/tsconfig.app.json",
         "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
         "rspackConfig": "apps/host/rspack.config.ts",
+        "skipRemotes": ["vue_mfe", "react_mfe", "next_mfe"],
         "styles": ["global.tailwind"],
         "postcssConfig": "postcss.config.js",
         "scripts": [],

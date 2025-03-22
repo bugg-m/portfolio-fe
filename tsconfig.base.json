@@ -19,11 +19,13 @@
       "@enums/*": ["packages/enums/*"],
       "@host/*": ["apps/host/src/*"],
       "@react_mfe/*": ["apps/react_mfe/src/*"],
+      "@next_mfe/*": ["apps/next_mfe/src/*"],
+      "@vue_mfe/*": ["apps/vue_mfe/src/*"],
+      "@styles": ["global.css"],
       "@utils/*": ["packages/utils/*"],
       "next_mfe/Module": ["apps/next_mfe/src/remote-entry.ts"],
       "react_mfe/Module": ["apps/react_mfe/src/remote-entry.ts"],
-      "vue_mfe/Module": ["apps/vue_mfe/src/remote-entry.ts"],
-      "@styles": ["global.css"]
+      "vue_mfe/Module": ["apps/vue_mfe/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

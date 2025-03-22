@@ -3,47 +3,30 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/vue_mfe/src",
   "projectType": "application",
-  "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/rspack:rspack",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/vue_mfe",
         "index": "apps/vue_mfe/src/index.html",
-        "baseHref": "/",
         "main": "apps/vue_mfe/src/main.ts",
         "tsConfig": "apps/vue_mfe/tsconfig.app.json",
-        "assets": ["apps/vue_mfe/src/favicon.ico", "apps/vue_mfe/src/assets"],
-        "rspackConfig": "apps/vue_mfe/rspack.config.ts",
         "styles": ["global.tailwind"],
-        "postcssConfig": "postcss.config.js",
-        "scripts": [],
-        "configurations": {
-          "development": {
-            "mode": "development"
-          },
-          "production": {
-            "mode": "production",
-            "optimization": true,
-            "sourceMap": false,
-            "outputHashing": "all",
-            "namedChunks": false,
-            "extractLicenses": true,
-            "vendorChunk": false
-          }
-        },
-        "target": "web"
+        "postcssConfig": "postcss.config.js"
       },
       "configurations": {
+        "development": {
+          "mode": "development"
+        },
         "production": {
-          "rspackConfig": "apps/vue_mfe/rspack.config.prod.ts"
+          "mode": "production"
         }
       }
     },
     "serve": {
-      "executor": "@nx/rspack:module-federation-dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "vue_mfe:build",
@@ -52,7 +35,8 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "vue_mfe:build:development"
+          "buildTarget": "vue_mfe:build:development",
+          "hmr": true
         },
         "production": {
           "buildTarget": "vue_mfe:build:production",
@@ -60,30 +44,33 @@
         }
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
-    "serve-static": {
-      "executor": "@nx/rspack:module-federation-static-server",
-      "defaultConfiguration": "production",
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
       "options": {
-        "serveTarget": "vue_mfe:serve"
+        "buildTarget": "vue_mfe:build"
       },
       "configurations": {
         "development": {
-          "serveTarget": "vue_mfe:serve:development"
+          "buildTarget": "vue_mfe:build:development"
         },
         "production": {
-          "serveTarget": "vue_mfe:serve:production"
+          "buildTarget": "vue_mfe:build:production"
         }
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "jestConfig": "apps/vue_mfe/jest.config.ts"
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/vue_mfe"
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
-  }
+  },
+  "tags": []
 }

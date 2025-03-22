@@ -15,7 +15,7 @@ const MicroServices = React.lazy(() => import('@host/app/micro-services/micro-se
 // micro services
 const ReactMfe = React.lazy(() => import('react_mfe/Module'));
 const NextMfe = React.lazy(() => import('next_mfe/Module'));
-const VueMfe = React.lazy(() => import('vue_mfe/Module'));
+const VueMfe = React.lazy(() => import('./VueWrapper'));
 
 function RootLayout() {
   return (

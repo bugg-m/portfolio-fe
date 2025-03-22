@@ -1,12 +1,22 @@
-import nx from '@nx/eslint-plugin';
+import vue from 'eslint-plugin-vue';
 import baseConfig from '../../eslint.config.mjs';
 
 export default [
   ...baseConfig,
-  ...nx.configs['flat/react'],
+  ...vue.configs['flat/recommended'],
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    rules: {},
+    files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        parser: await import('@typescript-eslint/parser'),
+      },
+    },
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+      'vue/singleline-html-element-content-newline': 'off',
+    },
   },
 ];

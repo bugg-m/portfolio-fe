@@ -9,11 +9,10 @@ import RootFolderItem from './root-folder-item';
 const Folder: React.FC<{ folderItems: IFolderData }> = ({ folderItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { setName, showInput, folderData, setShowInput, handleShowInput, handleOnKeyDown } =
-    useFolderHook({
-      folderItems,
-      setIsOpen,
-    });
+  const { folderData, handleShowInput } = useFolderHook({
+    folderItems,
+    setIsOpen,
+  });
   if (folderData.isFolder) {
     return (
       <div className="ml-10">
