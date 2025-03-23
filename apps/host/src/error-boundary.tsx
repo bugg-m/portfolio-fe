@@ -142,7 +142,8 @@ export class ErrorBoundary extends Component<
             colorScheme="primary"
             variant="filled"
             tone={100}
-            size="xl">
+            size="xl"
+          >
             <div className="profile-responsive">
               <Image
                 src={notFound404}
@@ -154,7 +155,7 @@ export class ErrorBoundary extends Component<
               <span className="text-sm xs:text-base sm:text-lg md:text-xl text-neutral-700 font-semibold">
                 {errorDetails?.type}
               </span>
-              <span className="text-xs xs:text-sm sm:text-base md:text-lg text-neutral-600 font-light">
+              <span className="text-xs sm:text-sm text-neutral-600 font-light">
                 {errorDetails?.message || 'An error occurred while loading this component'}
               </span>
               <Button
@@ -162,7 +163,8 @@ export class ErrorBoundary extends Component<
                 onClick={() => {
                   this.resetErrorBoundary();
                 }}
-                colorScheme="secondary">
+                colorScheme="secondary"
+              >
                 Retry
               </Button>
             </div>

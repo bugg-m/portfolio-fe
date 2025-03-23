@@ -18,7 +18,6 @@
         "tsConfig": "apps/host/tsconfig.app.json",
         "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
         "rspackConfig": "apps/host/rspack.config.ts",
-        "skipRemotes": ["vue_mfe", "react_mfe", "next_mfe"],
         "styles": ["global.tailwind"],
         "postcssConfig": "postcss.config.js",
         "scripts": [],
@@ -49,6 +48,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "host:build",
+        "skipRemotes": ["vue_mfe", "react_mfe", "next_mfe"],
         "hmr": true,
         "port": 9000
       },

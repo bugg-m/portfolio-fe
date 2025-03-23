@@ -24,9 +24,9 @@ export default defineConfig(() => ({
       name: 'vue_mfe',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': './src/remote-entry.ts',
+        './Module': `${__dirname}/src/remote-entry.ts`,
       },
-      shared: ['vue', 'vue-router', 'pinia'],
+      shared: ['vue', 'vue-router'],
     }),
   ],
   build: {

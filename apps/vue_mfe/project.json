@@ -1,6 +1,7 @@
 {
   "name": "vue_mfe",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "apps/vue_mfe",
   "sourceRoot": "apps/vue_mfe/src",
   "projectType": "application",
   "targets": {
@@ -10,7 +11,8 @@
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/vue_mfe",
-        "index": "apps/vue_mfe/src/index.html",
+        "index": "apps/vue_mfe/index.html",
+        "baseHref": "/",
         "main": "apps/vue_mfe/src/main.ts",
         "tsConfig": "apps/vue_mfe/tsconfig.app.json",
         "styles": ["global.tailwind"],

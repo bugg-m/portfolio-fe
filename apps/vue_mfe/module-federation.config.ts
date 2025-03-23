@@ -1,5 +1,5 @@
 // FIX: This file does nothing, only exists to satisfy nx and rspack.
-// This configuration is already configured in next.config.js file
+// This configuration is already configured in vite.config.ts file
 
 import { ModuleFederationConfig } from '@nx/module-federation';
 

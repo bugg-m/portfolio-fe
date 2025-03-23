@@ -1,6 +1,7 @@
 {
   "name": "next_mfe",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "apps/next_mfe",
   "sourceRoot": "apps/next_mfe/src",
   "projectType": "application",
   "targets": {
@@ -9,7 +10,28 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/next_mfe"
+        "outputPath": "dist/apps/next_mfe",
+        "baseHref": "/",
+        "main": "apps/next_mfe/src/bootstrap.ts",
+        "tsConfig": "apps/next_mfe/tsconfig.json",
+        "styles": ["global.tailwind"],
+        "postcssConfig": "postcss.config.js",
+        "scripts": [],
+        "configurations": {
+          "development": {
+            "mode": "development"
+          },
+          "production": {
+            "mode": "production",
+            "optimization": true,
+            "sourceMap": false,
+            "outputHashing": "all",
+            "namedChunks": false,
+            "extractLicenses": true,
+            "vendorChunk": false
+          }
+        },
+        "target": "web"
       },
       "configurations": {
         "development": {
