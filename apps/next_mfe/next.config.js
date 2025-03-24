@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 const { composePlugins, withNx } = require('@nx/next');
 const { withModuleFederation } = require('@nx/react/module-federation.js');
 

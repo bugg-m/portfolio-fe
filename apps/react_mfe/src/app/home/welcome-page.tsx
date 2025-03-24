@@ -68,7 +68,8 @@ const MicroserviceWelcome = ({
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
             <div className="flex items-start">
               <span className="text-2xl mr-4">{feature.icon}</span>
               <div>
@@ -86,7 +87,8 @@ const MicroserviceWelcome = ({
         {benefits.map((benefit, index) => (
           <div
             key={index}
-            className="bg-gray-50 p-4 rounded-md border border-gray-200">
+            className="bg-gray-50 p-4 rounded-md border border-gray-200"
+          >
             <div className="text-xl mb-2">{benefit.icon}</div>
             <h4 className="font-bold text-gray-800 mb-1">{benefit.title}</h4>
             <p className="text-xs text-gray-600">{benefit.description}</p>
@@ -111,7 +113,8 @@ const MicroserviceWelcome = ({
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 ml-2"
             viewBox="0 0 20 20"
-            fill="currentColor">
+            fill="currentColor"
+          >
             <path
               fillRule="evenodd"
               d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
