@@ -43,7 +43,10 @@ function RootLayout() {
             <Route
               path="/next_mfe"
               element={
-                <ErrorBoundary name="next micro frontend">
+                <ErrorBoundary
+                  name="next micro frontend"
+                  mfeWIP={true}
+                >
                   <NextMfe />
                 </ErrorBoundary>
               }

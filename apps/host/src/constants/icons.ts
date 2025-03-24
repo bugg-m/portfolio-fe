@@ -8,6 +8,7 @@ import linkedin from '@host/assets/icons/linkedin.svg?url';
 import mail from '@host/assets/icons/mail.svg?url';
 import menu from '@host/assets/icons/menu.svg?url';
 import message from '@host/assets/icons/message.svg?url';
+import retry from '@host/assets/icons/retry.svg?url';
 import settings from '@host/assets/icons/settings.svg?url';
 import sharing from '@host/assets/icons/sharing.svg?url';
 import stepBack from '@host/assets/icons/step-back.svg?url';
@@ -26,6 +27,7 @@ export {
   mail,
   menu,
   message,
+  retry,
   settings,
   sharing,
   stepBack,

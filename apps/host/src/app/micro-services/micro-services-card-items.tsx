@@ -12,7 +12,8 @@ const MicroServicesCardItems: React.FC<IMicroServicesCardProps> = ({ services })
       className="group"
       hoverAble
       clickable
-      onClick={() => navigate(services.link)}>
+      onClick={() => navigate(services.link)}
+    >
       <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 flex justify-center items-center md:h-48 h-32">
         <Image
           src={services.image}
@@ -33,8 +34,9 @@ const MicroServicesCardItems: React.FC<IMicroServicesCardProps> = ({ services })
             {services.features.map((feature, idx) => (
               <li
                 key={idx}
-                className="flex items-center text-xs text-neutral-600">
-                <span className="text-neutral-500 mr-2">✓</span>
+                className="flex items-center text-xs text-neutral-600"
+              >
+                <span className="text-neutral-500 mr-2 group-hover:text-primary-600">✓</span>
                 {feature}
               </li>
             ))}
@@ -48,7 +50,8 @@ const MicroServicesCardItems: React.FC<IMicroServicesCardProps> = ({ services })
         <Button
           size="md"
           className="mt-4 w-full group-hover:bg-primary-700 hover-scale-90"
-          colorScheme="secondary">
+          colorScheme="secondary"
+        >
           Explore Solution
         </Button>
       </div>

@@ -9,13 +9,13 @@ import { NxCardItems } from './nx-card-items';
 const MicroServicesIntro = () => {
   return (
     <main className="max-w-4xl mx-auto my-16">
-      <title className="text-3xl md:text-4xl header mb-4">
+      <header className="text-3xl md:text-4xl header mb-4">
         NX Powered Micro-Frontend Architecture
-      </title>
-
-      <header className="title text-xl text-secondary-700 mb-6">
-        One Workspace, Multiple Technologies, Endless Possibilities
       </header>
+
+      <h2 className="title text-xl text-secondary-700 mb-6">
+        One Workspace, Multiple Technologies, Endless Possibilities
+      </h2>
 
       <p className="paragraph-sm mb-8">
         This monorepo solution uses
@@ -26,7 +26,8 @@ const MicroServicesIntro = () => {
           rel="noreferrer"
           className="px-1.5 font-semibold text-base hover:text-primary-500"
           colorScheme="secondary"
-          size="sm">
+          size="sm"
+        >
           NX
         </Button>
         to create a unified development experience across multiple frontend frameworks. The
@@ -38,7 +39,8 @@ const MicroServicesIntro = () => {
           rel="noreferrer"
           className="px-1.5 font-semibold text-base hover:text-primary-500"
           colorScheme="secondary"
-          size="sm">
+          size="sm"
+        >
           React,
         </Button>
         <Button
@@ -48,7 +50,8 @@ const MicroServicesIntro = () => {
           rel="noreferrer"
           className="px-1.5 font-semibold text-base hover:text-primary-500"
           colorScheme="secondary"
-          size="sm">
+          size="sm"
+        >
           Next,
         </Button>
         and
@@ -59,7 +62,8 @@ const MicroServicesIntro = () => {
           rel="noreferrer"
           className="px-1.5 font-semibold text-base hover:text-primary-500"
           colorScheme="secondary"
-          size="sm">
+          size="sm"
+        >
           Vue js
         </Button>
         micro-frontends that work together seamlessly, all managed within a single workspace.
@@ -89,12 +93,12 @@ const MicroServicesIntro = () => {
         ))}
       </div>
 
-      <p className="paragraph-sm bg-primary-50 text-secondary-600 mb-4 italic border-x-4 border-primary-300 pl-4 py-4">
-        "Combining multiple frontend frameworks in a single NX workspace creates a
-        best-of-all-worlds solution where each technology can shine in its ideal use case."
+      <p className="paragraph-sm bg-primary-50 text-secondary-600 mb-6 italic border-x-4 border-primary-300 pl-4 py-4">
+        "Combining multiple frontend frameworks in a single NX workspace allows developers to
+        leverage the strengths of different technologies across various project components."
       </p>
 
-      <p className="paragraph-sm text-secondary-600 mb-10">
+      <p className="paragraph-sm text-sm text-secondary-600 mb-10 px-10">
         The framework-specific micro-frontends below show how each contributes to this comprehensive
         architecture. Each solution can be deployed independently or combined for a seamless user
         experience.
@@ -104,7 +108,8 @@ const MicroServicesIntro = () => {
         <Button
           size="icon"
           rounded="full"
-          className="animate-bounce shadow-lg">
+          className="animate-bounce shadow-lg"
+        >
           <Icon
             src={stepNext}
             className="rotate-90"
