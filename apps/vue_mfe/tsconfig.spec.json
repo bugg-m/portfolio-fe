@@ -2,20 +2,18 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["node"]
+    "types": ["vitest/globals", "vitest/importMeta", "vite/client", "node", "vitest"]
   },
-  "exclude": [
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.vue",
-    "src/**/*.test.vue",
+  "include": [
     "vitest.config.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
     "src/**/*.test.tsx",
     "src/**/*.spec.tsx",
     "src/**/*.test.js",
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
-    "src/**/*.spec.jsx"
-  ],
-  "include": ["src/remote-entry.ts", "*.d.ts", "src/**/*.ts", "src/**/*.vue"]
+    "src/**/*.spec.jsx",
+    "src/**/*.d.ts"
+  ]
 }

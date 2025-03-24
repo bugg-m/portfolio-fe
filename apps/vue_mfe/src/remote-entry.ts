@@ -1,1 +1,2 @@
-export { mountVueApp } from './bootstrap';
+import { mountVueApp } from './bootstrap';
+export default mountVueApp;

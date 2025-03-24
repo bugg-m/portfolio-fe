@@ -58,7 +58,8 @@ const WelcomeModal: React.FC = () => {
             colorScheme="primary"
             onClick={exploreWithMe}
             className="hover-scale-90"
-            size="sm">
+            size="sm"
+          >
             Explore with me
           </Button>
           <Button
@@ -66,12 +67,14 @@ const WelcomeModal: React.FC = () => {
             variant="outline"
             onClick={onClose}
             className="hover-scale-90"
-            size="sm">
+            size="sm"
+          >
             Explore on your own
           </Button>
         </div>
       }
-      className="md:mt-20 max-h-[90vh] overflow-y-auto">
+      className="md:mt-20 max-h-[90vh] overflow-y-auto"
+    >
       <main className="text-center">
         <div className="flex-center">
           <Image
@@ -100,7 +103,8 @@ const WelcomeModal: React.FC = () => {
               rel="noreferrer"
               className="px-1.5 font-semibold"
               colorScheme="secondary"
-              size="sm">
+              size="sm"
+            >
               BUGG-UI library.
             </Button>
             Feel free to explore and see how these different frameworks work together while

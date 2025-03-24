@@ -33,7 +33,8 @@ const ProgressBar: React.FC<IProgressBarProps> = ({ value = ProgressBarEnum.MIN_
         <span
           className={`text-center w-full absolute top-0.5 z-50 ${
             progressValue >= ProgressBarEnum.MID_POINT ? 'text-gray-100' : 'text-gray-800'
-          }`}>
+          }`}
+        >
           {progressValue}%
         </span>
         <div

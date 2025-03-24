@@ -7,14 +7,16 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "types": ["vite/client"]
+    "resolveJsonModule": true
   },
   "files": [],
   "include": [],
   "references": [
     {
       "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
     }
   ],
   "extends": "../../tsconfig.base.json"

@@ -48,5 +48,4 @@ Thumbs.db
 .next
 apps/next_mfe/package.json
 out
-vite.config.*.timestamp*
 vitest.config.*.timestamp*

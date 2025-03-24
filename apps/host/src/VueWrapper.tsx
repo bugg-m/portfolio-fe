@@ -6,6 +6,7 @@ import mountVueApp from 'vue_mfe/Module';
 const VueAppWrapper = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const appRef = useRef<App<any> | null>(null);
+  console.log({ mountVueApp });
 
   useEffect(() => {
     if (containerRef.current) {

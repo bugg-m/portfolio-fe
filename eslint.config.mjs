@@ -11,12 +11,7 @@ export default [
     },
   },
   {
-    ignores: [
-      '**/dist',
-      '**/vite.config.*.timestamp*',
-      '**/vitest.config.*.timestamp*',
-      '**/.next/**/*',
-    ],
+    ignores: ['**/dist', '**/vitest.config.*.timestamp*', '**/.next/**/*'],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -34,7 +29,6 @@ export default [
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
             ['^.+\\.s?css$'],
-            ['^\\u0000'],
           ],
         },
       ],

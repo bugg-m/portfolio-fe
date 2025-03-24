@@ -26,7 +26,8 @@ const PasswordGenerator: React.FC = () => {
             />
             <button
               onClick={() => navigator.clipboard.writeText(password)}
-              className="px-2 py-1 bg-gray-600 border text-gray-50 border-gray-700 hover:bg-gray-400 hover:text-gray-800 place-items-center rounded-md">
+              className="px-2 py-1 bg-gray-600 border text-gray-50 border-gray-700 hover:bg-gray-400 hover:text-gray-800 place-items-center rounded-md"
+            >
               Copy
             </button>
           </div>
