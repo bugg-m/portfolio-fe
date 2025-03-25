@@ -1,15 +1,17 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import GlobalLoader from '@components/loader/global-loader';
 
 import '@styles';
 
-import HostRootLayout from './layout';
+import { router } from './routes/root.route';
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <HostRootLayout />
-    </BrowserRouter>
+    <Suspense fallback={<GlobalLoader />}>
+      <RouterProvider router={router} />
+    </Suspense>
   </StrictMode>
 );
