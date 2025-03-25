@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { AxiosRequestConfig } from 'axios';
 
-import { NotifyError, NotifySuccess } from '../../../apps/host/src/components/notify/notify';
+import { NotifyError, NotifySuccess } from '../../components/notify/notify';
 import { ApiError } from '../utils/core-api-classes';
 import { ApiService } from '../utils/core-api-utility';
 

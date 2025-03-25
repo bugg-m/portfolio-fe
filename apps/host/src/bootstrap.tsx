@@ -4,12 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 
 import '@styles';
 
-import RootLayout from './layout';
+import HostRootLayout from './layout';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <RootLayout />
+      <HostRootLayout />
     </BrowserRouter>
   </StrictMode>
 );

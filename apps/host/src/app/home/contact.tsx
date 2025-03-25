@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card, Image, Input, TextArea } from '@bugg-m/bugg-ui';
+import { NotifyError } from '@components/notify/notify';
 
-import { NotifyError } from '@host/components/notify/notify';
 import { contact } from '@host/constants/illustrations';
 
 import { usePostDataHook } from '@api/hooks/use-post-data-hook';
@@ -54,11 +54,13 @@ const Contact: React.FC = () => {
         <div className="flex-between-center w-full flex-col-reverse md:flex-row gap-8">
           <Card
             hoverAble
-            className="flex-1 md:w-4/5 sm:w-3/5 w-full">
+            className="flex-1 md:w-4/5 sm:w-3/5 w-full"
+          >
             <form
               onSubmit={handleSubmit}
               className="space-y-12 md:p-10 px-2 py-3"
-              noValidate>
+              noValidate
+            >
               <div className="space-y-6">
                 <Input
                   type="text"
@@ -98,7 +100,8 @@ const Contact: React.FC = () => {
                 disabled={!formData.email || !formData.message || !formData.name}
                 isLoading={isLoading}
                 loadingText="Sending..."
-                className="w-full">
+                className="w-full"
+              >
                 Send Message
               </Button>
 
@@ -108,7 +111,8 @@ const Contact: React.FC = () => {
                   variant="link"
                   href={process.env.NX_PUBLIC_GMAIL_URL}
                   target="_blank"
-                  className="px-1.5 hover:text-primary-500">
+                  className="px-1.5 hover:text-primary-500"
+                >
                   echobuggm@email.com
                 </Button>
               </p>

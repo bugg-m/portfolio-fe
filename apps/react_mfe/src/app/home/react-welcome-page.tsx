@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MicroserviceWelcome = ({
+const ReactWelcomePage = ({
   title = 'React Microservice',
   subtitle = 'Modern Frontend Development with React',
   technologies = ['React', 'JavaScript', 'Tailwind CSS'],
@@ -127,4 +127,4 @@ const MicroserviceWelcome = ({
   );
 };
 
-export default MicroserviceWelcome;
+export default ReactWelcomePage;

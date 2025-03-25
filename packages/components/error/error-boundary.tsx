@@ -1,8 +1,8 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { Button, Card, Icon, Image } from '@bugg-m/bugg-ui';
 
-import { retry, stepBack } from './constants/icons';
-import { comingSoon, notFound404 } from './constants/illustrations';
+import { retry, stepBack } from '../../../apps/host/src/constants/icons';
+import { comingSoon, notFound404 } from '../../../apps/host/src/constants/illustrations';
 
 export enum MicroFrontendErrorType {
   LOADING_FAILED = 'LOADING_FAILED',
@@ -152,24 +152,23 @@ export class ErrorBoundary extends Component<
       }
 
       return (
-        <main className="w-full h-screen flex-center px-5 md:pt-10">
+        <main className="w-full h-screen flex-center px-10 md:pt-10">
           <Card
-            className="flex-center flex-col xs:w-4/5 sm:w-3/5 md:w-1/2 lg:w-1/3 group"
+            className="flex-center flex-col xs:w-4/5 sm:w-3/5 md:w-2/5 lg:w-1/3 gap-5"
             colorScheme="primary"
             variant="filled"
             tone={100}
             size="xl"
             hoverAble
           >
-            <div className="profile-responsive">
+            <div className="flex-center p-5">
               <Image
                 src={mfeWIP ? comingSoon : notFound404}
-                size="full"
                 alt="not found"
-                className="group-hover:scale-110 transition-transform duration-300 drop-shadow-xl"
+                className="profile-responsive group-hover:scale-90 transition-transform duration-300 drop-shadow-xl"
               />
             </div>
-            <div className="flex-center text-center flex-col gap-2">
+            <div className="flex-center text-center flex-col gap-5">
               {mfeWIP ? (
                 <>
                   <span className="text-sm uppercase xs:text-base sm:text-lg md:text-xl text-neutral-700 font-semibold group-hover:text-neutral-500">

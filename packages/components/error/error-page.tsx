@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, Image } from '@bugg-m/bugg-ui';
 
-import { comingSoon, notFound404, serviceUnavailable } from '@host/constants/illustrations';
+import {
+  comingSoon,
+  notFound404,
+  serviceUnavailable,
+} from '../../../apps/host/src/constants/illustrations';
 
 interface ErrorPageProps {
   type: 'unAvailable' | 'underDevelopment' | 'notFound';
@@ -40,21 +44,22 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ type = 'notFound' }) => {
   }, [type]);
 
   return (
-    <main className="w-full h-screen flex-center px-5 md:pt-10">
+    <main className="w-full h-screen flex-center px-10 md:pt-10">
       <Card
-        className="flex-center flex-col xs:w-4/5 sm:w-3/5 md:w-1/2 lg:w-1/3"
+        className="flex-center flex-col xs:w-4/5 sm:w-3/5 md:w-2/5 lg:w-1/3 gap-5"
         colorScheme="primary"
         variant="filled"
         tone={100}
-        size="xl">
-        <div className="profile-responsive">
+        size="xl"
+      >
+        <div className="flex-center p-5">
           <Image
             src={errorType?.src}
-            size="full"
             alt={errorType?.subtitle}
+            className="profile-responsive"
           />
         </div>
-        <div className="flex-center flex-col gap-2">
+        <div className="flex-center flex-col gap-5">
           <span className="text-sm xs:text-base sm:text-lg md:text-xl text-neutral-700 font-semibold">
             Oh Snap!
           </span>
@@ -64,7 +69,8 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ type = 'notFound' }) => {
           <Button
             className="font-light mt-5 text-xs xs:text-sm"
             onClick={() => navigate('/', { replace: true })}
-            colorScheme="secondary">
+            colorScheme="secondary"
+          >
             Go to Homepage
           </Button>
         </div>

@@ -1,5 +1,5 @@
 enum AppRoutesEnum {
-  ERROR = '*',
+  OTHER = '*',
   HOME = '/',
   MICROSERVICES = '/microservices',
   REACT_MFE = '/react_mfe',
@@ -7,4 +7,8 @@ enum AppRoutesEnum {
   VUE_MFE = '/vue_mfe',
 }
 
-export { AppRoutesEnum };
+enum ReactRoutesEnum {
+  HOME = '/',
+}
+
+export { AppRoutesEnum, ReactRoutesEnum };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { withModuleFederation } from '@nx/module-federation/rspack';
 import { composePlugins, withNx, withReact } from '@nx/rspack';
 
@@ -7,4 +8,8 @@ const config = {
   ...baseConfig,
 };
 
-export default composePlugins(withNx(), withReact(), withModuleFederation(config, { dts: false }));
+export default composePlugins(
+  withNx(),
+  withReact(),
+  withModuleFederation(config, { dts: false }) as any
+);
