@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Root } from 'react-dom/client';
 
 import mountReactApp from 'react_mfe/Module';
 
-const VueAppWrapper = () => {
+const VueAppWrapper: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const appRef = useRef<Root | null>(null);
 

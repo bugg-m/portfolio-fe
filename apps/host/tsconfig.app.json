@@ -2,11 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
-    ]
+    "types": ["node", "@nx/react/typings/cssmodule.d.ts", "@nx/react/typings/image.d.ts"]
   },
   "exclude": [
     "src/**/*.spec.ts",
@@ -24,6 +20,8 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/app.tsx"
+    "src/app.tsx",
+    "../../packages/components/cards/nx-card-xl.tsx",
+    "../../packages/components/cards/nx-card-lg.tsx"
   ]
 }

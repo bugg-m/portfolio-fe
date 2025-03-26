@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import notFound404 from '@assets/illustrations/404-error.svg?url';
+import comingSoon from '@assets/illustrations/coming-soon.svg?url';
+import serviceUnavailable from '@assets/illustrations/service-unavailable.svg?url';
 import { Button, Card, Image } from '@bugg-m/bugg-ui';
-
-import {
-  comingSoon,
-  notFound404,
-  serviceUnavailable,
-} from '../../../apps/host/src/constants/illustrations';
 
 interface ErrorPageProps {
   type: 'unAvailable' | 'underDevelopment' | 'notFound';

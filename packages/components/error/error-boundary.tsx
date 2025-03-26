@@ -1,8 +1,9 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
+import retry from '@assets/icons/retry.svg?url';
+import stepBack from '@assets/icons/step-back.svg?url';
+import notFound404 from '@assets/illustrations/404-error.svg?url';
+import comingSoon from '@assets/illustrations/coming-soon.svg?url';
 import { Button, Card, Icon, Image } from '@bugg-m/bugg-ui';
-
-import { retry, stepBack } from '../../../apps/host/src/constants/icons';
-import { comingSoon, notFound404 } from '../../../apps/host/src/constants/illustrations';
 
 export enum MicroFrontendErrorType {
   LOADING_FAILED = 'LOADING_FAILED',

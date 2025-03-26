@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Icon } from '@bugg-m/bugg-ui';
 
-import { MonorepoBenefitsCardProps as NxCardItemsProps } from './monorepo-benefits-cards';
+import { NxCardProps } from './nx-card-lg';
 
-const NxCardItems: React.FC<NxCardItemsProps> = ({ icon, title, description }) => {
+const NxCardXl: React.FC<NxCardProps> = ({ icon, title, description }) => {
   return (
     <Card hoverAble>
       <div className="flex-center gap-3 mb-3">
@@ -18,4 +18,4 @@ const NxCardItems: React.FC<NxCardItemsProps> = ({ icon, title, description }) =
   );
 };
 
-export { NxCardItems };
+export { NxCardXl };

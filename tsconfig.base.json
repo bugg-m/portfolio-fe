@@ -18,6 +18,7 @@
       "@api/*": ["packages/api/*"],
       "@enums/*": ["packages/enums/*"],
       "@styles": ["global.css"],
+      "@assets/*": ["packages/assets/*"],
       "@components/*": ["packages/components/*"],
       "@utils/*": ["packages/utils/*"],
       "@host/*": ["apps/host/src/*"],

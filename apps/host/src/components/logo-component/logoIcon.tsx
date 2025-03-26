@@ -1,13 +1,15 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@bugg-m/bugg-ui';
 
 import { bug } from '@host/constants/icons';
 
-const LogoIcon = () => {
+const LogoIcon: React.FC = () => {
   return (
     <Link
       to="/"
-      className="flex-center gap-2">
+      className="flex-center gap-2"
+    >
       <div className="hover:animate-ping">
         <Icon
           src={bug}

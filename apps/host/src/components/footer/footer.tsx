@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@bugg-m/bugg-ui';
 
@@ -5,7 +6,7 @@ import { github, linkedin, mail, message } from '@host/constants/icons';
 
 import LogoIcon from '../logo-component/logoIcon';
 
-function Footer() {
+const Footer: React.FC = () => {
   const links = [
     {
       to: process.env.NX_PUBLIC_GITHUB_URL ?? '',
@@ -39,7 +40,8 @@ function Footer() {
               key={alt}
               to={to}
               className="size-6 md:size-8 flex items-center justify-center rounded-full border border-primary-50 hover:bg-primary-50"
-              target="_blank">
+              target="_blank"
+            >
               <Icon
                 src={icon}
                 iconColor="primary"
@@ -53,13 +55,14 @@ function Footer() {
         © 2024{' '}
         <Link
           to="/"
-          className="hover:underline">
+          className="hover:underline"
+        >
           BUGG™
         </Link>
         . All Rights Reserved.
       </span>
     </div>
   );
-}
+};
 
 export default Footer;

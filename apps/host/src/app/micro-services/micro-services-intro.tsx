@@ -1,24 +1,26 @@
+import React from 'react';
 import { Button, Icon } from '@bugg-m/bugg-ui';
+import { NxCardLg } from '@components/cards/nx-card-lg';
+import { NxCardXl } from '@components/cards/nx-card-xl';
 
-import MonorepoBenefitsCard from '@host/app/micro-services/monorepo-benefits-cards';
 import { monorepoBenefitsData, nxCardItemsData } from '@host/constants/core-contants';
 import { stepNext } from '@host/constants/icons';
 
-import { NxCardItems } from './nx-card-items';
-
-const MicroServicesIntro = () => {
+const MicroServicesIntro: React.FC = () => {
   return (
     <main className="max-w-4xl mx-auto my-16">
-      <header className="text-3xl md:text-4xl header mb-4">
+      <header className="text-2xl sm:text-3xl md:text-4xl header text-neutral-800 mb-4">
         NX Powered Micro-Frontend Architecture
       </header>
 
-      <h2 className="title text-xl text-secondary-700 mb-6">
-        One Workspace, Multiple Technologies, Endless Possibilities
-      </h2>
+      <div className="sm:text-lg text-base md:text-xl text-secondary-700 mb-6 sm:px-5 md:px-20 py-4 border-x-8 rounded-md border-primary-500 border-y">
+        <span className="block title text-start">One Workspace</span>
+        <span className="block title text-center">Multiple Technologies</span>
+        <span className="block title text-end">Endless Possibilities</span>
+      </div>
 
       <p className="paragraph-sm mb-8">
-        This monorepo solution uses
+        This monorepo uses
         <Button
           variant="link"
           href={process.env.NX_PUBLIC_NX_DOCS_URL}
@@ -71,7 +73,7 @@ const MicroServicesIntro = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {nxCardItemsData.map(nxCard => (
-          <NxCardItems
+          <NxCardXl
             key={nxCard.title}
             icon={nxCard.icon}
             title={nxCard.title}
@@ -84,7 +86,7 @@ const MicroServicesIntro = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         {monorepoBenefitsData.map(benefits => (
-          <MonorepoBenefitsCard
+          <NxCardLg
             key={benefits.title}
             icon={benefits.icon}
             title={benefits.title}
@@ -93,7 +95,7 @@ const MicroServicesIntro = () => {
         ))}
       </div>
 
-      <p className="paragraph-sm bg-primary-50 text-secondary-600 mb-6 italic border-x-4 border-primary-300 pl-4 py-4">
+      <p className="paragraph-sm bg-primary-50 text-secondary-600 mb-6 italic border-x-4 border-primary-300 p-4">
         "Combining multiple frontend frameworks in a single NX workspace allows developers to
         leverage the strengths of different technologies across various project components."
       </p>

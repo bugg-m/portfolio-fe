@@ -16,7 +16,7 @@
         "baseHref": "/",
         "main": "apps/host/src/main.ts",
         "tsConfig": "apps/host/tsconfig.app.json",
-        "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
+        "assets": ["apps/host/src/favicon.ico"],
         "rspackConfig": "apps/host/rspack.config.ts",
         "styles": ["global.tailwind"],
         "postcssConfig": "postcss.config.js",

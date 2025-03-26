@@ -8,7 +8,7 @@ enum AppRoutesEnum {
 }
 
 enum ReactRoutesEnum {
-  HOME = '/',
+  OVERVIEW = '/',
 }
 
 export { AppRoutesEnum, ReactRoutesEnum };

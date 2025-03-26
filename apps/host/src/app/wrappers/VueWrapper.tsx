@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { App } from 'vue';
 import mountVueApp from 'vue_mfe/Module';
 
-const VueAppWrapper = () => {
+const VueAppWrapper: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const appRef = useRef<App<any> | null>(null);
 
