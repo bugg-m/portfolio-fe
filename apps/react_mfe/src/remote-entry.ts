@@ -1,1 +1,3 @@
-export { default } from './layout';
+import { mountReactApp } from './bootstrap';
+
+export default mountReactApp;

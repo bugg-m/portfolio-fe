@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'react_mfe/Module' {
-  const Component: React.ComponentType<any>;
-  export default Component;
+  import { Root } from 'react-dom/client';
+
+  const mountReactApp: (container: HTMLElement) => Root;
+  export default mountReactApp;
+  export const unmount: (container: HTMLElement) => void;
 }
 
 declare module 'next_mfe/Module' {
@@ -14,7 +17,6 @@ declare module 'vue_mfe/Module' {
 
   const mountVueApp: (container: HTMLElement) => App<any>;
   export default mountVueApp;
-  export const mount: (container: HTMLElement) => any;
   export const unmount: (container: HTMLElement) => void;
 }
 

@@ -4,22 +4,22 @@ import { ErrorBoundary } from '@components/error/error-boundary';
 import GlobalLoader from '@components/loader/global-loader';
 import { AppRoutesEnum } from '@enums/app-routes-enum';
 
-import Home from '../app/home/home';
+import Home from '@host/app/home/home';
 
-import HostRootLayout from './root.layout';
+import HostLayout from './host.layout';
 
 const ErrorPage = React.lazy(() => import('@components/error/error-page'));
 const MicroServices = React.lazy(() => import('@host/app/micro-services/micro-services'));
 // micro services
-const ReactMfe = React.lazy(() => import('react_mfe/Module'));
+const ReactMfe = React.lazy(() => import('@host/app/wrappers/ReactWrapper'));
 const NextMfe = React.lazy(() => import('next_mfe/Module'));
-const VueMfe = React.lazy(() => import('../VueWrapper'));
+const VueMfe = React.lazy(() => import('@host/app/wrappers/VueWrapper'));
 
-export const router = createBrowserRouter(
+export const hostRouter = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path={AppRoutesEnum.HOME}
-      element={<HostRootLayout />}
+      element={<HostLayout />}
     >
       <Route
         path={AppRoutesEnum.HOME}

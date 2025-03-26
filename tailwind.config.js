@@ -50,12 +50,6 @@ export const theme = {
         900: 'var(--neutral-900)',
       },
     },
-    width: {
-      authCard: '26rem',
-    },
-    height: {
-      modalCard: '22rem',
-    },
     borderRadius: {
       '4xl': '8rem',
       '5xl': '10rem',

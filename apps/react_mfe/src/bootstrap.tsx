@@ -1,13 +1,23 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import { ErrorBoundary } from '@components/error/error-boundary';
 
 import '@styles';
 
-import MicroserviceWelcome from './app/home/welcome-page';
+import { reactRouter } from './routes/react.route';
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(
-  <StrictMode>
-    <MicroserviceWelcome />
-  </StrictMode>
-);
+const mountReactApp = (container: HTMLElement) => {
+  const root = ReactDOM.createRoot(container);
+  root.render(
+    <StrictMode>
+      <ErrorBoundary name="portfolio react">
+        <RouterProvider router={reactRouter} />
+      </ErrorBoundary>
+    </StrictMode>
+  );
+
+  return { unmount: () => root.unmount() };
+};
+
+export { mountReactApp };

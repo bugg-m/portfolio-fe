@@ -31,7 +31,7 @@ const Experience: React.FC = () => {
               <p className="text-xs text-neutral-400">{myExperiencesData.duration}</p>
             </title>
 
-            <p className="mt-2 paragraph-sm animate-paragraph text-neutral-600">
+            <p className="mt-2 md:pr-10 paragraph-sm animate-paragraph text-neutral-600">
               {myExperiencesData.description}
             </p>
             <div>
@@ -40,7 +40,8 @@ const Experience: React.FC = () => {
                 {myExperiencesData.skills.map(title => (
                   <li
                     key={title}
-                    className="text-xs sm:text-sm text-neutral-400 hover-scale-110 hover:text-neutral-600">
+                    className="text-xs sm:text-sm text-neutral-400 hover-scale-110 hover:text-neutral-600"
+                  >
                     {title}
                   </li>
                 ))}
