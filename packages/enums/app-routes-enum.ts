@@ -9,6 +9,7 @@ enum AppRoutesEnum {
 
 enum ReactRoutesEnum {
   OVERVIEW = '/',
+  MINI_PROJECTS = 'mini-projects',
 }
 
 export { AppRoutesEnum, ReactRoutesEnum };

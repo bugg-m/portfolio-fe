@@ -12,7 +12,7 @@ const NxCardLg: React.FC<NxCardProps> = ({ icon, title, description }) => {
     <Card
       hoverAble
       variant="flat"
-      className="flex-center flex-col p-4 bg-gradient-to-br from-primary-50 to-white rounded-lg border border-primary-100 hover:shadow-md transition duration-300"
+      className="flex-center flex-col p-4 nx-card-lg rounded-lg border border-primary-100 hover:shadow-md transition duration-300"
     >
       <Icon
         src={icon}

@@ -1,5 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 import { Button, Image } from '@bugg-m/bugg-ui';
 import { NotifyError, NotifySuccess } from '@components/notify/notify';
+import { AppRoutesEnum } from '@enums/app-routes-enum';
 
 import { developer1, developer2 } from '@host/constants/illustrations';
 import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
@@ -17,7 +19,7 @@ export interface CVDocument {
 const Hero: React.FC = () => {
   const { isLoading, getData } = useGetDataHook<CVDocument>();
   const { width } = useWindowDimensions();
-
+  const navigate = useNavigate();
   const downloadResume = async () => {
     try {
       const result = await getData({
@@ -76,7 +78,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="flex-center w-full pt-6 sm:pt-8 md:pt-10 gap-4 sm:gap-6 md:gap-8">
           <Button
-            disabled
+            onClick={() => navigate(AppRoutesEnum.REACT_MFE)}
             title="This feature is Under Development"
             className="w-2/5 sm:w-1/3 hover-scale-110"
             rounded="full"

@@ -4,7 +4,7 @@ import { Icon } from '@bugg-m/bugg-ui';
 
 import { github, linkedin, mail, message } from '@host/constants/icons';
 
-import LogoIcon from '../logo-component/logoIcon';
+import LogoIcon from '../logo-component/logo-icon';
 
 const Footer: React.FC = () => {
   const links = [

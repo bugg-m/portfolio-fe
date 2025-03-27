@@ -6,7 +6,7 @@ import GlobalLoader from '@components/loader/global-loader';
 
 import '@styles';
 
-import { hostRouter } from './routes/host.route';
+import { hostRouter } from './routes/host-route';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

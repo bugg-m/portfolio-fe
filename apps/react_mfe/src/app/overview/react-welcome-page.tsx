@@ -10,7 +10,7 @@ const ReactWelcomePage: React.FC = () => {
       <section className="section bg-secondary-50 mx-auto border-x border-secondary-200 space-y-5">
         <main className="max-w-4xl mx-auto my-16">
           <header className="text-2xl sm:text-3xl md:text-4xl header text-neutral-800 mb-4">
-            Welcome to our React Micro Microservice!
+            Welcome to our React Microservice!
           </header>
 
           <h2 className="sm:text-lg title text-base md:text-xl text-secondary-700 mb-6">

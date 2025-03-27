@@ -1,37 +1,46 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Button, Icon } from '@bugg-m/bugg-ui';
 
 import { stepBack, stepNext } from '@host/constants/icons';
 
-type MenuItem = {
+import { NavItems } from './nav-items';
+
+export interface MenuItem {
   name: string;
   path: string;
-};
+  hasChildren?: boolean | false;
+  children?: MenuItem[];
+}
 
 const menuItems: MenuItem[] = [
   {
     name: 'overview',
     path: '/',
   },
+  {
+    name: 'mini projects',
+    path: 'mini-projects',
+    hasChildren: true,
+    children: [],
+  },
 ];
 
 const SideNavbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   return (
     <nav
-      className={`bg-secondary-200 relative flex flex-col text-light shadow-lg transition-all duration-300 h-screen px-5 py-5 pt-20 ${
-        isOpen ? 'w-36' : 'w-0 -translate-x-10'
+      className={`navbar-bg relative text-light shadow-lg transition-all duration-300 h-screen px-5 py-5 pt-20 ${
+        isOpen ? 'w-44' : 'w-0 -translate-x-10'
       } space-y-2`}
     >
       <Button
         onClick={() => setIsOpen(prev => !prev)}
         rounded="none"
-        tone={200}
+        tone={300}
         colorScheme="secondary"
-        className={`h-16 w-6 rounded-none rounded-r-xl absolute transition-all duration-300 ${
-          isOpen ? 'left-36' : 'left-10'
+        className={`h-16 w-6 rounded-none rounded-r-xl absolute z-50 transition-all duration-300 ${
+          isOpen ? 'left-44' : 'left-10'
         }`}
       >
         {isOpen ? (
@@ -46,17 +55,13 @@ const SideNavbar: React.FC = () => {
           />
         )}
       </Button>
-      {menuItems.map((item, index) => (
-        <Link
-          to={item.path}
-          key={index}
-          className={`capitalize p-2 rounded hover:bg-secondary-50 transition-all duration-300 ${
-            isOpen ? 'translate-x-0' : '-translate-x-20'
-          }`}
-        >
-          {item.name}
-        </Link>
-      ))}
+      <main
+        className={`flex flex-col transition-all duration-300 ${
+          isOpen ? 'translate-x-0' : '-translate-x-32'
+        }`}
+      >
+        <NavItems menuItems={menuItems} />
+      </main>
     </nav>
   );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import { NxCardXl } from '@components/cards/nx-card-xl';
 
-import { api, performance, sharing, state } from '@react_mfe/constants/icons';
+import { api, performance, state, ui } from '@react_mfe/constants/icons';
 
 const ReactFeatures: React.FC = () => {
   const features = [
     {
-      icon: sharing,
+      icon: ui,
       title: 'Component Library',
       description: 'Reusable UI components built with React and styled with Tailwind CSS',
     },

@@ -3,6 +3,7 @@ import { createMemoryRouter, createRoutesFromElements, Route } from 'react-route
 import { AppRoutesEnum, ReactRoutesEnum } from '@enums/app-routes-enum';
 
 import ReactWelcomePage from '@react_mfe/app/overview/react-welcome-page';
+import ReactMiniProjects from '@react_mfe/app/react-mini-projects';
 
 import ReactMFELayout from './react.layout';
 
@@ -18,6 +19,12 @@ export const reactRouter = createMemoryRouter(
         path={ReactRoutesEnum.OVERVIEW}
         element={<ReactWelcomePage />}
       />
+
+      <Route
+        path={ReactRoutesEnum.MINI_PROJECTS}
+        element={<ReactMiniProjects />}
+      />
+
       <Route
         path={AppRoutesEnum.OTHER}
         element={<ErrorPage type="notFound" />}

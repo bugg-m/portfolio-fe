@@ -5,15 +5,16 @@ import GlobalLoader from '@components/loader/global-loader';
 import { AppRoutesEnum } from '@enums/app-routes-enum';
 
 import Home from '@host/app/home/home';
+import { AppRouterHandler } from '@host/helpers/app-router-handler';
 
-import HostLayout from './host.layout';
+import HostLayout from './host-layout';
 
 const ErrorPage = React.lazy(() => import('@components/error/error-page'));
 const MicroServices = React.lazy(() => import('@host/app/micro-services/micro-services'));
 // micro services
-const ReactMfe = React.lazy(() => import('@host/app/wrappers/ReactWrapper'));
+const ReactMfe = React.lazy(() => import('@host/helpers/react-mounter'));
 const NextMfe = React.lazy(() => import('next_mfe/Module'));
-const VueMfe = React.lazy(() => import('@host/app/wrappers/VueWrapper'));
+const VueMfe = React.lazy(() => import('@host/helpers/vue-mounter'));
 
 export const hostRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -34,9 +35,9 @@ export const hostRouter = createBrowserRouter(
         path={`${AppRoutesEnum.REACT_MFE}/*`}
         element={
           <ErrorBoundary name="react micro frontend">
-            <Suspense fallback={<GlobalLoader />}>
+            <AppRouterHandler basename={AppRoutesEnum.REACT_MFE}>
               <ReactMfe />
-            </Suspense>
+            </AppRouterHandler>
           </ErrorBoundary>
         }
       />
@@ -48,7 +49,9 @@ export const hostRouter = createBrowserRouter(
             name="next micro frontend"
             mfeWIP={true}
           >
-            <NextMfe />
+            <Suspense fallback={<GlobalLoader />}>
+              <NextMfe />
+            </Suspense>
           </ErrorBoundary>
         }
       />
@@ -56,11 +59,12 @@ export const hostRouter = createBrowserRouter(
         path={`${AppRoutesEnum.VUE_MFE}/*`}
         element={
           <ErrorBoundary name="vue micro frontend">
-            <VueMfe />
+            <Suspense fallback={<GlobalLoader />}>
+              <VueMfe />
+            </Suspense>
           </ErrorBoundary>
         }
       />
-
       <Route
         path={AppRoutesEnum.OTHER}
         element={<ErrorPage type="notFound" />}

@@ -187,6 +187,16 @@ body {
   }
 }
 
+/* Background Gradient Classes */
+@layer utilities {
+  .navbar-bg {
+    @apply bg-gradient-to-r from-secondary-300 via-secondary-100 to-secondary-300;
+  }
+  .nx-card-lg {
+    @apply bg-gradient-to-br from-primary-50 to-white;
+  }
+}
+
 /* Custom Container Classes */
 @layer components {
   .section {

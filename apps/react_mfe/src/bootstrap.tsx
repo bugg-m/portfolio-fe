@@ -1,7 +1,8 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { ErrorBoundary } from '@components/error/error-boundary';
+import GlobalLoader from '@components/loader/global-loader';
 
 import '@styles';
 
@@ -12,7 +13,9 @@ const mountReactApp = (container: HTMLElement) => {
   root.render(
     <StrictMode>
       <ErrorBoundary name="portfolio react">
-        <RouterProvider router={reactRouter} />
+        <Suspense fallback={<GlobalLoader />}>
+          <RouterProvider router={reactRouter} />
+        </Suspense>
       </ErrorBoundary>
     </StrictMode>
   );

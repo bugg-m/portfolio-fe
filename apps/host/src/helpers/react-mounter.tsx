@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef } from 'react';
-import { App } from 'vue';
-import mountVueApp from 'vue_mfe/Module';
+import { Root } from 'react-dom/client';
 
-const VueAppWrapper: React.FC = () => {
+import mountReactApp from 'react_mfe/Module';
+
+const ReactMounter: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const appRef = useRef<App<any> | null>(null);
+  const appRef = useRef<Root | null>(null);
 
   useEffect(() => {
     if (containerRef.current) {
-      appRef.current = mountVueApp(containerRef.current);
+      appRef.current = mountReactApp(containerRef.current);
     }
 
     return () => {
@@ -22,4 +22,4 @@ const VueAppWrapper: React.FC = () => {
   return <div ref={containerRef}></div>;
 };
 
-export default VueAppWrapper;
+export default ReactMounter;
