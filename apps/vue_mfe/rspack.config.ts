@@ -7,6 +7,11 @@ import baseConfig from './module-federation.config';
 
 const config: ModuleFederationConfig = {
   ...baseConfig,
+
+  library: {
+    type: 'global',
+    name: 'vue_mfe',
+  },
 };
 
 export default composePlugins(

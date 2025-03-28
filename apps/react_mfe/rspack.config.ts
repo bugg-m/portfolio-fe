@@ -6,9 +6,26 @@ import baseConfig from './module-federation.config';
 
 const config = {
   ...baseConfig,
+
+  library: {
+    type: 'global',
+    name: 'react_mfe',
+  },
 };
 
 export default composePlugins(
+  config => {
+    config.module = config.module || {};
+    config.module.rules = config.module.rules || [];
+
+    config.module.rules.push({
+      test: /\.svg$/i,
+      type: 'asset',
+      resourceQuery: /url/,
+    });
+
+    return config;
+  },
   withNx(),
   withReact(),
   withModuleFederation(config, { dts: false }) as any
