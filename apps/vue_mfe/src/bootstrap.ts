@@ -2,12 +2,12 @@ import { App, createApp } from 'vue';
 
 import '@styles';
 
-import AppComponent from './app/App.vue';
-import router from './router';
+import VueLayout from './router/vue-layout.vue';
+import router from './router/vue-route';
 
 const mountVueApp = (container: HTMLDivElement | string): App | null => {
   if (!container) return null;
-  const app = createApp(AppComponent);
+  const app = createApp(VueLayout);
   app.use(router);
 
   app.mount(container);
