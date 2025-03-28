@@ -6,11 +6,6 @@ import baseConfig from './module-federation.config';
 
 const config = {
   ...baseConfig,
-
-  library: {
-    type: 'global',
-    name: 'react_mfe',
-  },
 };
 
 export default composePlugins(

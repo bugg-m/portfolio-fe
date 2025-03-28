@@ -8,6 +8,11 @@ const config: ModuleFederationConfig = {
     './Module': './src/remote-entry.ts',
   },
 
+  library: {
+    type: 'global',
+    name: 'react_mfe',
+  },
+
   shared: () => {
     return false;
   },
