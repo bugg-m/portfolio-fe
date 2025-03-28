@@ -7,7 +7,7 @@ const config: ModuleFederationConfig = {
 
   remotes: ['react_mfe', 'next_mfe', 'vue_mfe'],
 
-  shared: (name, config) => {
+  shared: () => {
     return false;
   },
 

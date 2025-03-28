@@ -8,7 +8,7 @@ const config: ModuleFederationConfig = {
     './Module': './src/remote-entry.ts',
   },
 
-  shared: (name, config) => {
+  shared: () => {
     return false;
   },
 
