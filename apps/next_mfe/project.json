@@ -1,0 +1,66 @@
+{
+  "name": "next_mfe",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "apps/next_mfe",
+  "sourceRoot": "apps/next_mfe/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/next_mfe",
+        "baseHref": "/",
+        "main": "apps/next_mfe/src/bootstrap.ts",
+        "tsConfig": "apps/next_mfe/tsconfig.json",
+        "styles": ["global.tailwind"],
+        "postcssConfig": "postcss.config.js",
+        "scripts": [],
+        "configurations": {
+          "development": {
+            "mode": "development"
+          },
+          "production": {
+            "mode": "production",
+            "optimization": true,
+            "sourceMap": false,
+            "outputHashing": "all",
+            "namedChunks": false,
+            "extractLicenses": true,
+            "vendorChunk": false
+          }
+        },
+        "target": "web"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/next_mfe"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "next_mfe:build",
+        "dev": true,
+        "port": 9002
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "next_mfe:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "next_mfe:build:production",
+          "dev": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

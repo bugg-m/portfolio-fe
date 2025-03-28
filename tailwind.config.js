@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 import { join } from 'path';
 
-export const content = [join(__dirname, 'packages/**/src/{components,app}/**/*.{ts,tsx}')];
+export const content = [join(__dirname, '{packages,apps}/**/{components,app}/**/*.{ts,tsx}')];
+
 export const theme = {
   screens: {
     xs: '480px',
@@ -49,12 +50,6 @@ export const theme = {
         800: 'var(--neutral-800)',
         900: 'var(--neutral-900)',
       },
-    },
-    width: {
-      authCard: '26rem',
-    },
-    height: {
-      modalCard: '22rem',
     },
     borderRadius: {
       '4xl': '8rem',

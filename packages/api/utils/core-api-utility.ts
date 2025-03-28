@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { ApiError, ApiResponse } from '@api/utils/core-api-classes';
 import axios, { AxiosRequestConfig, Method } from 'axios';
+
+import { ApiError, ApiResponse } from './core-api-classes';
 
 async function request<T>(
   method: Method,
   url: string,
-  data?: T | any,
+  data?: T,
   config?: AxiosRequestConfig
 ): Promise<ApiResponse | ApiError> {
   try {
@@ -23,7 +23,7 @@ async function request<T>(
       data: response.data.data || response.data,
       status: response.status < 400,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
       let errorData = error.response?.data;
 
@@ -68,10 +68,10 @@ const ApiService = {
   get: <T>({ url, config }: { url: string; config?: AxiosRequestConfig }) =>
     request<T>('GET', url, undefined, config),
 
-  post: <T>({ url, data, config }: { url: string; data: any; config?: AxiosRequestConfig }) =>
+  post: <T>({ url, data, config }: { url: string; data: T; config?: AxiosRequestConfig }) =>
     request<T>('POST', url, data, config),
 
-  patch: <T>({ url, data, config }: { url: string; data: any; config?: AxiosRequestConfig }) =>
+  patch: <T>({ url, data, config }: { url: string; data: T; config?: AxiosRequestConfig }) =>
     request<T>('PATCH', url, data, config),
 
   delete: <T>({ url, config }: { url: string; config?: AxiosRequestConfig }) =>

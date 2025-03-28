@@ -15,10 +15,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@host/*": ["packages/host/src/*"],
-      "@react_mfe/*": ["packages/react_mfe/src/*"],
-      "react_mfe/Module": ["packages/react_mfe/src/remote-entry.ts"],
-      "@api/*": ["packages/api/*"]
+      "@api/*": ["packages/api/*"],
+      "@enums/*": ["packages/enums/*"],
+      "@styles": ["global.css"],
+      "@assets/*": ["packages/assets/*"],
+      "@components/*": ["packages/components/*"],
+      "@utils/*": ["packages/utils/*"],
+      "@host/*": ["apps/host/src/*"],
+      "@next_mfe/*": ["apps/next_mfe/src/*"],
+      "@react_mfe/*": ["apps/react_mfe/src/*"],
+      "@vue_mfe/*": ["apps/vue_mfe/src/*"],
+      "next_mfe/Module": ["apps/next_mfe/src/remote-entry.ts"],
+      "react_mfe/Module": ["apps/react_mfe/src/remote-entry.ts"],
+      "vue_mfe/Module": ["apps/vue_mfe/src/remote-entry.ts"]
     }
-  }
+  },
+  "include": ["global.d.ts"],
+  "exclude": ["node_modules", "tmp"]
 }

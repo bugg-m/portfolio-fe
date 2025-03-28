@@ -1,14 +1,28 @@
-const coreLibraries = new Set(['react', 'react-dom']);
-
 export default {
-  shared: (packageName: string, defaultConfig: any) => {
-    if (coreLibraries.has(packageName)) {
-      return {
-        ...defaultConfig,
+  additionalShared: [
+    {
+      libraryName: 'react',
+      sharedConfig: {
+        eager: false,
         singleton: true,
-        requiredVersion: '18.3.1',
-      };
-    }
-    return defaultConfig;
-  },
+        requiredVersion: '19.0.0',
+      },
+    },
+    {
+      libraryName: 'react-dom',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: '19.0.0',
+      },
+    },
+    {
+      libraryName: 'react-router-dom',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: '6.29.0',
+      },
+    },
+  ],
 };
