@@ -5,6 +5,10 @@ const config: ModuleFederationConfig = {
   exposes: {
     './Module': './src/remote-entry.ts',
   },
+  library: {
+    type: 'global',
+    name: 'vue_mfe',
+  },
 };
 
 export default config;
