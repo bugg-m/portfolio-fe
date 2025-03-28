@@ -1,3 +1,3 @@
 export interface IProgressBarProps {
-  value: number;
+  value?: number;
 }

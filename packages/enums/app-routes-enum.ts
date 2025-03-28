@@ -9,7 +9,13 @@ enum AppRoutesEnum {
 
 enum ReactRoutesEnum {
   OVERVIEW = '/',
-  MINI_PROJECTS = 'mini-projects',
+  MINI_PROJECTS = '/mini-projects',
+  FOLDERS = '/folders',
+  OMIT_CELLS = '/omit-cells',
+  PROGRESS_BAR = '/progress-bar',
+  PAGINATION = '/pagination',
+  PASSWORD_GENERATOR = '/password-generator',
+  PROJECTS = '/projects',
 }
 
 export { AppRoutesEnum, ReactRoutesEnum };

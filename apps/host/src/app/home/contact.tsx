@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Card, Image, Input, TextArea } from '@bugg-m/bugg-ui';
+import { Button, Card, Icon, Image, Input, TextArea } from '@bugg-m/bugg-ui';
 import { NotifyError } from '@components/notify/notify';
 
+import { send } from '@host/constants/icons';
 import { contact } from '@host/constants/illustrations';
 
 import { usePostDataHook } from '@api/hooks/use-post-data-hook';
@@ -101,6 +102,13 @@ const Contact: React.FC = () => {
                 isLoading={isLoading}
                 loadingText="Sending..."
                 className="w-full"
+                rightIcon={
+                  <Icon
+                    src={send}
+                    size="sm"
+                    iconColor="default"
+                  />
+                }
               >
                 Send Message
               </Button>

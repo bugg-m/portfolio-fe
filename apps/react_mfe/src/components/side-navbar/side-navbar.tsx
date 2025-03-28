@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Icon } from '@bugg-m/bugg-ui';
+import { ReactRoutesEnum } from '@enums/app-routes-enum';
 
-import { stepBack, stepNext } from '@host/constants/icons';
+import { step } from '@host/constants/icons';
 
 import { NavItems } from './nav-items';
 
@@ -19,9 +20,34 @@ const menuItems: MenuItem[] = [
   },
   {
     name: 'mini projects',
-    path: 'mini-projects',
+    path: ReactRoutesEnum.MINI_PROJECTS,
     hasChildren: true,
-    children: [],
+    children: [
+      {
+        name: 'folders',
+        path: ReactRoutesEnum.FOLDERS,
+      },
+      {
+        name: 'omit cells',
+        path: ReactRoutesEnum.OMIT_CELLS,
+      },
+      {
+        name: 'pagination',
+        path: ReactRoutesEnum.PAGINATION,
+      },
+      {
+        name: 'password generator',
+        path: ReactRoutesEnum.PASSWORD_GENERATOR,
+      },
+      {
+        name: 'progress bar',
+        path: ReactRoutesEnum.PROGRESS_BAR,
+      },
+    ],
+  },
+  {
+    name: 'projects',
+    path: ReactRoutesEnum.PROJECTS,
   },
 ];
 
@@ -30,36 +56,28 @@ const SideNavbar: React.FC = () => {
 
   return (
     <nav
-      className={`navbar-bg relative text-light shadow-lg transition-all duration-300 h-screen px-5 py-5 pt-20 ${
-        isOpen ? 'w-44' : 'w-0 -translate-x-10'
+      className={`navbar-bg relative text-light shadow-lg transition-all duration-300 h-screen px-2 py-5 pt-20 ${
+        isOpen ? 'w-48' : 'w-0 -translate-x-10'
       } space-y-2`}
     >
       <Button
         onClick={() => setIsOpen(prev => !prev)}
         rounded="none"
-        tone={300}
+        tone={600}
         colorScheme="secondary"
         className={`h-16 w-6 rounded-none rounded-r-xl absolute z-50 transition-all duration-300 ${
-          isOpen ? 'left-44' : 'left-10'
+          isOpen ? 'left-48' : 'left-10'
         }`}
       >
-        {isOpen ? (
-          <Icon
-            src={stepBack}
-            size="md"
-          />
-        ) : (
-          <Icon
-            src={stepNext}
-            size="md"
-          />
-        )}
+        <Icon
+          src={step}
+          size="md"
+          className={`${
+            isOpen ? '' : 'rotate-180'
+          } text-neutral-200 transition-transform duration-300`}
+        />
       </Button>
-      <main
-        className={`flex flex-col transition-all duration-300 ${
-          isOpen ? 'translate-x-0' : '-translate-x-32'
-        }`}
-      >
+      <main className={`${isOpen ? 'translate-x-0' : '-translate-x-32'}`}>
         <NavItems menuItems={menuItems} />
       </main>
     </nav>

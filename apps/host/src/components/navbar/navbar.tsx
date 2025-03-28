@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from '@bugg-m/bugg-ui';
+import { AppRoutesEnum } from '@enums/app-routes-enum';
 
 import { close, menu } from '@host/constants/icons';
 
@@ -12,8 +13,8 @@ const Navbar: React.FC = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false);
 
   const menuItems = [
-    { title: 'home', id: 1, to: '' },
-    { title: 'microservices', id: 3, to: 'microservices' },
+    { title: 'home', id: 1, to: AppRoutesEnum.HOME },
+    { title: 'microservices', id: 3, to: AppRoutesEnum.MICROSERVICES },
   ];
 
   return (

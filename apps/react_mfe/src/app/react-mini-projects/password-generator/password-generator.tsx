@@ -1,43 +1,44 @@
 import React from 'react';
+import { Button, Checkbox, Input } from '@bugg-m/bugg-ui';
 import { PasswordGeneratorEnum } from '@enums/password-generator-enum';
 
 import usePasswordGeneratorHook from '@react_mfe/hooks/use-password-generator-hooks';
-
-import CharacterButtonItem from './character-button-item';
 
 const PasswordGenerator: React.FC = () => {
   const { password, size, setSize, addCharacter, setAddCharacter, addNumber, setAddNumber } =
     usePasswordGeneratorHook();
 
   return (
-    <div className="w-full h-screen mx-auto place-items-center">
-      <div className="w-1/2 h-2/5 bg-gray-200 border border-gray-300 rounded-md p-5">
-        <span className="text-lg text-gray-700 font-semibold text-center block mb-5">
+    <div className="w-full h-screen mx-auto place-items-center place-content-center">
+      <div className="w-1/2 h-2/5 bg-secondary-200 border border-secondary-300 rounded-md p-5">
+        <span className="text-lg text-neutral-700 font-semibold text-center block mb-5">
           Password Generator
         </span>
         <div className="flex-center flex-col gap-5">
           <div className="w-full flex-center gap-5">
-            <input
+            <Input
               type="text"
               name="password"
               value={password}
               readOnly
-              className="w-3/4 focus:outline-none border border-gray-300 rounded-md px-2 py-1"
+              variant="filled"
+              colorScheme="secondary"
+              placeholder=""
             />
-            <button
+            <Button
               onClick={() => navigator.clipboard.writeText(password)}
-              className="px-2 py-1 bg-gray-600 border text-gray-50 border-gray-700 hover:bg-gray-400 hover:text-gray-800 place-items-center rounded-md"
+              colorScheme="secondary"
             >
               Copy
-            </button>
+            </Button>
           </div>
           <div className="w-full flex-center gap-5">
-            <CharacterButtonItem
+            <Checkbox
+              onChange={() => setAddNumber(prev => !prev)}
+              checked={addNumber}
               label="Add Number"
-              isChecked={addNumber}
-              handleCheck={() => setAddNumber(prev => !prev)}
             />
-            <CharacterButtonItem
+            <Checkbox
               label="Add Characters"
               isChecked={addCharacter}
               handleCheck={() => setAddCharacter(prev => !prev)}

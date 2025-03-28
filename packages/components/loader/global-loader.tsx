@@ -3,7 +3,7 @@ import { Loader } from '@bugg-m/bugg-ui';
 
 const GlobalLoader: React.FC = () => {
   return (
-    <div className="w-full h-screen bg-gray-100 flex-center">
+    <div className="w-full h-screen bg-secondary-100 flex-center">
       <Loader />
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import retry from '@assets/icons/retry.svg?url';
-import stepBack from '@assets/icons/step-back.svg?url';
+import step from '@assets/icons/step.svg?url';
 import notFound404 from '@assets/illustrations/404-error.svg?url';
 import comingSoon from '@assets/illustrations/coming-soon.svg?url';
 import { Button, Card, Icon, Image } from '@bugg-m/bugg-ui';
@@ -201,7 +201,7 @@ export class ErrorBoundary extends Component<
                   size="sm"
                   leftIcon={
                     <Icon
-                      src={stepBack}
+                      src={step}
                       iconColor="default"
                     />
                   }

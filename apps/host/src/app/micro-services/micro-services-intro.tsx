@@ -4,7 +4,7 @@ import { NxCardLg } from '@components/cards/nx-card-lg';
 import { NxCardXl } from '@components/cards/nx-card-xl';
 
 import { monorepoBenefitsData, nxCardItemsData } from '@host/constants/core-contants';
-import { stepNext } from '@host/constants/icons';
+import { step } from '@host/constants/icons';
 
 const MicroServicesIntro: React.FC = () => {
   return (
@@ -113,8 +113,8 @@ const MicroServicesIntro: React.FC = () => {
           className="animate-bounce shadow-lg"
         >
           <Icon
-            src={stepNext}
-            className="rotate-90"
+            src={step}
+            className="-rotate-90"
             iconColor="default"
             size="md"
           />

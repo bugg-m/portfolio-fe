@@ -22,23 +22,22 @@ const OmitCells: React.FC = () => {
         key={index}
         disabled={cell === 0 || selectedDiv.includes(index) || isCubeClearing}
         onClick={() => handleColorCube(index)}
-        className={`size-5 ${
+        className={`size-32 ${
           cell === 1
-            ? `border border-gray-500 cursor-pointer ${
-                selectedDiv.includes(index) ? 'bg-green-400' : 'bg-white'
+            ? `border border-secondary-500 cursor-pointer ${
+                selectedDiv.includes(index) ? 'bg-primary-400' : 'bg-white'
               } rounded-md`
             : ''
         }`}
       />
     ));
   }, [cells, selectedDiv, handleColorCube, isCubeClearing]);
-
+  const cols = cells[0].length;
   return (
-    <div className="w-full h-screen mx-auto place-items-center">
-      <div
-        className={`w-1/2 h-4/5 bg-gray-200 border border-gray-300 rounded-md p-5 gap-5 grid grid-cols-${cells[0].length} place-content-center`}>
-        {renderCubes}
-      </div>
+    <div
+      className={`w-1/2 h-4/5 bg-secondary-200 border border-secondary-300 rounded-md p-5 gap-5 grid grid-cols-${cols} place-items-center`}
+    >
+      {renderCubes}
     </div>
   );
 };

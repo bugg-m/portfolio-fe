@@ -23,7 +23,7 @@ const ReactBenefits: React.FC = () => {
   ];
   return (
     <div>
-      <h3 className="text-xl font-bold mb-6 text-gray-800">Key Benefits</h3>
+      <h3 className="text-xl font-bold mb-6 text-neutral-800">Key Benefits</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         {benefits.map((benefit, index) => (
           <NxCardLg

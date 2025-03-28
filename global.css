@@ -190,7 +190,7 @@ body {
 /* Background Gradient Classes */
 @layer utilities {
   .navbar-bg {
-    @apply bg-gradient-to-r from-secondary-300 via-secondary-100 to-secondary-300;
+    @apply bg-gradient-to-r from-secondary-800 via-secondary-700 to-secondary-600;
   }
   .nx-card-lg {
     @apply bg-gradient-to-br from-primary-50 to-white;

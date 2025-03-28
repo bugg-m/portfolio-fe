@@ -10,7 +10,7 @@ const Products: React.FC<{ product: IProductCardProps }> = ({ product }) => {
           className="size-full object-cover"
         />
       </div>
-      <p className="text-nowrap text-sm font-medium text-gray-500">
+      <p className="text-nowrap text-sm font-medium text-neutral-500">
         {product.title.length > 25 ? `${product.title.slice(0, 25)}...` : product.title}
       </p>
     </div>
