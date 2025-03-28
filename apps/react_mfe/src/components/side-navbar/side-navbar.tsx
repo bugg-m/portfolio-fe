@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Icon } from '@bugg-m/bugg-ui';
 import { ReactRoutesEnum } from '@enums/app-routes-enum';
 
-import { step } from '@host/constants/icons';
+import { step } from '@react_mfe/constants/icons';
 
 import { NavItems } from './nav-items';
 
