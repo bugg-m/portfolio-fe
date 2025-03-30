@@ -31,13 +31,13 @@ export const folderData: IFolderData = {
       subFolders: [
         {
           id: 6,
-          name: 'subfolder1',
+          name: 'file1',
           isFolder: false,
           subFolders: [],
         },
         {
           id: 7,
-          name: 'subfolder2',
+          name: 'file2',
           isFolder: false,
           subFolders: [],
         },

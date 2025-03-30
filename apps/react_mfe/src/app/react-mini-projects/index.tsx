@@ -7,7 +7,7 @@ import { developer3 } from '@react_mfe/constants/illustrations';
 const ReactMiniProjects: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-secondary-50 h-screen grid grid-cols-1 md:grid-cols-2">
+    <div className="bg-secondary-50 h-auto grid grid-cols-1 md:grid-cols-2">
       <div className="flex-center flex-col  col-span-1 order-2 md:order-1 p-4 space-y-4 max-w-4xl mx-auto my-16">
         <header className="text-2xl sm:text-3xl md:text-4xl header text-neutral-800 mb-4">
           Hello!{' '}
@@ -30,7 +30,7 @@ const ReactMiniProjects: React.FC = () => {
         <Button
           onClick={() => navigate}
           title="This feature is Under Development"
-          className="w-2/5 sm:w-1/3 hover-scale-110"
+          className="md:w-2/5 w-full hover-scale-110"
           rounded="full"
         >
           Explore react projects

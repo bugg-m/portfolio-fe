@@ -9,11 +9,16 @@ const PasswordGenerator: React.FC = () => {
     usePasswordGeneratorHook();
 
   return (
-    <div className="w-full h-screen mx-auto place-items-center place-content-center">
-      <div className="w-1/2 h-2/5 bg-secondary-200 border border-secondary-300 rounded-md p-5">
-        <span className="text-lg text-neutral-700 font-semibold text-center block mb-5">
-          Password Generator
-        </span>
+    <main className="w-full h-screen mx-auto place-items-center place-content-center">
+      <div className="md:px-20 py-10">
+        <span className="header">Password Generator</span>
+        <p className="paragraph-sm animate-paragraph bg-primary-50 text-neutral-700 mb-6 border-x-4 border-primary-300 p-4">
+          A secure and interactive password generator crafted in React. Customize criteria for
+          strength and length, and generate unique, robust passwords instantly—all within a
+          user-friendly interface.
+        </p>
+      </div>
+      <section className="lg:w-1/2 md:w-3/5 sm:w-4/5 w-full h-auto bg-secondary-200 border border-secondary-300 rounded-md p-5">
         <div className="flex-center flex-col gap-5">
           <div className="w-full flex-center gap-5">
             <Input
@@ -58,8 +63,8 @@ const PasswordGenerator: React.FC = () => {
             />
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

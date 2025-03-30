@@ -28,6 +28,7 @@ const WelcomeModal: React.FC = () => {
     setLocalStorage<boolean>({
       name: StorageNamesEnum.IS_WELCOME_MODAL_VIEWED,
       value: true,
+      expiryTime: '4d',
     });
 
     setShowModal(false);
@@ -95,7 +96,7 @@ const WelcomeModal: React.FC = () => {
             with Next.js, Vue.js, and additional React.js applications.
           </p>
           <p className="mb-2 paragraph-xs animate-paragraph">
-            Everything you see is powered by my custom-built
+            Each project is crafted using the power of React and enhanced with my custom-built&nbsp;
             <Button
               variant="link"
               href={process.env.NX_PUBLIC_BUGG_UI_URL}

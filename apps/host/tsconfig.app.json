@@ -21,7 +21,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/app.tsx",
-    "../../packages/components/cards/nx-card-xl.tsx",
-    "../../packages/components/cards/nx-card-lg.tsx"
+    "../../packages/**/*.tsx",
+    "../../packages/**/*.ts"
   ]
 }

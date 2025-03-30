@@ -37,7 +37,7 @@ const RootFolderItem: React.FC<IRootFolderItemProps> = ({
             role="img"
             aria-label="folder"
           >
-            📉+
+            📄+
           </span>
         </button>
       </div>
