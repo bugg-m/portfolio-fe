@@ -1,6 +1,6 @@
 import { Image } from '@bugg-m/bugg-ui';
 
-import { WelcomeModal } from '@host/components/modals/welcom-modal';
+import { WelcomeModal } from '@host/components/modals/welcome-modal';
 import { express, nodeJs, react, vue } from '@host/constants/logos';
 
 import About from './about';
@@ -26,7 +26,8 @@ const Home: React.FC = () => {
           {skillsData.map(({ icon, title }) => (
             <div
               key={title}
-              className="flex-center flex-col hover-scale-110">
+              className="flex-center flex-col hover-scale-110"
+            >
               <Image
                 src={icon}
                 alt={title}

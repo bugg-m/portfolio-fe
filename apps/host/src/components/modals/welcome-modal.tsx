@@ -28,7 +28,7 @@ const WelcomeModal: React.FC = () => {
     setLocalStorage<boolean>({
       name: StorageNamesEnum.IS_WELCOME_MODAL_VIEWED,
       value: true,
-      expiryTime: '5s',
+      expiryTime: '2d',
     });
 
     setShowModal(false);
