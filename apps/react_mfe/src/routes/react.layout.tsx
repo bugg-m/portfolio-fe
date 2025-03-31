@@ -12,17 +12,17 @@ const ReactMFELayout: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="font-mono min-w-full min-h-screen">
-      <aside className="fixed top-0 left-0 h-screen z-[60]">
+    <main className="font-mono min-w-full min-h-screen relative">
+      <aside className="fixed top-0 left-0 h-screen z-40">
         <SideNavbar />
       </aside>
 
       <main className="w-full min-h-screen scroll-smooth bg-secondary-100 responsive-container">
-        <section className="section h-full flex-center bg-secondary-50 mx-auto border-x border-secondary-200 space-y-5">
+        <section className="section h-full flex-center bg-secondary-50 mx-auto border-x border-secondary-200 space-y-5 z-0">
           <Outlet />
         </section>
       </main>
-    </div>
+    </main>
   );
 };
 

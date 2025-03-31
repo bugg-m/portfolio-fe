@@ -7,7 +7,7 @@
   >
     <button
       :class="[
-        'h-16 w-6 bg-secondary-600 rounded-none rounded-r-xl absolute z-50 transition-all duration-300',
+        'h-16 w-6 bg-secondary-600 rounded-none rounded-r-xl absolute transition-all duration-300',
         isOpen ? 'left-48' : 'left-10',
       ]"
       @click="toggleOpen"
