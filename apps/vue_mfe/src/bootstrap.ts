@@ -2,8 +2,8 @@ import { App, createApp } from 'vue';
 
 import '@styles';
 
-import VueLayout from './router/vue-layout.vue';
-import router from './router/vue-route';
+import VueLayout from './routes/vue-layout.vue';
+import router from './routes/vue-route';
 
 const mountVueApp = (container: HTMLDivElement | string): App | null => {
   if (!container) return null;

@@ -1,6 +1,6 @@
 <template>
   <div class="font-mono min-w-full min-h-screen relative">
-    <aside class="fixed top-0 left-0 h-screen z-40">
+    <aside class="fixed top-0 left-0 h-screen z-50">
       <SideNavbar />
     </aside>
     <main class="w-full min-h-screen scroll-smooth bg-secondary-100 responsive-container">

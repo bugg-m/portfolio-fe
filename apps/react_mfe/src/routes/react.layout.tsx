@@ -13,7 +13,7 @@ const ReactMFELayout: React.FC = () => {
   }, []);
   return (
     <main className="font-mono min-w-full min-h-screen relative">
-      <aside className="fixed top-0 left-0 h-screen z-40">
+      <aside className="fixed top-0 left-0 h-screen z-50">
         <SideNavbar />
       </aside>
 

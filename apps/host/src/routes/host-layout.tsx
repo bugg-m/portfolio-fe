@@ -7,7 +7,7 @@ import Navbar from '@host/components/navbar/navbar';
 function HostLayout() {
   return (
     <div className="font-mono min-w-full min-h-screen relative">
-      <header className="fixed top-0 w-full bg-white z-50">
+      <header className="fixed top-0 w-full bg-white z-[60]">
         <Navbar />
       </header>
       <main className="w-full min-h-screen scroll-smooth z-0">
