@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ReactWelcomeModal } from '@react_mfe/components/modals/react-welcome-modal';
+
 import ReactBenefits from './react-benefits';
 import ReactFeatures from './react-features';
 import ReactTechnologies from './react-technologies';
@@ -7,6 +9,7 @@ import ReactTechnologies from './react-technologies';
 const ReactWelcomePage: React.FC = () => {
   return (
     <main className="max-w-4xl mx-auto my-16">
+      <ReactWelcomeModal />
       <header className="text-2xl sm:text-3xl md:text-4xl header text-neutral-800 mb-4">
         Welcome to our React Microservice!
       </header>

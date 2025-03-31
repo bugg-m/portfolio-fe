@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Carousel } from '@bugg-m/bugg-ui';
+import { useWindowDimensions } from '@hooks/use-window-dimensions';
 
 import ProjectCardItems from '@host/app/home/project-card-items';
-import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
 import { IGitHubRepos } from '@host/types/core-portfolio-types';
 
 import { useGetDataHook } from '@api/hooks/use-get-data-hook';
@@ -25,7 +25,8 @@ const Projects: React.FC = () => {
         carouselSliderStyles="md:mt-32 mt-10"
         carouselContainerStyles="md:h-[80vh] h-[45vh]"
         animationDuration={50}
-        isLoading={isLoading || !gitHubRepos}>
+        isLoading={isLoading || !gitHubRepos}
+      >
         {gitHubRepos &&
           gitHubRepos.map((project, index) => (
             <ProjectCardItems

@@ -1,35 +1,33 @@
-import { useEffect, useState } from 'react';
-
+import { useCallback, useEffect, useState } from 'react';
+import { useWindowDimensions } from '@hooks/use-window-dimensions';
 const usePaginationHook = () => {
-  // render buttons based on length of data divided by size
-  // handle next and prev fn
-  const size = 10;
+  const { width } = useWindowDimensions();
+  const size = width > 640 ? 10 : 5;
 
-  // state for current page
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(10);
-  const [skip, setSkip] = useState(10);
   const [products, setProducts] = useState([]);
 
-  const loadProducts = async () => {
+  const loadProducts = useCallback(async () => {
     try {
-      const response = await fetch('https://dummyjson.com/products?limit=10&skip=0');
+      const skipData = (currentPage - 1) * 10;
+      const response = await fetch(
+        `https://dummyjson.com/products?limit=${limit}&skip=${skipData}`
+      );
       const data = await response.json();
-      console.log(data);
 
       setProducts(data?.products);
       setLimit(data?.limit);
-      setSkip(data?.skip);
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [limit, currentPage]);
 
   useEffect(() => {
     loadProducts();
-  }, []);
+  }, [loadProducts]);
 
-  return { size, skip, limit, products, currentPage, setCurrentPage };
+  return { size, limit, products, currentPage, setCurrentPage };
 };
 
 export default usePaginationHook;

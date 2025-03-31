@@ -7,7 +7,7 @@ import { experience } from '@host/constants/illustrations';
 const Experience: React.FC = () => {
   return (
     <section className="section rounded-tr-4xl sm:rounded-tr-5xl md:rounded-tr-7xl lg:rounded-tr-full border-x border-secondary-300 bg-secondary-50">
-      <main className="max-w-6xl mx-auto px-4 relative z-10">
+      <main className="max-w-6xl mx-auto px-4">
         <h2 className="header">Experience</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-12 items-center justify-center">
           <div className="flex-center col-span-1">

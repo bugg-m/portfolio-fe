@@ -30,7 +30,7 @@ const ReactMiniProjects: React.FC = () => {
         <Button
           onClick={() => navigate}
           title="This feature is Under Development"
-          className="w-2/5 sm:w-1/3 hover-scale-110"
+          className="md:w-2/5 w-full hover-scale-110"
           rounded="full"
         >
           Explore react projects

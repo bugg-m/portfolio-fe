@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -20,6 +20,7 @@
       "@styles": ["global.css"],
       "@assets/*": ["packages/assets/*"],
       "@components/*": ["packages/components/*"],
+      "@hooks/*": ["packages/hooks/*"],
       "@utils/*": ["packages/utils/*"],
       "@host/*": ["apps/host/src/*"],
       "@next_mfe/*": ["apps/next_mfe/src/*"],

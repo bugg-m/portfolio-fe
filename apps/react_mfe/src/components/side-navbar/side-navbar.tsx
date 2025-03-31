@@ -65,7 +65,7 @@ const SideNavbar: React.FC = () => {
         rounded="none"
         tone={600}
         colorScheme="secondary"
-        className={`h-16 w-6 rounded-none rounded-r-xl absolute z-50 transition-all duration-300 ${
+        className={`h-16 w-6 rounded-none rounded-r-xl absolute transition-all duration-300 ${
           isOpen ? 'left-48' : 'left-10'
         }`}
       >

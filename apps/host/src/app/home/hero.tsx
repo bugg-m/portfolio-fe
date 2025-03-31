@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Image } from '@bugg-m/bugg-ui';
 import { NotifyError, NotifySuccess } from '@components/notify/notify';
 import { AppRoutesEnum } from '@enums/app-routes-enum';
+import { useWindowDimensions } from '@hooks/use-window-dimensions';
 
 import { developer1, developer2 } from '@host/constants/illustrations';
-import { useWindowDimensions } from '@host/hooks/use-window-dimensions';
 
 import { useGetDataHook } from '@api/hooks/use-get-data-hook';
 import { PortfolioApiRoutes } from '@api/routes/portfolio-api-routes';

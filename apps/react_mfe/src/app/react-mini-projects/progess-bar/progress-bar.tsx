@@ -28,27 +28,36 @@ const ProgressBar: React.FC<IProgressBarProps> = ({ value = ProgressBarEnum.MIN_
   }, [value]);
 
   return (
-    <div className="w-full h-64 rounded-md bg-secondary-200 flex-center flex-col gap-5 py-10">
-      <span className="text-3xl text-center block text-neutral-700">Progress Bar</span>
-      <div className="w-5/6 h-7 flex-center mx-auto border border-secondary-600 rounded-full relative overflow-hidden">
-        <span
-          className={`block text-center w-full absolute z-10 ${
-            progressValue >= ProgressBarEnum.MID_POINT ? 'text-neutral-100' : 'text-neutral-800'
-          }`}
-        >
-          {progressValue}%
-        </span>
-        <div
-          style={{
-            transform: `scaleX(${progressValue / ProgressBarEnum.MAX_RANGE})`,
-          }}
-          className={`h-full w-full bg-primary-500 origin-left z-0`}
-        />
+    <div className="w-full h-screen flex-center flex-col">
+      <div className="md:px-20 py-10">
+        <span className="header">Progress Bar</span>
+        <p className="paragraph-sm animate-paragraph bg-primary-50 text-neutral-700 mb-6 border-x-4 border-primary-300 p-4">
+          A visually engaging React progress bar component that dynamically reflects task
+          completion. With smooth animations and a responsive design, it provides clear feedback on
+          loading or processing states.
+        </p>
       </div>
-      <span className="text-sm font-semibold">
-        {progressValue >= ProgressBarEnum.MAX_RANGE ? 'Completed ✌🏻' : 'loading...'}
-      </span>
-      <Button onClick={() => setProgressValue(ProgressBarEnum.MIN_RANGE)}>Reset</Button>
+      <div className="w-full h-auto rounded-lg bg-secondary-200 flex-center flex-col gap-5 py-5">
+        <div className="w-5/6 h-7 flex-center mx-auto border border-secondary-600 rounded-full relative overflow-hidden">
+          <span
+            className={`block text-center w-full absolute z-10 ${
+              progressValue >= ProgressBarEnum.MID_POINT ? 'text-neutral-100' : 'text-neutral-800'
+            }`}
+          >
+            {progressValue}%
+          </span>
+          <div
+            style={{
+              transform: `scaleX(${progressValue / ProgressBarEnum.MAX_RANGE})`,
+            }}
+            className={`h-full w-full bg-primary-500 origin-left z-0`}
+          />
+        </div>
+        <span className="text-sm font-semibold">
+          {progressValue >= ProgressBarEnum.MAX_RANGE ? 'Completed ✌🏻' : 'loading...'}
+        </span>
+        <Button onClick={() => setProgressValue(ProgressBarEnum.MIN_RANGE)}>Reset</Button>
+      </div>
     </div>
   );
 };

@@ -40,7 +40,7 @@
 <script setup lang="ts">
 import { arrow } from '@vue_mfe/constants/icons';
 import { MenuItem } from '@vue_mfe/types/core-vue-types';
-import { ref, defineProps } from 'vue';
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 defineProps<{ menuItems: MenuItem[]; isChild?: boolean }>();
