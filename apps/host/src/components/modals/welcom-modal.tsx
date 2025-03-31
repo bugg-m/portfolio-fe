@@ -28,7 +28,7 @@ const WelcomeModal: React.FC = () => {
     setLocalStorage<boolean>({
       name: StorageNamesEnum.IS_WELCOME_MODAL_VIEWED,
       value: true,
-      expiryTime: '4d',
+      expiryTime: '5s',
     });
 
     setShowModal(false);
@@ -74,7 +74,7 @@ const WelcomeModal: React.FC = () => {
           </Button>
         </div>
       }
-      className="md:mt-20 max-h-[90vh] overflow-y-auto"
+      className="max-h-[90vh] overflow-y-auto"
     >
       <main className="text-center">
         <div className="flex-center">

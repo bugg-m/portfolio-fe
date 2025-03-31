@@ -58,7 +58,7 @@ const ReactWelcomeModal: React.FC = () => {
           Close
         </Button>
       }
-      className="md:mt-20 max-h-[90vh] overflow-y-auto"
+      className="max-h-[90vh] overflow-y-auto"
     >
       <main className="text-center">
         <div className="flex-center">

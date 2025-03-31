@@ -165,7 +165,7 @@ body {
 /* Custom Typography Classes */
 @layer components {
   .animate-paragraph {
-    @apply transition-transform tracking-tight duration-300 transform hover:translate-x-1 z-0;
+    @apply transition-transform tracking-tight duration-300 transform hover:translate-x-1;
   }
   .paragraph-md {
     @apply text-neutral-700 text-base md:text-lg leading-relaxed;
@@ -258,28 +258,24 @@ body {
       animation: appearBottomLeft linear;
       animation-timeline: view();
       animation-range: entry 0% cover 40%;
-      z-index: 10;
     }
 
     .animate-appear-br {
       animation: appearBottomRight linear;
       animation-timeline: view();
       animation-range: entry 0% cover 40%;
-      z-index: 10;
     }
 
     .animate-appear-tl {
       animation: appearTopLeft linear;
       animation-timeline: view();
       animation-range: entry 0% cover 40%;
-      z-index: 10;
     }
 
     .animate-appear-tr {
       animation: appearTopRight linear;
       animation-timeline: view();
       animation-range: entry 0% cover 40%;
-      z-index: 10;
     }
   }
 

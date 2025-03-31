@@ -30,7 +30,6 @@ const setLocalStorage = <T>({ name, value, expiryTime }: SetLocalStorageProps<T>
         expiry: Date.now() + time[expiryTime],
       } as T;
     }
-    console.log({ newValue });
 
     const stringValue = JSON.stringify(newValue);
     localStorage.setItem(name, stringValue);

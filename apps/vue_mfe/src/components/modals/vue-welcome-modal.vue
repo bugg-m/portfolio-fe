@@ -51,7 +51,7 @@
 import { ref, onMounted } from 'vue';
 import { StorageNamesEnum } from '@enums/storage-names-enum';
 import { getLocalStorage, setLocalStorage } from '@utils/core-utilities';
-import { developer2 } from '@host/constants/illustrations';
+import { developer2 } from '@vue_mfe/constants/illustrations';
 
 const showModal = ref(false);
 
