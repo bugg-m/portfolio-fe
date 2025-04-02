@@ -20,7 +20,7 @@ const Experience: React.FC = () => {
             />
           </div>
           <div className="h-auto md:p-5 rounded-md md:col-span-2 text-left space-y-4 w-full md:border-l-2 border-secondary-300">
-            <title className="flex-col flex-center-start">
+            <header className="flex-col flex-center-start">
               <div className="title flex-col flex-center-start mb-2">
                 <span className="md:text-3xl text-2xl">{myExperiencesData.role}</span>
                 <span className="text-sm md:text-lg text-neutral-500">
@@ -29,7 +29,7 @@ const Experience: React.FC = () => {
               </div>
 
               <p className="text-xs text-neutral-400">{myExperiencesData.duration}</p>
-            </title>
+            </header>
 
             <p className="mt-2 md:pr-10 paragraph-sm animate-paragraph text-neutral-600">
               {myExperiencesData.description}
