@@ -37,9 +37,9 @@ function usePostDataHook<T>() {
         } else {
           setData(result.data);
           setError(null);
-          if (notify) {
-            NotifySuccess(result.message);
-          }
+          // if (notify) {
+          NotifySuccess(result.message);
+          // }
         }
 
         return result;

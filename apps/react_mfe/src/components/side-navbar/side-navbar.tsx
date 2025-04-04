@@ -48,11 +48,33 @@ const menuItems: MenuItem[] = [
   {
     name: 'projects',
     path: ReactRoutesEnum.PROJECTS,
+    hasChildren: true,
+    children: [
+      {
+        name: 'user authentication',
+        path: ReactRoutesEnum.USER_AUTHENTICATION,
+        hasChildren: true,
+        children: [
+          {
+            name: 'log in',
+            path: ReactRoutesEnum.LOG_IN,
+          },
+          {
+            name: 'register',
+            path: ReactRoutesEnum.REGISTER,
+          },
+          {
+            name: 'profile',
+            path: ReactRoutesEnum.USER_PROFILE,
+          },
+        ],
+      },
+    ],
   },
 ];
 
 const SideNavbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <nav

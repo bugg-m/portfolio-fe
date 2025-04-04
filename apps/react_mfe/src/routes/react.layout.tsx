@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 import { AppRoutesEnum } from '@enums/app-routes-enum';
 
@@ -22,6 +23,10 @@ const ReactMFELayout: React.FC = () => {
           <Outlet />
         </section>
       </main>
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+      />
     </main>
   );
 };

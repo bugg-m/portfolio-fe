@@ -4,6 +4,10 @@ import { AppRoutesEnum, ReactRoutesEnum } from '@enums/app-routes-enum';
 
 import ReactWelcomePage from '@react_mfe/app/overview/react-welcome-page';
 import Projects from '@react_mfe/app/projects';
+import AuthLoginPage from '@react_mfe/app/projects/user-authentication/auth-log-in';
+import AuthOverview from '@react_mfe/app/projects/user-authentication/auth-overview';
+import AuthRegisterPage from '@react_mfe/app/projects/user-authentication/auth-register';
+import { UserProfile } from '@react_mfe/app/projects/user-authentication/user-profile';
 import ReactMiniProjects from '@react_mfe/app/react-mini-projects';
 import { Folders } from '@react_mfe/app/react-mini-projects/folders';
 import OmitCells from '@react_mfe/app/react-mini-projects/omit-cells/omit-cells';
@@ -53,6 +57,22 @@ export const reactRouter = createMemoryRouter(
       <Route
         path={ReactRoutesEnum.PROJECTS}
         element={<Projects />}
+      />
+      <Route
+        path={ReactRoutesEnum.USER_AUTHENTICATION}
+        element={<AuthOverview />}
+      />
+      <Route
+        path={ReactRoutesEnum.LOG_IN}
+        element={<AuthLoginPage />}
+      />
+      <Route
+        path={ReactRoutesEnum.REGISTER}
+        element={<AuthRegisterPage />}
+      />
+      <Route
+        path={ReactRoutesEnum.USER_PROFILE}
+        element={<UserProfile />}
       />
       <Route
         path={AppRoutesEnum.OTHER}

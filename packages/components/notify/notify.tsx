@@ -8,4 +8,4 @@ const NotifyError = (message: string) => {
   return toast.error(message ?? 'Error');
 };
 
-export { NotifyError,NotifySuccess };
+export { NotifyError, NotifySuccess };
