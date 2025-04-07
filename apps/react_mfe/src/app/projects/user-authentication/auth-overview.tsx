@@ -4,6 +4,7 @@ import { Button, Image } from '@bugg-m/bugg-ui';
 import { ReactRoutesEnum } from '@enums/app-routes-enum';
 
 import { userLogin } from '@react_mfe/constants/illustrations';
+import { overviewData } from '@react_mfe/data/user-authentication-data';
 
 const AuthOverview: React.FC = () => {
   const navigate = useNavigate();
@@ -49,29 +50,11 @@ const AuthOverview: React.FC = () => {
           demonstrate a secure and user-friendly way to manage user sessions.
         </p>
         <ul className="list-disc list-inside text-neutral-600 mb-4 text-start py-5">
-          <li>
-            <strong>User Registration & Login:</strong> Easy-to-use forms with real-time validation.
-          </li>
-          <li>
-            <strong>Password Recovery:</strong> Seamless password reset flow ensuring users can
-            regain access.
-          </li>
-          <li>
-            <strong>JWT-Based Authentication:</strong> Secure management of user sessions and
-            protected routes.
-          </li>
-          <li>
-            <strong>Responsive Design:</strong> Built with Tailwind CSS for a consistent experience
-            across devices.
-          </li>
-          <li>
-            <strong>Error Handling & Notifications:</strong> Clear feedback mechanisms for a smooth
-            user experience.
-          </li>
-          <li>
-            <strong>Modular & Scalable:</strong> Designed with a clean, modular structure for easy
-            integration into larger applications.
-          </li>
+          {overviewData.map(({ title, subtitle }) => (
+            <li key={title}>
+              <strong>{title}:</strong> {subtitle}
+            </li>
+          ))}
         </ul>
         <p className="paragraph-sm text-neutral-600 text-center">
           Explore the demo, check out the source code on GitHub, and see how this system can be

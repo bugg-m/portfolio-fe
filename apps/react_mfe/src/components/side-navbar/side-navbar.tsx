@@ -67,6 +67,10 @@ const menuItems: MenuItem[] = [
             name: 'profile',
             path: ReactRoutesEnum.USER_PROFILE,
           },
+          {
+            name: 'create passkey',
+            path: ReactRoutesEnum.CREATE_PASSKEY,
+          },
         ],
       },
     ],

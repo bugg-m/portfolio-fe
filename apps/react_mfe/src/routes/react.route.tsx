@@ -7,6 +7,7 @@ import Projects from '@react_mfe/app/projects';
 import AuthLoginPage from '@react_mfe/app/projects/user-authentication/auth-log-in';
 import AuthOverview from '@react_mfe/app/projects/user-authentication/auth-overview';
 import AuthRegisterPage from '@react_mfe/app/projects/user-authentication/auth-register';
+import { CreatePasskey } from '@react_mfe/app/projects/user-authentication/create-passkey';
 import { UserProfile } from '@react_mfe/app/projects/user-authentication/user-profile';
 import ReactMiniProjects from '@react_mfe/app/react-mini-projects';
 import { Folders } from '@react_mfe/app/react-mini-projects/folders';
@@ -73,6 +74,10 @@ export const reactRouter = createMemoryRouter(
       <Route
         path={ReactRoutesEnum.USER_PROFILE}
         element={<UserProfile />}
+      />
+      <Route
+        path={ReactRoutesEnum.CREATE_PASSKEY}
+        element={<CreatePasskey />}
       />
       <Route
         path={AppRoutesEnum.OTHER}

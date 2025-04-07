@@ -15,6 +15,7 @@ async function request<T>(
       data,
       ...config,
       responseType: 'json',
+      withCredentials: true,
     });
 
     return new ApiResponse({

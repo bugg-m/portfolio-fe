@@ -62,11 +62,11 @@ const AuthRegisterPage: React.FC = () => {
         onClose={() => setShowSuccessModal(false)}
         onLogIn={onLogIn}
       />
-      <Card className="md:w-2/5 sm:w-4/5 w-full px-3 py-10 space-y-5">
+      <Card className="md:w-3/5 sm:w-4/5 w-full px-3 py-10 space-y-5">
         <h2 className="title text-2xl font-bold text-center">Register</h2>
         <form
           onSubmit={handleSubmit}
-          className="space-y-10 md:p-10 px-2 py-3"
+          className="space-y-10 px-5 py-3"
         >
           <section className="space-y-5">
             <Input

@@ -21,6 +21,7 @@ enum ReactRoutesEnum {
   SIGN_IN = '/sign-in',
   REGISTER = '/register',
   USER_PROFILE = '/user-profile',
+  CREATE_PASSKEY = '/create-passkey',
 }
 
 export { AppRoutesEnum, ReactRoutesEnum };

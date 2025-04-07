@@ -10,7 +10,7 @@
         <span class="mb-2 text-2xl">{{ benefit.icon }} </span>
 
         <h4 class="font-bold mb-1">{{ benefit.title }}</h4>
-        <p class="text-sm text-gray-600">{{ benefit.description }}</p>
+        <p class="text-sm text-neutral-600">{{ benefit.description }}</p>
       </div>
     </div>
   </div>
