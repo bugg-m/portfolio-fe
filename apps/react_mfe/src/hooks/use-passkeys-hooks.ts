@@ -1,16 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { NotifyError } from '@components/notify/notify';
+import { ReactRoutesEnum } from '@enums/app-routes-enum';
 import { startRegistration } from '@simplewebauthn/browser';
 
 import { useGetDataHook } from '@api/hooks/use-get-data-hook';
 import { usePostDataHook } from '@api/hooks/use-post-data-hook';
 import { ReactMFEApiRoutes } from '@api/routes/react-mfe-api-routes';
+import { ApiError } from '@api/utils/core-api-classes';
 
 const usePasskeysHook = () => {
   const [isPasskeySupported, setIsPasskeySupported] = useState<boolean>(false);
-
+  const navigate = useNavigate();
   const checkIfPasskeySupported = useCallback(async () => {
     try {
       const response = await Promise.all([
@@ -36,29 +39,39 @@ const usePasskeysHook = () => {
   const { postData, isLoading: loading } = usePostDataHook();
 
   const verifyUserWithPasskey = useCallback(async () => {
-    const passkeyResponse = await getData({
-      url: ReactMFEApiRoutes.GET_PASSKEY_CHALLENGE,
-      notify: true,
-    });
+    try {
+      const passkeyResponse = await getData({
+        url: ReactMFEApiRoutes.GET_PASSKEY_CHALLENGE,
+        notify: true,
+      });
 
-    if (!passkeyResponse.status) return;
+      if (!passkeyResponse.status) return;
 
-    const { challengeResponse } = passkeyResponse.data;
+      const authenticationResult = await startRegistration(passkeyResponse.data);
 
-    const authenticationResult = await startRegistration(challengeResponse);
+      if (!authenticationResult) return;
 
-    if (!authenticationResult) return;
+      const verifyRegistrationResponse = await postData({
+        url: ReactMFEApiRoutes.VERIFY_USER,
+        data: { response: authenticationResult },
+        notify: true,
+      });
 
-    const verifyRegistrationResponse = await postData({
-      url: ReactMFEApiRoutes.VERIFY_USER,
-      data: authenticationResult,
-      notify: true,
-    });
+      if (!verifyRegistrationResponse.status) return;
 
-    if (!verifyRegistrationResponse.status) return;
-  }, [getData, postData]);
+      navigate(ReactRoutesEnum.USER_PROFILE);
+    } catch (err) {
+      const apiError = new ApiError({
+        statusCode: 500,
+        message: err instanceof Error ? err.message : 'An unexpected error occurred',
+        status: false,
+      });
+      NotifyError(apiError.message);
+      return apiError;
+    }
+  }, [getData, postData, navigate]);
 
-  return { isPasskeySupported, isProcessing: isLoading || loading, verifyUserWithPasskey };
+  return { isPasskeySupported, isLoading, loading, verifyUserWithPasskey };
 };
 
 export { usePasskeysHook };

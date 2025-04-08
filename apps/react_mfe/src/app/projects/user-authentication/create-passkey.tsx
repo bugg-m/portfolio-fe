@@ -6,7 +6,7 @@ import { passkeysBenefitsData } from '@react_mfe/data/user-authentication-data';
 import { usePasskeysHook } from '@react_mfe/hooks/use-passkeys-hooks';
 
 const CreatePasskey: React.FC = () => {
-  const { isPasskeySupported, isProcessing, verifyUserWithPasskey } = usePasskeysHook();
+  const { isPasskeySupported, isLoading, loading, verifyUserWithPasskey } = usePasskeysHook();
 
   return (
     <div className="bg-secondary-50 min-h-screen grid grid-cols-1 md:grid-cols-2">
@@ -55,7 +55,7 @@ const CreatePasskey: React.FC = () => {
           {isPasskeySupported ? (
             <Button
               onClick={verifyUserWithPasskey}
-              isLoading={isProcessing}
+              isLoading={isLoading || loading}
               className="md:w-2/5 w-full hover-scale-90"
               rounded="full"
             >

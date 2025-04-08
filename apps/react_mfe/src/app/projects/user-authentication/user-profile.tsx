@@ -1,32 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, Image } from '@bugg-m/bugg-ui';
 import { ReactRoutesEnum } from '@enums/app-routes-enum';
-import { StorageNamesEnum } from '@enums/storage-names-enum';
-import { getLocalStorage } from '@utils/core-utilities';
 
 import { userCircle } from '@react_mfe/constants/icons';
 import { userProfile } from '@react_mfe/constants/illustrations';
 
+import { useGetDataHook } from '@api/hooks/use-get-data-hook';
+import { ReactMFEApiRoutes } from '@api/routes/react-mfe-api-routes';
+
 interface UserDetailsProps {
   username: string;
   email: string;
-  passkey?: string;
+  displayName: string;
 }
 
 const UserProfile: React.FC = () => {
   const [userDetails, setUserDetails] = useState<UserDetailsProps>();
   const navigate = useNavigate();
+  const { isLoading, getData } = useGetDataHook<UserDetailsProps>();
+
+  const getUserDetails = useCallback(async () => {
+    const user = await getData({ url: ReactMFEApiRoutes.GET_USER_DETAILS });
+
+    if (!user.status) return;
+
+    setUserDetails(user.data);
+  }, [getData]);
+
   useEffect(() => {
-    const userData = getLocalStorage<UserDetailsProps>(StorageNamesEnum.USER_DETAILS);
-    if (!userData) return;
-    setUserDetails(userData);
-  }, []);
+    getUserDetails();
+  }, [getUserDetails]);
+
+  console.log(userDetails?.displayName);
 
   return (
     <main className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 py-5">
       <section className="flex-center order-2 md:order-1 col-span-1">
-        <Card className="h-auto w-full flex items-start justify-start gap-5 flex-col">
+        <Card
+          loading={isLoading}
+          className="h-auto w-full flex items-start justify-start gap-5 flex-col"
+        >
           <div className="flex-center space-x-4">
             <Image
               src={userCircle}
@@ -42,12 +56,12 @@ const UserProfile: React.FC = () => {
             size="sm"
             onClick={() => navigate(ReactRoutesEnum.CREATE_PASSKEY)}
           >
-            Create Passkey
+            Explore Passkey
           </Button>
-          {userDetails?.passkey ? (
-            <div className="mt-6 p-4 border rounded-md">
+          {userDetails?.displayName ? (
+            <div className="mt-6 w-full p-4 border rounded-md">
               <h3 className="text-lg font-semibold text-neutral-500">Passkey</h3>
-              <p className="text-neutral-400 break-all">{userDetails?.passkey}</p>
+              <p className="text-neutral-400 break-all">{userDetails?.displayName}</p>
             </div>
           ) : (
             <p className="paragraph-sm text-neutral-500">No! Passkeys Found.</p>
