@@ -16,12 +16,12 @@ interface UserDetailsProps {
 }
 
 const UserProfile: React.FC = () => {
-  const [userDetails, setUserDetails] = useState<UserDetailsProps>();
+  const [userDetails, setUserDetails] = useState<UserDetailsProps | null>(null);
   const navigate = useNavigate();
   const { isLoading, getData } = useGetDataHook<UserDetailsProps>();
 
   const getUserDetails = useCallback(async () => {
-    const user = await getData({ url: ReactMFEApiRoutes.GET_USER_DETAILS });
+    const user = await getData({ url: ReactMFEApiRoutes.GET_USER_DETAILS, notify: true });
 
     if (!user.status) return;
 
@@ -32,7 +32,13 @@ const UserProfile: React.FC = () => {
     getUserDetails();
   }, [getUserDetails]);
 
-  console.log(userDetails?.displayName);
+  const logoutUser = useCallback(async () => {
+    const logout = await getData({ url: ReactMFEApiRoutes.LOGOUT, notify: true });
+
+    if (!logout.status) return;
+
+    setUserDetails(null);
+  }, [getData]);
 
   return (
     <main className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 py-5">
@@ -52,12 +58,34 @@ const UserProfile: React.FC = () => {
               <p className="text-neutral-400">{userDetails?.email}</p>
             </div>
           </div>
-          <Button
-            size="sm"
-            onClick={() => navigate(ReactRoutesEnum.CREATE_PASSKEY)}
-          >
-            Explore Passkey
-          </Button>
+          <div className="flex-between-center gap-4">
+            <Button
+              size="sm"
+              disabled
+              title="Working on this feature"
+              onClick={() => navigate(ReactRoutesEnum.CREATE_PASSKEY)}
+            >
+              Explore Passkey
+            </Button>
+            {!userDetails ? (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => navigate(ReactRoutesEnum.LOG_IN)}
+              >
+                Login
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                colorScheme="error"
+                size="sm"
+                onClick={logoutUser}
+              >
+                Logout
+              </Button>
+            )}
+          </div>
           {userDetails?.displayName ? (
             <div className="mt-6 w-full p-4 border rounded-md">
               <h3 className="text-lg font-semibold text-neutral-500">Passkey</h3>

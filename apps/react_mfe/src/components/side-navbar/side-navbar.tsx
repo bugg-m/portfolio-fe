@@ -20,9 +20,10 @@ const menuItems: MenuItem[] = [
   },
   {
     name: 'mini projects',
-    path: ReactRoutesEnum.MINI_PROJECTS,
+    path: '',
     hasChildren: true,
     children: [
+      { name: 'overview', path: ReactRoutesEnum.MINI_PROJECTS },
       {
         name: 'folders',
         path: ReactRoutesEnum.FOLDERS,
@@ -47,14 +48,16 @@ const menuItems: MenuItem[] = [
   },
   {
     name: 'projects',
-    path: ReactRoutesEnum.PROJECTS,
+    path: '',
     hasChildren: true,
     children: [
+      { name: 'overview', path: ReactRoutesEnum.PROJECTS },
       {
         name: 'user authentication',
-        path: ReactRoutesEnum.USER_AUTHENTICATION,
+        path: '',
         hasChildren: true,
         children: [
+          { name: 'overview', path: ReactRoutesEnum.USER_AUTHENTICATION },
           {
             name: 'log in',
             path: ReactRoutesEnum.LOG_IN,
@@ -67,10 +70,10 @@ const menuItems: MenuItem[] = [
             name: 'profile',
             path: ReactRoutesEnum.USER_PROFILE,
           },
-          {
-            name: 'create passkey',
-            path: ReactRoutesEnum.CREATE_PASSKEY,
-          },
+          // {
+          //   name: 'create passkey',
+          //   path: ReactRoutesEnum.CREATE_PASSKEY,
+          // },
         ],
       },
     ],

@@ -6,6 +6,8 @@ import { ReactRoutesEnum } from '@enums/app-routes-enum';
 import { StorageNamesEnum } from '@enums/storage-names-enum';
 import { setLocalStorage } from '@utils/core-utilities';
 
+import { usePasskeysHook } from '@react_mfe/hooks/use-passkeys-hooks';
+
 import { usePostDataHook } from '@api/hooks/use-post-data-hook';
 import { ReactMFEApiRoutes } from '@api/routes/react-mfe-api-routes';
 
@@ -16,6 +18,7 @@ const AuthLoginPage: React.FC = () => {
   });
   const navigate = useNavigate();
   const { isLoading, postData } = usePostDataHook();
+  const { passkeyLoading, verifyUserWithPasskey } = usePasskeysHook();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -77,14 +80,26 @@ const AuthLoginPage: React.FC = () => {
             placeholder="Password"
             required
           />
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={!formData.username || !formData.password}
-            isLoading={isLoading}
-          >
-            Login
-          </Button>
+          <div className="flex-between-center gap-5">
+            <Button
+              type="submit"
+              title="Please fill all fields before proceeding!"
+              className="w-full"
+              disabled={!formData.username || !formData.password}
+              isLoading={isLoading}
+            >
+              Login with credentials
+            </Button>
+            <Button
+              disabled
+              title="Working on this feature"
+              onClick={verifyUserWithPasskey}
+              className="w-full"
+              isLoading={passkeyLoading}
+            >
+              Login with passkey
+            </Button>
+          </div>
         </form>
         <p className="mt-4 text-center text-neutral-600 text-sm">
           Don't have an account?

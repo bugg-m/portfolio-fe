@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Alert, Button, Card, Image } from '@bugg-m/bugg-ui';
 
 import { fingerPrintLogin } from '@react_mfe/constants/illustrations';
@@ -6,8 +6,12 @@ import { passkeysBenefitsData } from '@react_mfe/data/user-authentication-data';
 import { usePasskeysHook } from '@react_mfe/hooks/use-passkeys-hooks';
 
 const CreatePasskey: React.FC = () => {
-  const { isPasskeySupported, isLoading, loading, verifyUserWithPasskey } = usePasskeysHook();
+  const { isPasskeySupported, passkeyLoading, createUserPasskey, checkIfPasskeySupported } =
+    usePasskeysHook();
 
+  useEffect(() => {
+    checkIfPasskeySupported();
+  }, [checkIfPasskeySupported]);
   return (
     <div className="bg-secondary-50 min-h-screen grid grid-cols-1 md:grid-cols-2">
       <div className="col-span-1 flex-center p-4 sm:p-6">
@@ -54,8 +58,8 @@ const CreatePasskey: React.FC = () => {
         <div className="w-full flex-start-center">
           {isPasskeySupported ? (
             <Button
-              onClick={verifyUserWithPasskey}
-              isLoading={isLoading || loading}
+              onClick={createUserPasskey}
+              isLoading={passkeyLoading}
               className="md:w-2/5 w-full hover-scale-90"
               rounded="full"
             >

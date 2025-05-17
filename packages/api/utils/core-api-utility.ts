@@ -20,7 +20,7 @@ async function request<T>(
 
     return new ApiResponse({
       statusCode: response.status,
-      message: response.data.message || 'Request successful',
+      message: response.data.message,
       data: response.data.data || response.data,
       status: response.status < 400,
     });
