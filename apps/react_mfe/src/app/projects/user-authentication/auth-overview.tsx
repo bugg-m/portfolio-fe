@@ -20,7 +20,7 @@ const AuthOverview: React.FC = () => {
         </div>
         <div className="flex-center flex-col col-span-1 p-4 space-y-4 max-w-4xl mx-auto my-16">
           <header className="text-2xl sm:text-3xl header md:text-4xl font-bold text-neutral-800 mb-4">
-            Welcome to Secure Authentication!{' '}
+            Welcome to User Authentication!{' '}
             <span
               role="img"
               aria-label="security"
@@ -42,9 +42,7 @@ const AuthOverview: React.FC = () => {
       </div>
 
       <div className="py-10 px-4 md:px-8">
-        <h2 className="title text-2xl font-bold mb-4 text-center">
-          Secure User Authentication System
-        </h2>
+        <h2 className="title text-2xl font-bold mb-4 text-center">User Authentication System</h2>
         <p className="paragraph-sm text-neutral-600 mb-2">
           This project is a fully functional authentication system built with React, designed to
           demonstrate a secure and user-friendly way to manage user sessions.
