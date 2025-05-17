@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
       </div>
       <hr className="w-11/12 border-secondary-100 sm:mx-auto" />
       <span className="block py-2 text-center text-sm text-neutral-700 sm:text-center">
-        © 2024{' '}
+        © {new Date().getFullYear()}{' '}
         <Link
           to="/"
           className="hover:underline"

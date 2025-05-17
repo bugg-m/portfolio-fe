@@ -8,7 +8,7 @@
         <div class="flex justify-between items-center border-b pb-2">
           <h2 class="text-lg font-semibold text-primary-700">Manish Kumar</h2>
           <button
-            class="text-gray-500 hover:text-gray-800"
+            class="text-neutral-500 hover:text-neutral-800"
             @click="onClose"
           >
             &times;
@@ -22,7 +22,7 @@
           />
         </div>
         <h3 class="text-lg font-bold text-primary-700 mb-2">Welcome to My Portfolio</h3>
-        <p class="text-sm text-gray-600 mb-4">
+        <p class="text-sm text-neutral-600 mb-4">
           Welcome to the Vue Micro Frontend of my portfolio! This section showcases a collection of
           mini Vue projects that highlight modern UI patterns and interactive design. Explore these
           projects to see how dynamic Vue components and innovative features come together in a
@@ -36,7 +36,7 @@
             Explore with me
           </button>
           <button
-            class="border border-gray-400 px-4 py-2 rounded hover:bg-gray-100"
+            class="border border-gray-400 px-4 py-2 rounded hover:bg-secondary-100"
             @click="onClose"
           >
             Explore on your own

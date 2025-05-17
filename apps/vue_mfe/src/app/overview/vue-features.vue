@@ -7,7 +7,7 @@
     >
       <div class="mb-2 text-2xl">{{ feature.icon }}</div>
       <h3 class="font-bold mb-1">{{ feature.title }}</h3>
-      <p class="text-sm text-gray-600">{{ feature.description }}</p>
+      <p class="text-sm text-neutral-600">{{ feature.description }}</p>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { folderData } from '@react_mfe/data/folderData';
+import { folderData } from '@react_mfe/data/folder-data';
 
 import { RootFolder } from './root-folders';
 

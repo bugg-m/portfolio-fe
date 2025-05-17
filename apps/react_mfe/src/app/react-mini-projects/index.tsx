@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Image } from '@bugg-m/bugg-ui';
+import { ReactRoutesEnum } from '@enums/app-routes-enum';
 
 import { developer3 } from '@react_mfe/constants/illustrations';
 
@@ -8,7 +9,7 @@ const ReactMiniProjects: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-secondary-50 min-h-screen grid grid-cols-1 md:grid-cols-2">
-      <div className="flex-center flex-col  col-span-1 order-2 md:order-1 p-4 space-y-4 max-w-4xl mx-auto my-16">
+      <div className="flex-center flex-col col-span-1 order-2 md:order-1 p-4 space-y-4 max-w-4xl mx-auto my-16">
         <header className="text-2xl sm:text-3xl md:text-4xl header text-neutral-800 mb-4">
           Hello!{' '}
           <span
@@ -28,7 +29,7 @@ const ReactMiniProjects: React.FC = () => {
           offer practical insights for your own development journey.
         </p>
         <Button
-          onClick={() => navigate}
+          onClick={() => navigate(ReactRoutesEnum.FOLDERS)}
           title="This feature is Under Development"
           className="md:w-2/5 w-full hover-scale-110"
           rounded="full"

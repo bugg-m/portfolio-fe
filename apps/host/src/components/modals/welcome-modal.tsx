@@ -35,7 +35,7 @@ const WelcomeModal: React.FC = () => {
   };
 
   const exploreWithMe = () => {
-    navigate(AppRoutesEnum.MICROSERVICES);
+    navigate(AppRoutesEnum.MICROFRONTENDS);
     onClose();
   };
 

@@ -90,6 +90,7 @@
   },
   "dependencies": {
     "@bugg-m/bugg-ui": "^2.4.5",
+    "@simplewebauthn/browser": "^13.1.0",
     "axios": "^1.8.4",
     "next": "~15.1.4",
     "react": "19.0.0",

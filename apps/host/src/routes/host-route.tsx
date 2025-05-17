@@ -27,7 +27,7 @@ export const hostRouter = createBrowserRouter(
         element={<Home />}
       />
       <Route
-        path={AppRoutesEnum.MICROSERVICES}
+        path={AppRoutesEnum.MICROFRONTENDS}
         element={<MicroServices />}
       />
 
