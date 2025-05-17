@@ -1,7 +1,7 @@
 enum AppRoutesEnum {
   OTHER = '*',
   HOME = '/',
-  MICROSERVICES = '/microservices',
+  MICROFRONTENDS = '/microfrontends',
   REACT_MFE = '/react_mfe',
   NEXT_MFE = '/next_mfe',
   VUE_MFE = '/vue_mfe',

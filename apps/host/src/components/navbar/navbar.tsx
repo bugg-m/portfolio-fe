@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
   const menuItems = [
     { title: 'home', id: 1, to: AppRoutesEnum.HOME },
-    { title: 'microservices', id: 3, to: AppRoutesEnum.MICROSERVICES },
+    { title: 'micro-frontends', id: 3, to: AppRoutesEnum.MICROFRONTENDS },
   ];
 
   return (

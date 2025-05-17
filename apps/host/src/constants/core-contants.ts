@@ -49,20 +49,22 @@ const microservicesData = [
 ];
 
 const myExperiencesData = {
-  company: 'Fibonacci Innovations',
+  company: 'Fibonacci Innovative Solutions LLP',
   role: 'Associate Software Engineer',
   duration: 'July 2023 - Dec 2024',
-  location: 'On-Site',
+  location: 'Gurugram, India (On-Site)',
   description:
-    'Developed responsive web interfaces using React and Vue.js frameworks, implemented passkey authentication and role-based access controls, created reusable UI components including interactive charts, built scalable design systems with dark-light theme support, engineered front-end solutions for microservice-based architectures, and integrated secure payment workflows to enhance user experience.',
+    'Engineered scalable and accessible web applications using React.js and Vue.js, implemented role-based access control and passkey authentication (FIDO2), led TypeScript migration to improve code quality, built and maintained micro-frontend architecture with Redux Toolkit integration, optimized UI rendering and performance across enterprise platforms, and developed custom data visualization tools and dashboards with REST API integration.',
   skills: [
-    'React',
+    'React.js',
     'Vue.js',
-    'UI Components',
-    'Design Systems',
-    'Microservices',
-    'Authentication',
-    'Payment Integration',
+    'TypeScript',
+    'Redux Toolkit',
+    'Micro-Frontend Architecture',
+    'REST APIs',
+    'FIDO2 Authentication',
+    'UI Performance Optimization',
+    'Data Visualization',
   ],
 };
 
