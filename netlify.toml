@@ -7,4 +7,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "https://bugg-portfolio.netlify.app"
+    Access-Control-Allow-Origin = "https://bugg-m.netlify.app"
